@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="WebFormsApp_AdminSite.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/MasterPage.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="container mainContainer ">
+            <header>
+                <div class="row ">
+                    <div class="col-md-6 col-sm-12 text-left ">
+                        <asp:Label ID="lblDobrodosli" runat="server" Text="Dobrodošli !" Font-Bold="True" Font-Italic="True" CssClass="customLabel"></asp:Label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right  ">
+                        <asp:Button runat="server" CssClass="btn btn-primary " Width="100px" Text="Admin" />
+                        <asp:Button runat="server" CssClass="btn btn-danger" Width="100px" Text="Odjava" ID="btnOdajvi" />
+                    </div>
+                </div>
+                <hr style="border: 1px solid #808080" />
+
+                <nav class="row ">
+                    <div class="col-sm-6 col-md-12 text-center">
+                        <asp:Button runat="server" ID="btnPopisKorisnika" CssClass="btn btn-outline-dark" Width="170px" Text="Popis korisnika" />
+                        <asp:Button runat="server" ID="btnKreirajJelovnik" CssClass="btn btn-outline-dark" Width="170px" Text="Kreiraj jelovnik" />
+                        <asp:Button runat="server" ID="btnUredivanjeNamirnica" CssClass="btn btn-outline-dark" Width="170px" Text="Uređivanje namirnica" />
+                        <asp:Button runat="server" ID="btnPopisObroka" CssClass="btn btn-outline-dark" Width="170px" Text="Popis obroka" />
+                        <asp:Button runat="server" ID="btnPostavke" CssClass="btn btn-outline-dark" Width="170px" Text="Postavke" />
+
+                    </div>
+                </nav>
+                <hr style="border: 1px solid #808080" />
+
+
+            </header>
+
+
+            <div class="content row justify-content-center">
+
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+            <hr style="border: 1px solid #808080" />
+
+            <footer >
+                <div class="footer text-center ">
+                    <p><%: DateTime.Now.ToShortDateString() %> | <span style="color:red;">WEB FORMS PROJEKT</span></p>
+                    <p>REPOSITORY - MICROSOFT SQL</p>
+                    <a href="LoginPage.aspx">< Povratak</a>
+                </div>
+
+
+
+            </footer>
+
+
+
+        </div>
+
+
+
+    </form>
+</body>
+</html>

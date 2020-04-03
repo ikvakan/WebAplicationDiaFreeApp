@@ -1,0 +1,28 @@
+﻿body {
+    background-color: #E0E0E0;
+}
+
+.container {
+    width: 400px;
+    margin: 200px auto;
+    background-color: #F5F5F5;
+    padding: 30px;
+    box-shadow: 5px 5px 5px #808080;
+    border-radius: 25px;
+}
+
+label.login {
+    color: #337ab7;
+    font-size:3em;
+    
+}
+
+.txtBox{
+    border-radius:8px;
+}
+
+label{
+    font-style:italic;
+}
+
+
