@@ -30,11 +30,17 @@
 
                 <nav class="row ">
                     <div class="col-sm-6 col-md-12 text-center">
-                        <asp:Button runat="server" ID="btnPopisKorisnika" CssClass="btn btn-outline-dark" Width="170px" Text="Popis korisnika" />
+                       <%-- <asp:Button runat="server" ID="btnPopisKorisnika" CssClass="btn btn-outline-dark" Width="170px" Text="Popis korisnika" OnClick="btnPopisKorisnika_Click" />
                         <asp:Button runat="server" ID="btnKreirajJelovnik" CssClass="btn btn-outline-dark" Width="170px" Text="Kreiraj jelovnik" />
                         <asp:Button runat="server" ID="btnUredivanjeNamirnica" CssClass="btn btn-outline-dark" Width="170px" Text="Uređivanje namirnica" />
                         <asp:Button runat="server" ID="btnPopisObroka" CssClass="btn btn-outline-dark" Width="170px" Text="Popis obroka" />
-                        <asp:Button runat="server" ID="btnPostavke" CssClass="btn btn-outline-dark" Width="170px" Text="Postavke" />
+                        <asp:Button runat="server" ID="btnPostavke" CssClass="btn btn-outline-dark" Width="170px" Text="Postavke" />--%>
+
+                        <a href="UserListPage.aspx" class="btn btn-outline-dark" style="width: 150px;">Popis korisnika</a>
+                        <a href="CreateMealPage.aspx" class="btn btn-outline-dark" style="width: 150px;">Kreiraj jelovnik</a>
+                        <a href="UserListPage" class="btn btn-outline-dark" style="width: 200px;">Uređivanje namirnica</a>
+                        <a href="UserListPage" class="btn btn-outline-dark" style="width: 150px;">Popis obroka</a>
+                        <a href="UserListPage" class="btn btn-outline-dark" style="width:150px;">Postavke</a>
 
                     </div>
                 </nav>

@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebFormsApp_AdminSite
 {
-    public partial class Master : System.Web.UI.MasterPage
+    public partial class UserListPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-        }
 
-        
+        }
     }
 }

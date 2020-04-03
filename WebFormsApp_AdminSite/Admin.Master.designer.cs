@@ -51,51 +51,6 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.Button btnOdajvi;
 
         /// <summary>
-        /// btnPopisKorisnika control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPopisKorisnika;
-
-        /// <summary>
-        /// btnKreirajJelovnik control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnKreirajJelovnik;
-
-        /// <summary>
-        /// btnUredivanjeNamirnica control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUredivanjeNamirnica;
-
-        /// <summary>
-        /// btnPopisObroka control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPopisObroka;
-
-        /// <summary>
-        /// btnPostavke control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPostavke;
-
-        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
