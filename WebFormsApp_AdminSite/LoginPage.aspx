@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label>Korisničko ime:</label>
-                        <asp:CustomValidator ID="userNameValidator" runat="server" ErrorMessage="Neispravano korisničko ime." CssClass="validatorColor" Display="Dynamic" ControlToValidate="txtUserName">*</asp:CustomValidator>
+                        
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Obavezno polje." ControlToValidate="txtUserName" Text="*" CssClass="validatorColor" Display="Dynamic">*</asp:RequiredFieldValidator>
                         <asp:TextBox
                             runat="server"
@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         <label>Zaporka:</label>
-                        <asp:CustomValidator ID="passwordValidator" runat="server" ErrorMessage="Neispravna zaporka." CssClass="validatorColor" Display="Dynamic" ControlToValidate="txtPassword">*</asp:CustomValidator>
+                       
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Obavezno polje." ControlToValidate="txtPassword" Text="*" CssClass="validatorColor" Display="Dynamic"></asp:RequiredFieldValidator>
 
                         <asp:TextBox
