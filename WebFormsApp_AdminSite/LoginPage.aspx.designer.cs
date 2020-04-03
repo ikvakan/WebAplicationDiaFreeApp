@@ -24,6 +24,24 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.HtmlControls.HtmlForm formLogin;
 
         /// <summary>
+        /// userNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator userNameValidator;
+
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// txtUserName control.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,24 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUserName;
+
+        /// <summary>
+        /// passwordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator passwordValidator;
+
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// txtPassword control.
@@ -51,12 +87,12 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// btnRegister control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

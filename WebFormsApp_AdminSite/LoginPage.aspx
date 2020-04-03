@@ -20,6 +20,8 @@
                     </div>
                     <div class="form-group">
                         <label>Korisničko ime:</label>
+                        <asp:CustomValidator ID="userNameValidator" runat="server" ErrorMessage="Neispravano korisničko ime." CssClass="validatorColor" Display="Dynamic" ControlToValidate="txtUserName">*</asp:CustomValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Obavezno polje." ControlToValidate="txtUserName" Text="*" CssClass="validatorColor" Display="Dynamic">*</asp:RequiredFieldValidator>
                         <asp:TextBox
                             runat="server"
                             ID="txtUserName"
@@ -28,6 +30,9 @@
                     </div>
                     <div class="form-group">
                         <label>Zaporka:</label>
+                        <asp:CustomValidator ID="passwordValidator" runat="server" ErrorMessage="Neispravna zaporka." CssClass="validatorColor" Display="Dynamic" ControlToValidate="txtPassword">*</asp:CustomValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Obavezno polje." ControlToValidate="txtPassword" Text="*" CssClass="validatorColor" Display="Dynamic"></asp:RequiredFieldValidator>
+
                         <asp:TextBox
                             runat="server"
                             ID="txtPassword"
@@ -41,12 +46,9 @@
                             ID="btnLogin"
                             Text="Prijava"
                             CssClass="btn btn-primary btn-block " OnClick="btnLogin_Click" />
-                        <asp:Button runat="server"
-                            ID="btnRegister"
-                            Text="Registracija"
-                            CssClass="btn btn-primary btn-block " OnClick="btnRegister_Click" />
-                        
+                        <a href="RegisterPage.aspx" class="btn btn-primary btn-block">Registracija</a>
                     </div>
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="validatorColor" />
 
                 </div>
             </div>

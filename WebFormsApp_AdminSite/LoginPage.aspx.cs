@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,17 +12,35 @@ namespace WebFormsApp_AdminSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            ResetControls();
+
+
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            var userName = txtUserName.Text;
+            var password = txtPassword.Text;
+
+
+            if (Admin.IsAdmin(userName, password))
+            {
+                Response.Redirect("Index.aspx");
+            }
+            else
+            {
+                ResetControls();
+
+            }
+
 
         }
 
-        protected void btnRegister_Click(object sender, EventArgs e)
+        private void ResetControls()
         {
-            Response.Redirect("RegisterPage.aspx");
+            txtUserName.Text = string.Empty;
+            txtPassword.Text = string.Empty;
         }
     }
 }
