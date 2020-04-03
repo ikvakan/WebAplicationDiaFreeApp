@@ -1,4 +1,6 @@
-﻿using ClassLibrary;
+﻿
+using ClassLibrary;
+using ClassLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,11 @@ namespace WebFormsApp_AdminSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ResetControls();
 
-            ResetControls();
+            }
 
 
         }
@@ -23,6 +28,7 @@ namespace WebFormsApp_AdminSite
             var userName = txtUserName.Text;
             var password = txtPassword.Text;
 
+            
 
             if (Admin.IsAdmin(userName, password))
             {

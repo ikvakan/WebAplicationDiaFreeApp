@@ -20,7 +20,7 @@ namespace ClassLibrary.Models
         Tip2
     }
 
-    public class Korisnik
+    public  class Korisnik
     {
         public static Guid IDKorisnik { get; set; }
         public static string Ime { get; set; }
@@ -29,14 +29,18 @@ namespace ClassLibrary.Models
         public static string Email { get; set; }
         public static string KorisnickoIme { get; set; }
         public static string Zaporka { get; set; }
-        public static RazinaFizickeAktivnosti FizickaAktivnost { get; set; }
+        public static string FizickaAktivnost { get; set; }
         public static int Visina { get; set; }
-        public static TipDijabetesa TipDijabetesa { get; set; }
+        public static string TipDijabetesa { get; set; }
         public static string Spol { get; set; }
 
         public Korisnik()
         {
             IDKorisnik = new Guid();
         }
+
+       
+
+
     }
 }
