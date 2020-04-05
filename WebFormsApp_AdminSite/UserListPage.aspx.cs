@@ -11,7 +11,7 @@ namespace WebFormsApp_AdminSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

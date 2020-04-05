@@ -29,15 +29,14 @@ namespace ClassLibrary.Models
         public static string Email { get; set; }
         public static string KorisnickoIme { get; set; }
         public static string Zaporka { get; set; }
+        public static double Tezina { get; set; }
+
         public static string FizickaAktivnost { get; set; }
         public static int Visina { get; set; }
         public static string TipDijabetesa { get; set; }
         public static string Spol { get; set; }
 
-        public Korisnik()
-        {
-            IDKorisnik = new Guid();
-        }
+       
 
        
 

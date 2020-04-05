@@ -64,7 +64,16 @@
                     </div>
                 </div>
 
+
                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Tezina:</label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Tezina obavezna." ControlToValidate="txtTezina" CssClass="validatorColor" Display="Dynamic">*</asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator3" runat="server" ErrorMessage="Tezina mora biti broj." ControlToValidate="txtTezina" CssClass="validatorColor" Display="Dynamic" Operator="DataTypeCheck" Type="Double">*</asp:CompareValidator>
+                        <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="Neispravan unos tezine." ControlToValidate="txtTezina" CssClass="validatorColor" Display="Dynamic" MaximumValue="250" MinimumValue="1" Type="Double">*</asp:RangeValidator>
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtTezina"></asp:TextBox>
+                    </div>
+
                     <div class="form-group">
                         <label>Razina fizičke aktivnosti:</label>
                         <asp:DropDownList runat="server" CssClass="form-control" ID="ddlRazinaFizAktiv">
