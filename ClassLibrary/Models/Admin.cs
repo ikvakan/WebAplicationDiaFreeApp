@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Admin : Korisnik
+    public class Admin  
     {
-        private static  string UserName { get; } = "admin";
-        private static  string Password { get; } = "123";
+        private static string UserName { get; } = "admin";
+        private static string Password { get; } = "123";
 
 
-       public static bool IsAdmin(string userName, string password)
+
+        public static bool isAdmin(string korisnickoIme, string zaporka)
         {
-            return UserName == userName && Password == password ? true : false;
+            return korisnickoIme == UserName && Password == zaporka ? true : false;
         }
+
+
     }
 
 

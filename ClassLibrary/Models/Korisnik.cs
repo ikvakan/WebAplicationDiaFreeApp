@@ -20,25 +20,27 @@ namespace ClassLibrary.Models
         Tip2
     }
 
-    public  class Korisnik
+    public class Korisnik
     {
-        public static Guid IDKorisnik { get; set; }
-        public static string Ime { get; set; }
-        public static string Prezime { get; set; }
-        public  static DateTime DatumRodenja { get; set; }
-        public static string Email { get; set; }
-        public static string KorisnickoIme { get; set; }
-        public static string Zaporka { get; set; }
-        public static double Tezina { get; set; }
+        public int IDKorisnik { get; set; }
+        public   string Ime { get; set; }
+        public   string Prezime { get; set; }
+        public  DateTime DatumRodenja { get; set; }
+        public  string Email { get; set; }
+        public   string KorisnickoIme { get; set; }
+        public  string Zaporka { get; set; }
+        public  double Tezina { get; set; }
 
-        public static string FizickaAktivnost { get; set; }
-        public static int Visina { get; set; }
-        public static string TipDijabetesa { get; set; }
-        public static string Spol { get; set; }
+        public  string FizickaAktivnost { get; set; }
+        public  double Visina { get; set; }
+        public  string TipDijabetesa { get; set; }
+        public  char Spol { get; set; }
 
+
+
+      
        
 
-       
 
 
     }
