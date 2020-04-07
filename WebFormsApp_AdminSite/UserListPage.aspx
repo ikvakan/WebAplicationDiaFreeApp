@@ -3,29 +3,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Repeater ID="repeaterPopisKorisnika" runat="server">
+    <asp:Repeater ID="repeaterPopisKorisnika" runat="server" DataSourceID="SqlDataSource1">
         <HeaderTemplate>
-            <table class="table table-striped tblPopisKorisnika">
-                <tr class="">
+            <table class="table table-striped w-75">
+                <thead class="thead-dark">
                     <th>IME:</th>
                     <th>PREZIME:</th>
                     <th>EMAIL:</th>
-                </tr>
+                    <th></th>
+                </thead>
         </HeaderTemplate>
         <ItemTemplate>
             <tr>
                 <td><%# Eval("Ime") %></td>
                 <td><%# Eval("Prezime") %></td>
-                <td><a href="mailto:<%#("Email") %>"><%#("Email") %></a></td>
-                <td><asp:LinkButton OnClick="lbUredi_Click" id="lbUredi"   CommandArgument='<%#Eval("IDKorisnik") %>' runat="server">Uredi</asp:LinkButton></td>
-            </tr>
+                <td><a href="mailto:<%#Eval("Email") %>"><%#Eval("Email") %></a></td>
+                <td><asp:LinkButton OnClick="lbUredi_Click"  id="lbUredi" CssClass="btn btn-sm btn-danger"  CommandArgument='<%#Eval("IDKorisnik") %>' runat="server">Uredi</asp:LinkButton></td>
+            </tr
+          
         </ItemTemplate>
         <FooterTemplate>
-            <tr>
-                <td>
-                    <asp:Label ID="lblInfo" CssClass="alert-danger" runat="server" Text=""></asp:Label>
-                </td>
-            </tr>
+           <hr />
             </table>
         </FooterTemplate>
 
@@ -33,4 +31,6 @@
 
     </asp:Repeater>
 
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DiaFreeDBConnectionString %>" SelectCommand="GetAllUsers" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+    
 </asp:Content>

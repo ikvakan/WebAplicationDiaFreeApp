@@ -10,5 +10,6 @@ namespace ClassLibrary.DAL
     public interface IRepo
     {
         List<Korisnik> GetAllUsers();
+        Korisnik GetUserById(int idUser);
     }
 }

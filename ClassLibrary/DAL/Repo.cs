@@ -45,5 +45,29 @@ namespace ClassLibrary.DAL
             return kolekcijaKorisnika;
 
         }
+
+        public Korisnik GetUserById(int idUser)
+        {
+            DataSet ds = SqlHelper.ExecuteDataset(cs, "GetUserById", idUser);
+           
+                DataRow row = ds.Tables[0].Rows[0];
+            return new Korisnik
+                {
+                    IDKorisnik =(int)row["IDKorisnik"],
+                    Ime = (string)row["Ime"],
+                    Prezime = (string)row["Prezime"],
+                    Email = (string)row["Email"],
+                    DatumRodenja = (DateTime)row["DatumRodenja"],
+                    KorisnickoIme = (string)row["KorisnickoIme"],
+                    Tezina = (double)row["Tezina"],
+                    Visina = (double)row["Visina"],
+                    Spol = (char)row["Spol"],
+                    TipDijabetesa = (string)row["TipDijabetesa"],
+                    FizickaAktivnost = (string)row["RazinaFizickeAktivnosti"]
+                };
+                
+            
+            
+        }
     }
 }
