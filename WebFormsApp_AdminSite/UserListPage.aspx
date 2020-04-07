@@ -3,6 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+
+  
+    
+    <div class="row  justify-content-center" style="margin-bottom: 20px;">
+        <h1><span class="badge badge-danger">Popis korisnika</span></h1>
+    </div>
+
+    <div class="row justify-content-center">
+
     <asp:Repeater ID="repeaterPopisKorisnika" runat="server"  >
         <HeaderTemplate>
             <table class="table table-striped w-75">
@@ -32,7 +42,8 @@
 
     </asp:Repeater>
     <asp:Label runat="server" ID="lblInfo"></asp:Label>
-    
 
+    </div>
+</div>
     
 </asp:Content>

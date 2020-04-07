@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\HelperMethods.cs" />
+    <Compile Include="DAL\IHelperMethods.cs" />
     <Compile Include="DAL\IRepo.cs" />
     <Compile Include="DAL\Repo.cs" />
     <Compile Include="DAL\RepoFactory.cs" />

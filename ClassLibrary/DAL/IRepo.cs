@@ -12,5 +12,7 @@ namespace ClassLibrary.DAL
     {
         List<Korisnik> GetAllUsers();
         Korisnik GetUserById(int idUser);
+
+        void UpdateUser(Korisnik k);
     }
 }

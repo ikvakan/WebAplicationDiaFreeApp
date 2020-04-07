@@ -14,6 +14,9 @@ namespace WebFormsApp_AdminSite
     {
 
         private static IRepo repo = RepoFactory.GetRepo();
+
+       
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ConnectDataSource();
@@ -28,12 +31,15 @@ namespace WebFormsApp_AdminSite
         protected void lbUredi_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
-            var id=int.Parse(btn.CommandArgument);
+            var idKorisnik=btn.CommandArgument;
 
-
-            var user = repo.GetUserById(id);
-
-            lblInfo.Text = user.Ime;
+            HttpCookie cookie = new HttpCookie("podaci");
+            cookie["IDKorisnik"] = idKorisnik;
+            cookie.Expires = DateTime.Now.AddSeconds(60);
+            Response.Cookies.Add(cookie);
+            
+            Response.Redirect("EditUserPage.aspx");
+            
 
             
         }

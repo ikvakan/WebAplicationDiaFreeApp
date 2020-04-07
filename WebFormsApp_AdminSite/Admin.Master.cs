@@ -14,7 +14,10 @@ namespace WebFormsApp_AdminSite
            
         }
 
-       
-
+        protected void btnOdajvi_Click(object sender, EventArgs e)
+        {
+            //odjavi korisnika iz sesije
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }

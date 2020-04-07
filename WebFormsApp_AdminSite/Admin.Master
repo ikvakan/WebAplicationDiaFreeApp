@@ -21,9 +21,9 @@
                     <div class="col-md-6 col-sm-12 text-left ">
                         <asp:Label ID="lblDobrodosli" runat="server" Text="Dobrodošli !" Font-Bold="True" Font-Italic="True" CssClass="customLabel"></asp:Label>
                     </div>
-                    <div class="col-md-6 col-sm-12 text-right  ">
-                        <asp:Button runat="server" CssClass="btn btn-primary " Width="100px" Text="Admin" />
-                        <asp:Button runat="server" CssClass="btn btn-danger" Width="100px" Text="Odjava" ID="btnOdajvi" />
+                    <div class="col-md-6 col-sm-12  text-right   ">
+                       <asp:Button runat="server" CssClass="btn btn-primary " Width="100px" Text="Admin" />
+                        <asp:Button runat="server" CssClass="btn btn-danger" Width="100px" Text="Odjava"  ID="btnOdajvi" OnClick="btnOdajvi_Click" />
                     </div>
                 </div>
                 <hr style="border: 1px solid #808080" />

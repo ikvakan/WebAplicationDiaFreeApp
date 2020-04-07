@@ -12,5 +12,10 @@ namespace ClassLibrary.DAL
         {
             return new Repo();
         }
+
+        public static IHelperMethods GetHelperMethods()
+        {
+            return new HelperMethods();
+        }
     }
 }
