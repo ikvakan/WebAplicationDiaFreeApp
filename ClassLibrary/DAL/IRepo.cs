@@ -1,4 +1,5 @@
-﻿using ClassLibrary.Models;
+﻿using ClassLibrary;
+using ClassLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace ClassLibrary.DAL
     public interface IRepo
     {
         List<Korisnik> GetAllUsers();
-       // Korisnik GetUserById(int idUser);
+        Korisnik GetUserById(int idUser);
     }
 }

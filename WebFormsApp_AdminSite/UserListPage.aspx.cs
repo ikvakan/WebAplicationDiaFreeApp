@@ -1,5 +1,5 @@
 ﻿using ClassLibrary.DAL;
-using ClassLibrary.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,28 +12,29 @@ namespace WebFormsApp_AdminSite
 
     public partial class UserListPage : System.Web.UI.Page
     {
-         IRepo repo = RepoFactory.GetRepo();
 
+        private static IRepo repo = RepoFactory.GetRepo();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                 FillRepeaterWithData();
-
-            }
+            ConnectDataSource();
         }
 
-        private void FillRepeaterWithData()
+        private void ConnectDataSource()
         {
-          
-                repeaterPopisKorisnika.DataSource = repo.GetAllUsers();
-                repeaterPopisKorisnika.DataBind();
-           
+            repeaterPopisKorisnika.DataSource = repo.GetAllUsers();
+            repeaterPopisKorisnika.DataBind();
         }
 
         protected void lbUredi_Click(object sender, EventArgs e)
         {
-            
+            LinkButton btn = (LinkButton)sender;
+            var id=int.Parse(btn.CommandArgument);
+
+
+            var user = repo.GetUserById(id);
+
+            lblInfo.Text = user.Ime;
+
             
         }
     }

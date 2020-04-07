@@ -1,4 +1,6 @@
-﻿using ClassLibrary.Models;
+﻿
+
+using ClassLibrary.Models;
 using Microsoft.ApplicationBlocks.Data;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,8 @@ namespace ClassLibrary.DAL
 {
     public class Repo : IRepo
     {
-        private string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+        public DataSet ds { get; set; }
+        private  string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
         public Repo()
         {
 
@@ -20,26 +23,25 @@ namespace ClassLibrary.DAL
 
         public List<Korisnik> GetAllUsers()
         {
-            List<Korisnik> kolekcijaKorisnika = new List<Korisnik>();
-            DataSet ds = SqlHelper.ExecuteDataset(cs, "GetAllUsers");
+             ds = SqlHelper.ExecuteDataset(cs, "GetAllUsers");
+             List<Korisnik> kolekcijaKorisnika = new List<Korisnik>();
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                kolekcijaKorisnika.Add(new Korisnik
-                {
-                    IDKorisnik = (int)row["IDKorisnik"],
-                    Ime = (string)row["Ime"],
-                    Prezime = (string)row["Prezime"],
-                    Email = (string)row["Email"],
-                    DatumRodenja = (DateTime)row["DatumRodenja"],
-                    KorisnickoIme = (string)row["KorisnickoIme"],
-                    Zaporka = (string)row["Zaporka"],
-                    Tezina = (double)row["Tezina"],
-                    Visina = (double)row["Visina"],
-                    Spol = (char)row["Spol"],
-                    TipDijabetesa = (string)row["TipDijabetesa"],
-                    FizickaAktivnost = (string)row["RazinaFizickeAktivnosti"]
-                });
+                Korisnik k = new Korisnik();
+                k.IDKorisnik = (int)row["IDKorisnik"];
+                k.Ime = row["Ime"].ToString();
+                k.Prezime = row["Prezime"].ToString();
+                k.Email = row["Email"].ToString();
+                k.DatumRodenja = (DateTime)row["DatumRodenja"];
+                k.KorisnickoIme = row["KorisnickoIme"].ToString();
+                k.Spol = (string)row["Spol"];
+                k.Visina = (decimal)row["Visina"];
+                k.Tezina = (decimal)row["Tezina"];
+                k.TipDijabetesa = (string)row["TipDijabetesa"];
+                
+               
+                kolekcijaKorisnika.Add(k);
             }
 
             return kolekcijaKorisnika;
@@ -48,26 +50,24 @@ namespace ClassLibrary.DAL
 
         public Korisnik GetUserById(int idUser)
         {
-            DataSet ds = SqlHelper.ExecuteDataset(cs, "GetUserById", idUser);
+             ds = SqlHelper.ExecuteDataset(cs, "GetUserById", idUser);
 
             DataRow row = ds.Tables[0].Rows[0];
 
+            Korisnik k = new Korisnik();
+            k.IDKorisnik = (int)row["IDKorisnik"];
+            k.Ime = row["Ime"].ToString();
+            k.Prezime = row["Prezime"].ToString();
+            k.Email = row["Email"].ToString();
+            k.DatumRodenja = (DateTime)row["DatumRodenja"];
+            k.KorisnickoIme = row["KorisnickoIme"].ToString();
+            k.Spol = (string)row["Spol"];
+            k.Visina = (decimal)row["Visina"];
+            k.Tezina = (decimal)row["Tezina"];
+            k.TipDijabetesa = (string)row["TipDijabetesa"];
 
-            return new Korisnik
-            {
-                IDKorisnik = idUser,
-                Ime = (string)row["Ime"],
-                Prezime = (string)row["Prezime"],
-                Email = (string)row["Email"],
-                DatumRodenja = (DateTime)row["DatumRodenja"],
-                KorisnickoIme = (string)row["KorisnickoIme"],
-                Tezina = (double)row["Tezina"],
-                Visina = (double)row["Visina"],
-                Spol = (char)row["Spol"],
-                TipDijabetesa = (string)row["TipDijabetesa"],
-                FizickaAktivnost = (string)row["RazinaFizickeAktivnosti"]
-            };
 
+            return k;
         }
     }
 }

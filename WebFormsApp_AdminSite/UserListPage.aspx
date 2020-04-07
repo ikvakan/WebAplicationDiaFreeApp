@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Repeater ID="repeaterPopisKorisnika" runat="server" >
+    <asp:Repeater ID="repeaterPopisKorisnika" runat="server"  >
         <HeaderTemplate>
             <table class="table table-striped w-75">
                 <thead class="thead-dark">
@@ -31,6 +31,8 @@
 
 
     </asp:Repeater>
+    <asp:Label runat="server" ID="lblInfo"></asp:Label>
+    
 
     
 </asp:Content>
