@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Repeater ID="repeaterPopisKorisnika" runat="server" DataSourceID="SqlDataSource1">
+    <asp:Repeater ID="repeaterPopisKorisnika" runat="server" >
         <HeaderTemplate>
             <table class="table table-striped w-75">
                 <thead class="thead-dark">
@@ -23,6 +23,7 @@
           
         </ItemTemplate>
         <FooterTemplate>
+            
            <hr />
             </table>
         </FooterTemplate>
@@ -31,6 +32,5 @@
 
     </asp:Repeater>
 
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DiaFreeDBConnectionString %>" SelectCommand="GetAllUsers" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     
 </asp:Content>
