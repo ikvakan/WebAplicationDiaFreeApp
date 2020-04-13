@@ -1,4 +1,5 @@
-﻿using ClassLibrary.DAL;
+﻿
+using ClassLibrary.DAL;
 
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,22 @@ using System.Web.UI.WebControls;
 namespace WebFormsApp_AdminSite
 {
 
-    public partial class UserListPage : System.Web.UI.Page
+    public partial class UserListPage : System.Web.UI.Page  
     {
 
         private static IRepo repo = RepoFactory.GetRepo();
 
-       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ConnectDataSource();
+            Master.ShowLabel("Popis korisnika");
+
+            if (!IsPostBack)
+            {
+                ConnectDataSource();
+
+            }
         }
 
         private void ConnectDataSource()
@@ -31,17 +38,17 @@ namespace WebFormsApp_AdminSite
         protected void lbUredi_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
-            var idKorisnik=btn.CommandArgument;
+            var idKorisnik = btn.CommandArgument;
 
             HttpCookie cookie = new HttpCookie("podaci");
             cookie["IDKorisnik"] = idKorisnik;
             cookie.Expires = DateTime.Now.AddSeconds(60);
             Response.Cookies.Add(cookie);
-            
-            Response.Redirect("EditUserPage.aspx");
-            
 
-            
+            Response.Redirect("EditUserPage.aspx");
+
+
+
         }
     }
 }

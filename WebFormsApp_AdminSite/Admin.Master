@@ -7,6 +7,7 @@
     <title></title>
 
     <link href="Content/bootstrap.css" rel="stylesheet" />
+
     <link href="Content/MasterPage.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.4.1.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -15,13 +16,13 @@
 <body>
     <form id="form1" runat="server">
 
-        <div class="container mainContainer ">
+        <div class="container mainContainer  ">
             <header>
                 <div class="row ">
-                    <div class="col-md-6 col-sm-12 text-left ">
-                        <asp:Label ID="lblDobrodosli" runat="server" Text="Dobrodošli !" Font-Bold="True" Font-Italic="True" CssClass="customLabel"></asp:Label>
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-left ">
+                        <asp:Label ID="lblHeaderInfo" runat="server" Text="" Font-Bold="True" Font-Italic="True" CssClass="customLabel"></asp:Label>
                     </div>
-                    <div class="col-md-6 col-sm-12  text-right   ">
+                    <div class="col-lg-6 col-md-6 col-sm-12  text-right   ">
                        <asp:Button runat="server" CssClass="btn btn-primary " Width="100px" Text="Admin" />
                         <asp:Button runat="server" CssClass="btn btn-danger" Width="100px" Text="Odjava"  ID="btnOdajvi" OnClick="btnOdajvi_Click" />
                     </div>
@@ -38,7 +39,7 @@
 
                         <a href="UserListPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Popis korisnika</a>
                         <a href="CreateMealPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Kreiraj obrok</a>
-                        <a href="UserListPage" class="btn btn-outline-dark " style="width: 200px;">Uređivanje namirnica</a>
+                        <a href="UserListPage" class="btn btn-outline-dark " style="width: 200px;">Spremi korisnike</a>
                         <a href="UserListPage" class="btn btn-outline-dark " style="width: 150px;">Popis obroka</a>
                         <a href="UserListPage" class="btn btn-outline-dark " style="width:150px;">Postavke</a>
 

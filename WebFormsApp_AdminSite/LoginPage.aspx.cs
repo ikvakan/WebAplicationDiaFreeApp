@@ -1,6 +1,6 @@
 ﻿
 using ClassLibrary;
-using ClassLibrary;
+
 using ClassLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,8 @@ namespace WebFormsApp_AdminSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //staviti admina u session zbog blokade pristupa 
 
             if (!IsPostBack)
             {

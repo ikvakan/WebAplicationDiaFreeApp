@@ -1,3 +1,26 @@
 ﻿body {
 
 }
+
+.container{
+    padding-top:10px;
+}
+
+.badge {
+    background: #6c757d;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+}
+
+label{
+    width:150px;
+}
+
+input{
+    width:50px;
+}
+
+table.thead th {
+    color: #6c757d;
+}

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="EditUserPage.aspx.cs" Inherits="WebFormsApp_AdminSite.EditUserPage" %>
-
+<%@ MasterType VirtualPath="~/Admin.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         

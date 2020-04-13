@@ -31,5 +31,19 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblInfo;
+
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new WebFormsApp_AdminSite.Master Master
+        {
+            get
+            {
+                return ((WebFormsApp_AdminSite.Master)(base.Master));
+            }
+        }
     }
 }

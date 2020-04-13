@@ -12,7 +12,9 @@ namespace ClassLibrary.DAL
     {
         List<Korisnik> GetAllUsers();
         Korisnik GetUserById(int idUser);
-
         void UpdateUser(Korisnik k);
+        List<Namirnice> getIngredients(string tipNamirnice);
+
+        void UpdateIngredients(Namirnice n);
     }
 }

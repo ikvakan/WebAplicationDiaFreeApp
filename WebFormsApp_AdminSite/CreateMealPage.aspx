@@ -1,14 +1,86 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="CreateMealPage.aspx.cs" Inherits="WebFormsApp_AdminSite.CreateMealPage" %>
+<%@ MasterType VirtualPath="~/Admin.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    
-  
+    <link href="Content/CreateMealPage.css" rel="stylesheet" />
+
+
+
+
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
-        <p  style="background-color:darkgray; border:solid; width:800px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsumthe printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
 
-    
-</asp:Content>
+    <div class="container w-25  ">
+
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="form-group">
+                    <label class="badge w-100">Obrok</label>
+                    <asp:DropDownList runat="server" ID="ddlObrok" CssClass="form-control">
+                        
+                        <asp:ListItem>Doručak</asp:ListItem>
+                        <asp:ListItem>Ručak</asp:ListItem>
+                        <asp:ListItem>Večera</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+
+                <div class="form-group">
+                    <label class="badge w-100">Tip namirnice</label>
+                    <asp:DropDownList runat="server" ID="ddlTipNamirnice" CssClass="form-control"  AutoPostBack="True"  >
+                        <asp:ListItem Value="sve">Sve</asp:ListItem>
+                        <asp:ListItem Value="bjelančevine">Bjelančevine</asp:ListItem>
+                        <asp:ListItem Value="ugljikohidrati">Ugljikohidrati</asp:ListItem>
+                        <asp:ListItem Value="masti">Masti</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+
+            </div>
+        </div>
+
+       <div class="row justify-content-center ">
+
+                <asp:GridView ID="gvNamirnice" runat="server" CellPadding="4" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" Width="900px" DataKeyNames="IDNamirnice" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" AllowPaging="True" CssClass="table table-borderless" OnPageIndexChanging="gvNamirnice_PageIndexChanging" OnRowCancelingEdit="gvNamirnice_RowCancelingEdit" OnRowEditing="gvNamirnice_RowEditing" OnRowUpdating="gvNamirnice_RowUpdating">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="NazivNamirnice" HeaderText="NAMIRNICA" ControlStyle-Width="150" >
+
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Energija_kJ" HeaderText="ENERGIJA [kJ]" >
+
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Energija_kcal" HeaderText="ENERGIJA [kcal]" >
+
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Grami" HeaderText="Grami" NullDisplayText="---" />
+                        <asp:BoundField DataField="Komad" HeaderText="Komad" NullDisplayText="---" />
+                        <asp:BoundField DataField="Zlica" HeaderText="Žlica" NullDisplayText="---" />
+                        <asp:BoundField DataField="Salica" HeaderText="Šalica" NullDisplayText="---" />
+                        <asp:BoundField DataField="TipNamirnice" HeaderText="TIP NAMIRNICE" ControlStyle-Width="120" >
+
+                        </asp:BoundField>
+                        <asp:CommandField CancelText="Odustani" DeleteText="Obriši" EditText="Uredi" ShowEditButton="True" />
+                    </Columns>
+                    <FooterStyle BackColor="#CCCC99" />
+                    <HeaderStyle BackColor="#6c757d" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#F7F7DE" />
+                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                    <SortedAscendingHeaderStyle BackColor="#848384" />
+                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                    <SortedDescendingHeaderStyle BackColor="#575357" />
+
+                </asp:GridView>
+       </div>
+
+        <asp:Label ID="lblInfo" runat="server" Font-Bold="True" Font-Size="12px" ForeColor="Red"></asp:Label>
+
+
+
+    </div>
+
+
+    </asp:Content>

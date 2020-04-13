@@ -17,6 +17,8 @@ namespace WebFormsApp_AdminSite
       
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.ShowLabel("Uređivanje korisnika");
+
             if (Request.Cookies["podaci"]!=null)
             {
                 if (!IsPostBack)
