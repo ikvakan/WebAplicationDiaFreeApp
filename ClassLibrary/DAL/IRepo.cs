@@ -16,5 +16,8 @@ namespace ClassLibrary.DAL
         List<Namirnice> getIngredients(string tipNamirnice);
 
         void UpdateIngredients(Namirnice n);
+        void DeleteIngredient(int n);
+
+        void InsertIngredient(Namirnice n);
     }
 }

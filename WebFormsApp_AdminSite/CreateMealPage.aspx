@@ -42,10 +42,12 @@
 
        <div class="row justify-content-center ">
 
-                <asp:GridView ID="gvNamirnice" runat="server" CellPadding="4" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" Width="900px" DataKeyNames="IDNamirnice" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" AllowPaging="True" CssClass="table table-borderless" OnPageIndexChanging="gvNamirnice_PageIndexChanging" OnRowCancelingEdit="gvNamirnice_RowCancelingEdit" OnRowEditing="gvNamirnice_RowEditing" OnRowUpdating="gvNamirnice_RowUpdating">
+                <asp:GridView ID="gvNamirnice" runat="server" CellPadding="4" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" Width="900px" DataKeyNames="IDNamirnice" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" AllowPaging="True" CssClass="table table-borderless" OnPageIndexChanging="gvNamirnice_PageIndexChanging" OnRowCancelingEdit="gvNamirnice_RowCancelingEdit" OnRowEditing="gvNamirnice_RowEditing" OnRowUpdating="gvNamirnice_RowUpdating" OnRowDeleting="gvNamirnice_RowDeleting"  >
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="NazivNamirnice" HeaderText="NAMIRNICA" ControlStyle-Width="150" >
+
+<ControlStyle Width="150px"></ControlStyle>
 
                         </asp:BoundField>
                         <asp:BoundField DataField="Energija_kJ" HeaderText="ENERGIJA [kJ]" >
@@ -58,10 +60,20 @@
                         <asp:BoundField DataField="Komad" HeaderText="Komad" NullDisplayText="---" />
                         <asp:BoundField DataField="Zlica" HeaderText="Žlica" NullDisplayText="---" />
                         <asp:BoundField DataField="Salica" HeaderText="Šalica" NullDisplayText="---" />
-                        <asp:BoundField DataField="TipNamirnice" HeaderText="TIP NAMIRNICE" ControlStyle-Width="120" >
-
-                        </asp:BoundField>
-                        <asp:CommandField CancelText="Odustani" DeleteText="Obriši" EditText="Uredi" ShowEditButton="True" />
+                        <asp:TemplateField HeaderText="TIP NAMIRNICE">
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="ddlEdit" runat="server" Text='<%# Bind("TipNamirnice") %>'>
+                                    <asp:ListItem>Masti</asp:ListItem>
+                                    <asp:ListItem>Bjelančevine</asp:ListItem>
+                                    <asp:ListItem>Ugljikohidrati</asp:ListItem>
+                                </asp:DropDownList>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("TipNamirnice") %>'></asp:Label>
+                            </ItemTemplate>
+                            <ControlStyle Width="120px" />
+                        </asp:TemplateField>
+                        <asp:CommandField CancelText="Odustani" DeleteText="Obriši" EditText="Uredi" ShowEditButton="True" ShowDeleteButton="True" InsertText="Umetni" />
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" />
                     <HeaderStyle BackColor="#6c757d" Font-Bold="True" ForeColor="White" />
@@ -74,6 +86,7 @@
                     <SortedDescendingHeaderStyle BackColor="#575357" />
 
                 </asp:GridView>
+              
        </div>
 
         <asp:Label ID="lblInfo" runat="server" Font-Bold="True" Font-Size="12px" ForeColor="Red"></asp:Label>

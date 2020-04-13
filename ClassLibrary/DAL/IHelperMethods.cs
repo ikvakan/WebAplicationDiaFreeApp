@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace ClassLibrary.DAL
         int SetUserTipDiabetesaForUpdate(string tipDijabetesa);
         
         int SetUserFizAktivnostForUpdate(string fizickaAktivnost);
+
+        bool ContainsIngredient(string name);
 
     }
 }

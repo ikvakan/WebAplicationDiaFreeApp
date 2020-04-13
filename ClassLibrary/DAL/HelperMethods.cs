@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using ClassLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,8 @@ namespace ClassLibrary.DAL
 {
     public class HelperMethods : IHelperMethods
     {
+
+
         public int SetUserTipDiabetesaForUpdate(string tipDijabetesa)
         {
             int result = 0;
@@ -45,6 +49,25 @@ namespace ClassLibrary.DAL
             return result;
         }
 
+        public bool ContainsIngredient(string name)
+        {
+            IRepo repo = RepoFactory.GetRepo();
 
+            List<Namirnice> kolekcijaNamirnica = repo.getIngredients("sve");
+
+            bool result = false;
+
+            foreach (var item in kolekcijaNamirnica)
+            {
+                if (item.NazivNamirnice.ToLower()==name.ToLower())
+                {
+                    
+                    result= true;
+                    break;
+                }
+            }
+
+            return result;
+        }
     }
 }

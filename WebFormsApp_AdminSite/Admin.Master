@@ -39,7 +39,7 @@
 
                         <a href="UserListPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Popis korisnika</a>
                         <a href="CreateMealPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Kreiraj obrok</a>
-                        <a href="UserListPage" class="btn btn-outline-dark " style="width: 200px;">Spremi korisnike</a>
+                        <a href="AddIngredientPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Unos namirnice</a>
                         <a href="UserListPage" class="btn btn-outline-dark " style="width: 150px;">Popis obroka</a>
                         <a href="UserListPage" class="btn btn-outline-dark " style="width:150px;">Postavke</a>
 
@@ -51,7 +51,7 @@
             </header>
 
 
-            <div class="content row justify-content-center">
+            <div class="content  justify-content-center">
 
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>

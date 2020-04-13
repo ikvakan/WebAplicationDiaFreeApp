@@ -96,5 +96,15 @@ namespace ClassLibrary.DAL
         {
             SqlHelper.ExecuteNonQuery(cs, "UpdateIngredients", n.IDNamirnice, n.NazivNamirnice, n.Energija_kJ, n.Energija_kcal,n.TipNamirnice, n.Grami ,n.Komad,n.Zlica , n.Salica);
         }
+
+        public void DeleteIngredient(int id)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "DeleteIngredient", id);
+        }
+
+        public void InsertIngredient(Namirnice n)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "InsertIngredient",n.NazivNamirnice,n.Energija_kJ,n.Energija_kcal,n.TipNamirnice,n.Grami,n.Komad,n.Zlica,n.Salica);
+        }
     }
 }

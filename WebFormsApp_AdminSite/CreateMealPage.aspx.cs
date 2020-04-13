@@ -96,7 +96,7 @@ namespace WebFormsApp_AdminSite
             TextBox tbKomad = (TextBox)updateRow.Cells[4].Controls[0];
             TextBox tbZlica = (TextBox)updateRow.Cells[5].Controls[0];
             TextBox tbSalica = (TextBox)updateRow.Cells[6].Controls[0];
-            TextBox tbTipNamirnice = (TextBox)updateRow.Cells[7].Controls[0];
+            DropDownList tbTipNamirnice = (DropDownList)updateRow.Cells[7].Controls[1];
 
             Namirnice n = new Namirnice();
             n.IDNamirnice = (int)gvNamirnice.DataKeys[e.RowIndex].Value;
@@ -135,6 +135,21 @@ namespace WebFormsApp_AdminSite
 
         }
 
-       
+        protected void gvNamirnice_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            var idNamirnice = (int)gvNamirnice.DataKeys[e.RowIndex].Value;
+
+            try
+            {
+                repo.DeleteIngredient(idNamirnice);
+            }
+            catch (Exception ex)
+            {
+
+                lblInfo.Text = $"Greška kod brisanja:{ex.Message} ";
+            }
+
+            BindDataToGridView(selectedType);
+        }
     }
 }

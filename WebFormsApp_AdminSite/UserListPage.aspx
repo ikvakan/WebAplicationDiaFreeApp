@@ -8,7 +8,7 @@
   
     
     <div class="row  justify-content-center" style="margin-bottom: 20px;">
-        <h1><span class="badge badge-danger">Popis korisnika</span></h1>
+        <h1><span class="badge badge-danger">Popis korisnika [spremi korisnike]</span></h1>
     </div>
 
     <div class="row justify-content-center">
