@@ -17,5 +17,10 @@ namespace ClassLibrary.DAL
         {
             return new HelperMethods();
         }
+
+        public static IFileManager GetFileManager()
+        {
+            return new FileManager();
+        }
     }
 }

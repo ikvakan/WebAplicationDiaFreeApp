@@ -34,6 +34,7 @@ namespace WebFormsApp_AdminSite
             if (!IsPostBack)
             {
                 ResetControls();
+               
             }
         }
 

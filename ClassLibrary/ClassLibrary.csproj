@@ -48,15 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\FileManager.cs" />
     <Compile Include="DAL\HelperMethods.cs" />
+    <Compile Include="DAL\IFileManager.cs" />
     <Compile Include="DAL\IHelperMethods.cs" />
     <Compile Include="DAL\IRepo.cs" />
     <Compile Include="DAL\Repo.cs" />
     <Compile Include="DAL\RepoFactory.cs" />
     <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\Jelovnik.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\Namirnice.cs" />
+    <Compile Include="Models\Obrok.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.DAL
 {
-    public interface IRepo
+    public interface IRepo 
     {
         List<Korisnik> GetAllUsers();
         Korisnik GetUserById(int idUser);
@@ -19,5 +19,11 @@ namespace ClassLibrary.DAL
         void DeleteIngredient(int n);
 
         void InsertIngredient(Namirnice n);
+
+        decimal InsertMeal(Obrok o);
+
+        void InsertIntoMealIngredients(int obrokId, int namirnicaID);
+
+       // void test(string naziv,int id);
     }
 }

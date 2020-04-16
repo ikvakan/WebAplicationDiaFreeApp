@@ -106,5 +106,24 @@ namespace ClassLibrary.DAL
         {
             SqlHelper.ExecuteNonQuery(cs, "InsertIngredient",n.NazivNamirnice,n.Energija_kJ,n.Energija_kcal,n.TipNamirnice,n.Grami,n.Komad,n.Zlica,n.Salica);
         }
+
+        public decimal InsertMeal(Obrok o)
+        {
+            
+            return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeal", o.NazivObroka);
+        }
+
+        public void InsertIntoMealIngredients(int obrokId, int namirnicaID)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "InsertIntoMelaIngredients", obrokId, namirnicaID);
+        }
+
+
+
+
+        //public void test(string naziv,int id)
+        //{
+        //    SqlHelper.ExecuteNonQuery(cs, "test", naziv, id);
+        //}
     }
 }
