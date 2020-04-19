@@ -23,7 +23,7 @@
                         <asp:Label ID="lblHeaderInfo" runat="server" Text="" Font-Bold="True" Font-Italic="True" CssClass="customLabel"></asp:Label>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12  text-right   ">
-                       <asp:Button runat="server" CssClass="btn btn-primary " Width="100px" Text="Admin" />
+                        <asp:HyperLink ID="HyperLink1" Text="Admin" CssClass="btn btn-primary" runat="server" NavigateUrl="https://www.youtube.com/watch?v=gkqSCaMBERQ&list=PLPf69IGxwfBH7_qrNcN1eP-WuSS5oWLiZ"></asp:HyperLink>
                         <asp:Button runat="server" CssClass="btn btn-danger" Width="100px" Text="Odjava"  ID="btnOdajvi" OnClick="btnOdajvi_Click" />
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                         <a href="UserListPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Popis korisnika</a>
                         <a href="CreateMealPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Kreiraj obrok</a>
                         <a href="AddIngredientPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Unos namirnice</a>
-                        <a href="UserListPage" class="btn btn-outline-dark " style="width: 150px;">Popis obroka</a>
+                        <a href="MealsListPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Popis obroka</a>
                         <a href="UserListPage" class="btn btn-outline-dark " style="width:150px;">Postavke</a>
 
                     </div>
@@ -63,7 +63,7 @@
             <footer >
                 <div class="footer text-center ">
                     <p><%: DateTime.Now.ToShortDateString() %> | <span style="color:red;">WEB FORMS PROJEKT</span></p>
-                    <p>REPOSITORY - MICROSOFT SQL</p>
+                    <p>REPOSITORY - DIAFREE DATABASE</p>
                     <a href="LoginPage.aspx">< Povratak</a>
                 </div>
 

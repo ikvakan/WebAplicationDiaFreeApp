@@ -110,7 +110,7 @@ namespace ClassLibrary.DAL
         public decimal InsertMeal(Obrok o)
         {
             
-            return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeal", o.NazivObroka);
+            return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeal", o.NazivObroka,o.DatumIzrade);
         }
 
         public void InsertIntoMealIngredients(int obrokId, int namirnicaID)
@@ -118,12 +118,58 @@ namespace ClassLibrary.DAL
             SqlHelper.ExecuteNonQuery(cs, "InsertIntoMelaIngredients", obrokId, namirnicaID);
         }
 
+        public int GetNumberOfMeals()
+        {
+            return (int) SqlHelper.ExecuteScalar(cs, "GetNumberOfMeals");
+        }
+
+        public List<Obrok> GetMealList()
+        {
+            ds = SqlHelper.ExecuteDataset(cs, "GetMeal");
+            List<Obrok> kolekcija = new List<Obrok>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                Obrok o = new Obrok();
+                o.IDObrok = (int)row["IDObrok"];
+                o.NazivObroka = (string)row["NazivObroka"];
+                o.DatumIzrade = (DateTime)row["DatumIzrade"];
+
+                kolekcija.Add(o);
+            }
+
+            return kolekcija;
+        }
+
+        public List<Namirnice> GetIngredientForMeal(int idMeal)
+        {
+            ds = SqlHelper.ExecuteDataset(cs, "GetIngredientForMeal", idMeal);
+            List<Namirnice> kolekcija = new List<Namirnice>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                Namirnice n = new Namirnice();
+                n.IDNamirnice = (int)row["IDNamirnice"];
+                n.NazivNamirnice = (string)row["Namirnica"];
+                n.Energija_kJ = (int)row["Energija_kJ"];
+                n.Energija_kcal = (int)row["Energija_kcal"];
+                n.TipNamirnice = (string)row["TipNamirnice"];
+                //n.Grami = (row["Grami"] != DBNull.Value) ? ((string)row["Grami"]) : "---";
+                //n.Komad = (row["Komad"] != DBNull.Value) ? ((string)row["Komad"]) : "---";
+                //n.Zlica = (row["Zlica"] != DBNull.Value) ? ((string)row["Zlica"]) : "---";
+                //n.Salica = (row["Salica"] != DBNull.Value) ? ((string)row["Salica"]) : "---";
+                n.Grami = (row["Grami"] != DBNull.Value) ? ((int)row["Grami"]) : 0;
+                n.Komad = (row["Komad"] != DBNull.Value) ? ((int)row["Komad"]) : 0;
+                n.Zlica = (row["Zlica"] != DBNull.Value) ? ((int)row["Zlica"]) : 0;
+                n.Salica = (row["Salica"] != DBNull.Value) ? ((int)row["Salica"]) : 0;
+
+                kolekcija.Add(n);
+            }
+
+            return kolekcija;
+        }
 
 
 
-        //public void test(string naziv,int id)
-        //{
-        //    SqlHelper.ExecuteNonQuery(cs, "test", naziv, id);
-        //}
+
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ClassLibrary.DAL;
 using ClassLibrary.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,16 +14,39 @@ namespace WebFormsApp_AdminSite
     {
 
         private IRepo repo = RepoFactory.GetRepo();
-        private IFileManager manager = RepoFactory.GetFileManager();
 
         private string selectedType;
         public static decimal obrokID;
+
+        public List<Namirnice> KolekcijaNamirnica
+        {
+            get
+            {
+                if (Session["listaNamirnica"] == null)
+                {
+                    Session["listaNamirnica"] = new List<Namirnice>();
+                }
+                return (List<Namirnice>)Session["listaNamirnica"];
+            }
+            set
+            {
+                Session["listaNamirnica"] = value;
+            }
+        }
+
         protected override void OnPreRender(EventArgs e)
         {
+
+            List<Namirnice> namirnice = new List<Namirnice>();
+
+
+
             if (IsPostBack)
             {
                 selectedType = (string)ViewState["selected"];
+                //namirnice = (List<Namirnice>)ViewState["namirnice"];
                 BindDataToGridView(selectedType);
+
 
 
             }
@@ -32,9 +56,10 @@ namespace WebFormsApp_AdminSite
         }
 
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Master.ShowLabel("Kreiraj obrok");
+            Master.ShowLabel("Odaberi namirnice");
 
             // selectedType = ddlTipNamirnice.SelectedValue;
 
@@ -42,13 +67,22 @@ namespace WebFormsApp_AdminSite
 
             selectedType = (string)ViewState["selected"];
 
+
+
             if (!IsPostBack)
             {
                 BindDataToGridView(selectedType);
-
+                
             }
 
+            lblInfo.Text = "";
+
+           
         }
+
+        
+
+
 
         private void BindDataToGridView(string selectedType)
         {
@@ -60,13 +94,11 @@ namespace WebFormsApp_AdminSite
         {
 
 
-
-
-            BindDataToGridView(selectedType);
             gvNamirnice.PageIndex = e.NewPageIndex;
-            gvNamirnice.DataBind();
-        }
+            BindDataToGridView(selectedType);
 
+
+        }
         protected void gvNamirnice_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvNamirnice.EditIndex = -1;
@@ -85,6 +117,8 @@ namespace WebFormsApp_AdminSite
 
         protected void gvNamirnice_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+
+
 
             GridViewRow updateRow = gvNamirnice.Rows[e.RowIndex];
 
@@ -125,6 +159,7 @@ namespace WebFormsApp_AdminSite
 
             BindDataToGridView(selectedType);
 
+
         }
 
         protected void gvNamirnice_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -146,13 +181,9 @@ namespace WebFormsApp_AdminSite
 
         protected void btnGeneriraj_Click(object sender, EventArgs e)
         {
-            var selectedMeal = ddlObrok.SelectedValue;
 
             List<Namirnice> kolekcija = new List<Namirnice>();
 
-            Obrok o = new Obrok();
-            o.NazivObroka = selectedMeal;
-            o.DatumIzrade = DateTime.Now;
 
             foreach (GridViewRow row in gvNamirnice.Rows)
             {
@@ -164,40 +195,50 @@ namespace WebFormsApp_AdminSite
                 Label lblKomad = (Label)row.FindControl("lblKomad");
                 Label lblZlica = (Label)row.FindControl("lblZlica");
                 Label lblSalica = (Label)row.FindControl("lblSalica");
+                Label lblTipNamirnice = (Label)row.FindControl("lblTipNamirnice");
 
                 if (cb != null && cb.Checked)
                 {
 
-                    var id = gvNamirnice.DataKeys[row.DataItemIndex].Values["IDNamirnice"].ToString();
+                    // var id = gvNamirnice.DataKeys[row.DataItemIndex].Values["IDNamirnice"].ToString();
+                    var id = (int)gvNamirnice.DataKeys[row.RowIndex]["IDNamirnice"];
+
+
 
                     Namirnice n = new Namirnice();
-                    n.IDNamirnice = int.Parse(id);
-                    //n.NazivNamirnice = lblNaziv.Text;
-                    //n.Energija_kJ = int.Parse(lblEnergija_kJ.Text);
-                    //n.Energija_kcal= int.Parse(lblEnergija_kcal.Text);
-                    //n.Grami = int.Parse(lblGrami.Text);
-                    //n.Komad= int.Parse(lblKomad.Text);
-                    //n.Zlica = int.Parse(lblZlica.Text);
-                    //n.Salica = int.Parse(lblSalica.Text);
+                    n.IDNamirnice = id;
+                    n.NazivNamirnice = lblNaziv.Text;
+                    n.Energija_kJ = int.Parse(lblEnergija_kJ.Text);
+                    n.Energija_kcal = int.Parse(lblEnergija_kcal.Text);
+                    n.Grami = int.Parse(lblGrami.Text);
+                    n.Komad = int.Parse(lblKomad.Text);
+                    n.Zlica = int.Parse(lblZlica.Text);
+                    n.Salica = int.Parse(lblSalica.Text);
+                    n.TipNamirnice = lblTipNamirnice.Text;
 
-                    kolekcija.Add(n);
+
+
+                        
+                  
+                        KolekcijaNamirnica.Add(n);
+
+                   
+
 
                 }
             }
 
 
-             obrokID= repo.InsertMeal(o);
-
-            foreach (var item in kolekcija)
+            if (KolekcijaNamirnica.Count > 0)
             {
-                repo.InsertIntoMealIngredients((int)obrokID, item.IDNamirnice);
+                Response.Redirect("AddMealPage.aspx");
             }
-
-
-
-
-           
+            else
+                lblInfo.Text = "Niste odabrali namirnice";
 
         }
+
+       
+
     }
 }

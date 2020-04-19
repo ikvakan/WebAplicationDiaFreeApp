@@ -57,6 +57,7 @@
     <Compile Include="DAL\RepoFactory.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\KreiraniObrok.cs" />
     <Compile Include="Models\Namirnice.cs" />
     <Compile Include="Models\Obrok.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

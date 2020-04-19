@@ -15,15 +15,6 @@ namespace WebFormsApp_AdminSite
     {
 
         /// <summary>
-        /// ddlObrok control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlObrok;
-
-        /// <summary>
         /// ddlTipNamirnice control.
         /// </summary>
         /// <remarks>
@@ -33,13 +24,13 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.DropDownList ddlTipNamirnice;
 
         /// <summary>
-        /// Button1 control.
+        /// btnOdaberi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnOdaberi;
 
         /// <summary>
         /// gvNamirnice control.

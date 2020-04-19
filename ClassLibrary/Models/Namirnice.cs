@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Models
 {
-   public class Namirnice
+   public class Namirnice 
+        
     {
         public int IDNamirnice  { get; set; }
         public string NazivNamirnice { get; set; }
@@ -19,6 +21,6 @@ namespace ClassLibrary.Models
         public int Zlica{ get; set; }
         public int Salica { get; set; }
 
-
+        
     }
 }

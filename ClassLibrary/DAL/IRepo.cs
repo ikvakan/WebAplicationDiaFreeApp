@@ -24,6 +24,11 @@ namespace ClassLibrary.DAL
 
         void InsertIntoMealIngredients(int obrokId, int namirnicaID);
 
-       // void test(string naziv,int id);
+        int GetNumberOfMeals();
+        // void test(string naziv,int id);
+
+        List<Obrok> GetMealList();
+
+        List<Namirnice> GetIngredientForMeal(int idMeal);
     }
 }
