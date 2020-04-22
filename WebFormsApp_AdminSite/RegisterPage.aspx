@@ -42,14 +42,16 @@
                             Operator="DataTypeCheck"
                             Type="Date"
                             ErrorMessage="Nepravilan datum." Display="Dynamic" ForeColor="Red"></asp:CompareValidator>
-                        <asp:TextBox ID="txtDatumRodenja"
+                        <%--<asp:TextBox ID="txtDatumRodenja"
                             CssClass="form-control"
                             runat="server"
                             AutoPostBack="False"
                             TabIndex="1"
                             placeholder="dd.mm.yyyy"
                             autocomplete="off"
-                            MaxLength="10"></asp:TextBox>
+                            MaxLength="10"></asp:TextBox>--%>
+                        <asp:TextBox ID="txtDatumRodenja" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+
                     </div>
                     <div class="form-group">
                         <label>Email:</label>

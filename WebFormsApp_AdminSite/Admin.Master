@@ -7,14 +7,15 @@
     <title></title>
 
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
 
     <link href="Content/MasterPage.css" rel="stylesheet" />
-    <script src="Scripts/jquery-3.4.1.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+
 
         <div class="container mainContainer  ">
             <header>

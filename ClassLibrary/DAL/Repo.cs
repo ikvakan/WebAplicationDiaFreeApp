@@ -167,9 +167,14 @@ namespace ClassLibrary.DAL
             return kolekcija;
         }
 
+        public  void DeleteMeal(int obrokId)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "DeleteMeal", obrokId);
+        }
 
-
-
-        
+        public void DelteFromMealIngredients(int obrokId)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "DelteFromMealIngredients", obrokId);
+        }
     }
 }

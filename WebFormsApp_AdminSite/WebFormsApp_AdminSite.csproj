@@ -128,6 +128,7 @@
     <Content Include="Content\CreateMealPage.css" />
     <Content Include="Content\LoginPage.css" />
     <Content Include="Content\MasterPage.css" />
+    <Content Include="Content\MealPageTableStyle.css" />
     <Content Include="Content\RegisterPage.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CreateMealPage.aspx" />
@@ -265,6 +266,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="SetupPage.aspx" />
     <Content Include="UserListPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -294,6 +296,9 @@
     <Compile Include="AddMealPage.aspx.designer.cs">
       <DependentUpon>AddMealPage.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\LanguagePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="CreateMealPage.aspx.cs">
@@ -353,6 +358,13 @@
     </Compile>
     <Compile Include="RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SetupPage.aspx.cs">
+      <DependentUpon>SetupPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SetupPage.aspx.designer.cs">
+      <DependentUpon>SetupPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserListPage.aspx.cs">
       <DependentUpon>UserListPage.aspx</DependentUpon>

@@ -25,7 +25,7 @@
 
             <div class="col-md-12 ">
                 <div class="form-group">
-                    <label class="badge w-100">Obrok</label>
+                    <label class="badge w-100">Datum</label>
                     <asp:TextBox ID="txtDatum" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Datum je obavezan" ForeColor="Red" ControlToValidate="txtDatum">Datum je obavezan.</asp:RequiredFieldValidator>
                 </div>

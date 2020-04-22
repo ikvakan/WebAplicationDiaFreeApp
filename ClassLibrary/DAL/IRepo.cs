@@ -30,5 +30,11 @@ namespace ClassLibrary.DAL
         List<Obrok> GetMealList();
 
         List<Namirnice> GetIngredientForMeal(int idMeal);
+
+        void DeleteMeal(int obrokId);
+
+        void DelteFromMealIngredients(int obrokId);
+
+
     }
 }
