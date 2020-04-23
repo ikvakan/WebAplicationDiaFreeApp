@@ -24,6 +24,24 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.HtmlControls.HtmlForm formRegister;
 
         /// <summary>
+        /// lblRegistracija control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegistracija;
+
+        /// <summary>
+        /// lblIme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIme;
+
+        /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtIme;
+
+        /// <summary>
+        /// lblPrezime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrezime;
 
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -60,6 +87,15 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.TextBox txtPrezime;
 
         /// <summary>
+        /// lblSurname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSurname;
+
+        /// <summary>
         /// CompareValidator4 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +112,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDatumRodenja;
+
+        /// <summary>
+        /// lblEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -96,6 +141,15 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
+        /// lblUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserName;
+
+        /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
@@ -114,6 +168,15 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.TextBox txtKorisnickoIme;
 
         /// <summary>
+        /// lblZaporka control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblZaporka;
+
+        /// <summary>
         /// RequiredFieldValidator5 control.
         /// </summary>
         /// <remarks>
@@ -130,6 +193,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtZaporka;
+
+        /// <summary>
+        /// lblProvjera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProvjera;
 
         /// <summary>
         /// RequiredFieldValidator7 control.
@@ -157,6 +229,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtProjveraZaporke;
+
+        /// <summary>
+        /// lblTezina control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTezina;
 
         /// <summary>
         /// RequiredFieldValidator8 control.
@@ -195,6 +276,15 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.TextBox txtTezina;
 
         /// <summary>
+        /// lblRazinaFizAkt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRazinaFizAkt;
+
+        /// <summary>
         /// ddlRazinaFizAktiv control.
         /// </summary>
         /// <remarks>
@@ -202,6 +292,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlRazinaFizAktiv;
+
+        /// <summary>
+        /// lblVisina control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVisina;
 
         /// <summary>
         /// RequiredFieldValidator6 control.
@@ -240,6 +339,15 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.TextBox txtVisina;
 
         /// <summary>
+        /// lblDijabetes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDijabetes;
+
+        /// <summary>
         /// ddlTipDijabetesa control.
         /// </summary>
         /// <remarks>
@@ -247,6 +355,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipDijabetesa;
+
+        /// <summary>
+        /// lblSpol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSpol;
 
         /// <summary>
         /// ddlSpol control.
@@ -265,6 +382,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPotvrdi;
+
+        /// <summary>
+        /// hpPovratak control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hpPovratak;
 
         /// <summary>
         /// ValidationSummary1 control.

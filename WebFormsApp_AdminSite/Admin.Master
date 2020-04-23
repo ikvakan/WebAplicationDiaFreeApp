@@ -21,11 +21,11 @@
             <header>
                 <div class="row ">
                     <div class="col-lg-6 col-md-6 col-sm-12 text-left ">
-                        <asp:Label ID="lblHeaderInfo" runat="server" Text="" Font-Bold="True" Font-Italic="True" CssClass="customLabel"></asp:Label>
+                        <asp:Label ID="lblHeaderInfo" runat="server" Font-Bold="True" Font-Italic="True" CssClass="customLabel" meta:resourcekey="lblHeaderInfoResource1"></asp:Label>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12  text-right   ">
-                        <asp:HyperLink ID="HyperLink1" Text="Admin" CssClass="btn btn-primary" runat="server" NavigateUrl="https://www.youtube.com/watch?v=gkqSCaMBERQ&list=PLPf69IGxwfBH7_qrNcN1eP-WuSS5oWLiZ"></asp:HyperLink>
-                        <asp:Button runat="server" CssClass="btn btn-danger" Width="100px" Text="Odjava"  ID="btnOdajvi" OnClick="btnOdajvi_Click" />
+                        <asp:HyperLink ID="HyperLink1" Text="Admin" CssClass="btn btn-primary" runat="server" NavigateUrl="https://www.youtube.com/watch?v=gkqSCaMBERQ&list=PLPf69IGxwfBH7_qrNcN1eP-WuSS5oWLiZ" meta:resourcekey="HyperLink1Resource1"></asp:HyperLink>
+                        <asp:Button runat="server" CssClass="btn btn-danger" Width="100px" Text="Odjava"  ID="btnOdajvi" OnClick="btnOdajvi_Click" meta:resourcekey="btnOdajviResource1" />
                     </div>
                 </div>
                 <hr style="border: 1px solid #808080" />
@@ -38,11 +38,17 @@
                         <asp:Button runat="server" ID="btnPopisObroka" CssClass="btn btn-outline-dark" Width="170px" Text="Popis obroka" />
                         <asp:Button runat="server" ID="btnPostavke" CssClass="btn btn-outline-dark" Width="170px" Text="Postavke" />--%>
 
-                        <a href="UserListPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Popis korisnika</a>
+                       <%-- <a href="UserListPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Popis korisnika</a>
                         <a href="CreateMealPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Kreiraj obrok</a>
                         <a href="AddIngredientPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Unos namirnice</a>
                         <a href="MealsListPage.aspx" class="btn btn-outline-dark " style="width: 150px;">Popis obroka</a>
-                        <a href="UserListPage" class="btn btn-outline-dark " style="width:150px;">Postavke</a>
+                        <a href="SetupPage.aspx" class="btn btn-outline-dark " style="width:150px;">Postavke</a>--%>
+
+                        <asp:HyperLink runat="server" ID="HyperLink2" NavigateUrl="UserListPage.aspx" CssClass="btn btn-outline-dark" Width="150px" meta:resourcekey="HyperLink2Resource1">Popis korisnika</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="HyperLink3" NavigateUrl="CreateMealPage.aspx" CssClass="btn btn-outline-dark" Width="150px" meta:resourcekey="HyperLink3Resource1">Kreiraj obrok</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="HyperLink4" NavigateUrl="AddIngredientPage.aspx" CssClass="btn btn-outline-dark" Width="150px" meta:resourcekey="HyperLink4Resource1">Unos namirnice</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="HyperLink5" NavigateUrl="MealsListPage.aspx" CssClass="btn btn-outline-dark" Width="150px" meta:resourcekey="HyperLink5Resource1">Popis obroka</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="HyperLink6" NavigateUrl="SetupPage.aspx" CssClass="btn btn-outline-dark" Width="150px" meta:resourcekey="HyperLink6Resource1">Postavke</asp:HyperLink>
 
                     </div>
                 </nav>
@@ -65,7 +71,7 @@
                 <div class="footer text-center ">
                     <p><%: DateTime.Now.ToShortDateString() %> | <span style="color:red;">WEB FORMS PROJEKT</span></p>
                     <p>REPOSITORY - DIAFREE DATABASE</p>
-                    <a href="LoginPage.aspx">< Povratak</a>
+                   
                 </div>
 
 

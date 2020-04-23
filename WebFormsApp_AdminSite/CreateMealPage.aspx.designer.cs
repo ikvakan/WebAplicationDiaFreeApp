@@ -15,6 +15,15 @@ namespace WebFormsApp_AdminSite
     {
 
         /// <summary>
+        /// lblTipNamirnice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipNamirnice;
+
+        /// <summary>
         /// ddlTipNamirnice control.
         /// </summary>
         /// <remarks>

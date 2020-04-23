@@ -176,5 +176,19 @@ namespace ClassLibrary.DAL
         {
             SqlHelper.ExecuteNonQuery(cs, "DelteFromMealIngredients", obrokId);
         }
+
+        public void InsertUser(Korisnik k)
+        {
+            int FizAktivnostId = helperMethod.SetUserFizAktivnostForUpdate(k.FizickaAktivnost.ToLower());
+
+            int tipDijabetesaId = helperMethod.SetUserTipDiabetesaForUpdate(k.TipDijabetesa.ToLower());
+
+            SqlHelper.ExecuteNonQuery(cs, "InsertUser", k.Ime, k.Prezime,k.DatumRodenja ,k.Email,k.KorisnickoIme,k.Zaporka,tipDijabetesaId,FizAktivnostId,k.Tezina,k.Visina,k.Spol);
+        }
+
+        public void DeleteUser(int id)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "DeleteUser", id);
+        }
     }
 }

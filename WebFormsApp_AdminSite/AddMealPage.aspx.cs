@@ -2,7 +2,9 @@
 using ClassLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,6 +17,20 @@ namespace WebFormsApp_AdminSite
         private List<Namirnice> listNamirnice = new List<Namirnice>();
 
         private IRepo repo = RepoFactory.GetRepo();
+        public string Language
+        {
+            get
+            {
+                if (Request.Cookies["languageOptions"] != null)
+                {
+                    if (Request.Cookies["languageOptions"]["language"] != null)
+                    {
+                        return Request.Cookies["languageOptions"]["language"];
+                    }
+                }
+                return "";
+            }
+        }
 
         public List<Namirnice> ListaNamirnicaSession
         {
@@ -36,7 +52,14 @@ namespace WebFormsApp_AdminSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Language == "hr")
+            {
+
+                Master.ShowLabel("Odaberi namirnice");
+            }
+            else
+                Master.ShowLabel("Select ingredient");
+
             if (!IsPostBack)
             {
                 if (Session["listaNamirnica"] != null)
@@ -154,6 +177,21 @@ namespace WebFormsApp_AdminSite
 
                     Response.Redirect("CreateMealPage.aspx");
 
+        }
+
+
+        protected override void InitializeCulture()
+        {
+            if (Request.Cookies["languageOptions"] != null)
+            {
+                if (Request.Cookies["languageOptions"]["language"] != null)
+                {
+                    string kultura = Request.Cookies["languageOptions"]["language"];
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo(kultura);
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(kultura);
+                }
+            }
+            base.InitializeCulture();
         }
     }
 }

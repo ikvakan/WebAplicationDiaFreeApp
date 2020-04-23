@@ -296,9 +296,6 @@
     <Compile Include="AddMealPage.aspx.designer.cs">
       <DependentUpon>AddMealPage.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\LanguagePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="CreateMealPage.aspx.cs">
@@ -375,6 +372,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -399,6 +397,60 @@
       <Project>{E92B2ACD-A042-4754-8BE7-76A620BC3B27}</Project>
       <Name>ClassLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\AddIngredientPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\AddIngredientPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\AddMealPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\AddMealPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\CreateMealPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\CreateMealPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\EditUserPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\EditUserPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\RegisterPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\RegisterPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\SetupPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\SetupPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Admin.Master.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Admin.Master.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\LoginPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\LoginPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\UserListPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\UserListPage.aspx.en.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

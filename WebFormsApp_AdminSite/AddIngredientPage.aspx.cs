@@ -2,7 +2,9 @@
 using ClassLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,7 +17,20 @@ namespace WebFormsApp_AdminSite
         private IRepo repo = RepoFactory.GetRepo();
         private IHelperMethods helper = RepoFactory.GetHelperMethods();
 
-        //private string selectedType;
+        public string Language
+        {
+            get
+            {
+                if (Request.Cookies["languageOptions"] != null)
+                {
+                    if (Request.Cookies["languageOptions"]["language"] != null)
+                    {
+                        return Request.Cookies["languageOptions"]["language"];
+                    }
+                }
+                return "";
+            }
+        }
 
         protected override void OnPreLoad(EventArgs e)
         {
@@ -29,12 +44,19 @@ namespace WebFormsApp_AdminSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Master.ShowLabel("Unos namirnice");
+            if (Language == "hr")
+            {
+                Master.ShowLabel("Unos namirnice");
+
+            }
+            else
+                Master.ShowLabel("Create ingredient");
+
 
             if (!IsPostBack)
             {
                 ResetControls();
-               
+
             }
         }
 
@@ -46,7 +68,7 @@ namespace WebFormsApp_AdminSite
             Namirnice n = new Namirnice();
             n.NazivNamirnice = txtNaziv.Text;
             n.Energija_kcal = (txtEnergija_kcal.Text != string.Empty) ? int.Parse(txtEnergija_kcal.Text) : 0;
-            n.Energija_kJ = (txtEnergija_kJ.Text != string.Empty) ? int.Parse(txtEnergija_kJ.Text) : 0; 
+            n.Energija_kJ = (txtEnergija_kJ.Text != string.Empty) ? int.Parse(txtEnergija_kJ.Text) : 0;
             n.TipNamirnice = ddlTipNamirnice.SelectedValue;
             n.Grami = (txtGrami.Text != string.Empty) ? int.Parse(txtGrami.Text) : 0;
             n.Komad = (txtKomad.Text != string.Empty) ? int.Parse(txtKomad.Text) : 0;
@@ -54,20 +76,20 @@ namespace WebFormsApp_AdminSite
             n.Salica = (txtSalica.Text != string.Empty) ? int.Parse(txtSalica.Text) : 0;
 
 
-                if (!helper.ContainsIngredient(n.NazivNamirnice))
-                {
-                
-                    repo.InsertIngredient(n);
-                    lblInfo.Text = $"Namirnica [{n.NazivNamirnice}] je dodana.";
-                    ResetControls();
+            if (!helper.ContainsIngredient(n.NazivNamirnice))
+            {
 
-                }
-                else
-                {
+                repo.InsertIngredient(n);
+                lblInfo.Text = $"Namirnica [{n.NazivNamirnice}] je dodana.";
+                ResetControls();
 
-                    lblInfo.Text = "Namirnica već postoji.";
-                }
-           
+            }
+            else
+            {
+
+                lblInfo.Text = "Namirnica već postoji.";
+            }
+
         }
 
         private void ResetControls()
@@ -80,7 +102,22 @@ namespace WebFormsApp_AdminSite
             txtZlica.Text = "";
             txtSalica.Text = "";
 
-            
+
+        }
+
+
+        protected override void InitializeCulture()
+        {
+            if (Request.Cookies["languageOptions"] != null)
+            {
+                if (Request.Cookies["languageOptions"]["language"] != null)
+                {
+                    string kultura = Request.Cookies["languageOptions"]["language"];
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo(kultura);
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(kultura);
+                }
+            }
+            base.InitializeCulture();
         }
     }
 }

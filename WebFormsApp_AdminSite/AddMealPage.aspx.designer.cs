@@ -15,6 +15,15 @@ namespace WebFormsApp_AdminSite
     {
 
         /// <summary>
+        /// lblObrok control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblObrok;
+
+        /// <summary>
         /// ddlObrok control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlObrok;
+
+        /// <summary>
+        /// lblDatum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDatum;
 
         /// <summary>
         /// txtDatum control.

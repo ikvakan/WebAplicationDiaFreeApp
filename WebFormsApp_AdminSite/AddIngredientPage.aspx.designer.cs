@@ -15,6 +15,15 @@ namespace WebFormsApp_AdminSite
     {
 
         /// <summary>
+        /// lblNaziv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNaziv;
+
+        /// <summary>
         /// txtNaziv control.
         /// </summary>
         /// <remarks>
@@ -33,6 +42,15 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
+        /// lblEnergija_kJ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEnergija_kJ;
+
+        /// <summary>
         /// txtEnergija_kJ control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEnergija_kJ;
+
+        /// <summary>
+        /// lblEnergij_kcal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEnergij_kcal;
 
         /// <summary>
         /// txtEnergija_kcal control.
@@ -51,6 +78,15 @@ namespace WebFormsApp_AdminSite
         protected global::System.Web.UI.WebControls.TextBox txtEnergija_kcal;
 
         /// <summary>
+        /// lblTipNamirnice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipNamirnice;
+
+        /// <summary>
         /// ddlTipNamirnice control.
         /// </summary>
         /// <remarks>
@@ -58,6 +94,42 @@ namespace WebFormsApp_AdminSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipNamirnice;
+
+        /// <summary>
+        /// lblGrami control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGrami;
+
+        /// <summary>
+        /// lblKomad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblKomad;
+
+        /// <summary>
+        /// lblZlica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblZlica;
+
+        /// <summary>
+        /// lblSalica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSalica;
 
         /// <summary>
         /// txtGrami control.

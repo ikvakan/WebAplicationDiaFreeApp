@@ -4,8 +4,10 @@ using ClassLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
@@ -30,17 +32,28 @@ namespace WebFormsApp_AdminSite
     {
         private static IRepo repo = RepoFactory.GetRepo();
 
-        public  void DeleteMealItem(int obrokId)
-        {
-           
-            repo.DelteFromMealIngredients(obrokId);
-            repo.DeleteMeal(obrokId);
-
+        public string Language { 
+            get 
+            {
+                if (Request.Cookies["languageOptions"] != null)
+                {
+                    if (Request.Cookies["languageOptions"]["language"]!=null)
+                    {
+                        return Request.Cookies["languageOptions"]["language"];
+                    }
+                }
+                return "";
+            }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Master.ShowLabel("Popis obroka");
+            if (Language == "hr")
+            {
+                Master.ShowLabel("Popis obroka");
+            }
+            else
+                Master.ShowLabel("Meals");
 
             //if (!IsPostBack)
             //{
@@ -91,13 +104,29 @@ namespace WebFormsApp_AdminSite
             tipNamirniceCellHeader.CssClass = "font-weight-bold";
             TableCell btnCellHeader = new TableCell(); //?? za button
 
-            nazivObrokaHeader.Text = "Obrok";
-            namirniceCellHeader.Text = "Namirnice";
-            gramiCellHeader.Text = "Grami";
-            komadCellHeader.Text = "Komad";
-            zlicaCellHeader.Text = "Žlica";
-            salicaCellHeader.Text = "Šalica";
-            tipNamirniceCellHeader.Text = "Tip namirnice";
+
+
+            if (Language == "hr")
+            {
+                nazivObrokaHeader.Text = "Obrok";
+                namirniceCellHeader.Text = "Namirnice";
+                gramiCellHeader.Text = "Grami";
+                komadCellHeader.Text = "Komad";
+                zlicaCellHeader.Text = "Žlica";
+                salicaCellHeader.Text = "Šalica";
+                tipNamirniceCellHeader.Text = "Tip namirnice"; 
+            }
+            else
+            {
+                nazivObrokaHeader.Text = "Meal";
+                namirniceCellHeader.Text = "Ingredient";
+                gramiCellHeader.Text = "Grams";
+                komadCellHeader.Text = "Piece";
+                zlicaCellHeader.Text = "Spoon";
+                salicaCellHeader.Text = "Cup";
+                tipNamirniceCellHeader.Text = "Ingredient type";
+            }
+
             //header
             TableHeaderRow tblHeaderRow = new TableHeaderRow();
             tblHeaderRow.CssClass = "bg-secondary text-white";
@@ -160,7 +189,13 @@ namespace WebFormsApp_AdminSite
         {
             TableCell cell = new TableCell();
             Button btn = new Button();
-            btn.Text = "Obriši";
+            if (Language == "hr")
+            {
+                btn.Text = "Obriši";
+            }
+            else
+                btn.Text = "Delete";
+
             btn.ID = $"btnObrisi{id}";
             btn.CssClass = "btn btn-danger btn-block";
             btn.Click += Btn_Click;
@@ -279,6 +314,29 @@ namespace WebFormsApp_AdminSite
                 sb.Append($"<td style='padding:0; '>{item.NazivNamirnice} </td>");
                 sb.Append("</tr>");
             }
+        }
+
+        protected override void InitializeCulture()
+        {
+            if (Request.Cookies["languageOptions"] != null)
+            {
+                if (Request.Cookies["languageOptions"]["language"] != null)
+                {
+                    string kultura = Request.Cookies["languageOptions"]["language"];
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo(kultura);
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(kultura);
+                }
+            }
+            base.InitializeCulture();
+        }
+
+
+        public void DeleteMealItem(int obrokId)
+        {
+
+            repo.DelteFromMealIngredients(obrokId);
+            repo.DeleteMeal(obrokId);
+
         }
     }
 }

@@ -3,7 +3,9 @@ using ClassLibrary.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -34,6 +36,21 @@ namespace WebFormsApp_AdminSite
             }
         }
 
+
+        public string Language
+        {
+            get
+            {
+                if (Request.Cookies["languageOptions"] != null)
+                {
+                    if (Request.Cookies["languageOptions"]["language"] != null)
+                    {
+                        return Request.Cookies["languageOptions"]["language"];
+                    }
+                }
+                return "";
+            }
+        }
         protected override void OnPreRender(EventArgs e)
         {
 
@@ -59,9 +76,14 @@ namespace WebFormsApp_AdminSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Master.ShowLabel("Odaberi namirnice");
+            if (Language == "hr")
+            {
 
-            // selectedType = ddlTipNamirnice.SelectedValue;
+                Master.ShowLabel("Kreiraj obrok");
+            }
+            else
+                Master.ShowLabel("Create meal");
+           
 
             ViewState["selected"] = ddlTipNamirnice.SelectedValue;
 
@@ -237,8 +259,20 @@ namespace WebFormsApp_AdminSite
                 lblInfo.Text = "Niste odabrali namirnice";
 
         }
+        protected override void InitializeCulture()
+        {
+            if (Request.Cookies["languageOptions"] != null)
+            {
+                if (Request.Cookies["languageOptions"]["language"] != null)
+                {
+                    string kultura = Request.Cookies["languageOptions"]["language"];
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo(kultura);
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(kultura);
+                }
+            }
+            base.InitializeCulture();
+        }
 
-       
 
     }
 }
