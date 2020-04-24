@@ -81,10 +81,6 @@ namespace ClassLibrary.DAL
                 n.TipNamirnice = (string)row["TipNamirnice"];
                
 
-                //n.Grami = (row["Grami"] != DBNull.Value) ? ((int)row["Grami"]) : 0;
-                //n.Komad = (row["Komad"] != DBNull.Value) ? ((int)row["Komad"]) : 0;
-                //n.Zlica = (row["Zlica"] != DBNull.Value) ? ((int)row["Zlica"]) : 0;
-                //n.Salica = (row["Salica"] != DBNull.Value) ? ((int)row["Salica"]) : 0;
                 kolekcijaNamirnica.Add(n);
             }
                 return kolekcijaNamirnica;
@@ -92,7 +88,7 @@ namespace ClassLibrary.DAL
 
         public void UpdateIngredients(Namirnice n)
         {
-            SqlHelper.ExecuteNonQuery(cs, "UpdateIngredients", n.IDNamirnice, n.NazivNamirnice, n.Energija_kJ, n.Energija_kcal,n.TipNamirnice, n.Grami ,n.Komad,n.Zlica , n.Salica);
+            SqlHelper.ExecuteNonQuery(cs, "UpdateIngredients", n.IDNamirnice, n.NazivNamirnice, n.Energija_kJ, n.Energija_kcal,n.TipNamirnice);
         }
 
         public void DeleteIngredient(int id)
@@ -102,7 +98,7 @@ namespace ClassLibrary.DAL
 
         public void InsertIngredient(Namirnice n)
         {
-            SqlHelper.ExecuteNonQuery(cs, "InsertIngredient",n.NazivNamirnice,n.Energija_kJ,n.Energija_kcal,n.TipNamirnice,n.Grami,n.Komad,n.Zlica,n.Salica);
+            SqlHelper.ExecuteNonQuery(cs, "InsertIngredient",n.NazivNamirnice,n.Energija_kJ,n.Energija_kcal,n.TipNamirnice);
         }
 
         public decimal InsertMeal(Obrok o)
@@ -140,7 +136,7 @@ namespace ClassLibrary.DAL
 
         public List<Namirnice> GetIngredientForMeal(int idMeal)
         {
-            ds = SqlHelper.ExecuteDataset(cs, "GetIngredientForMealTest", idMeal);
+            ds = SqlHelper.ExecuteDataset(cs, "GetIngredientForMeal", idMeal);
             List<Namirnice> kolekcija = new List<Namirnice>();
             foreach (DataRow row in ds.Tables[0].Rows)
             {
@@ -189,6 +185,11 @@ namespace ClassLibrary.DAL
         public decimal InsertMeasurementForIngredient(Namirnice n)
         {
             return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeasurementForIngredient", n.Grami, n.Komad, n.Zlica, n.Salica);
+        }
+
+        public void DeleteMeasurement(int id)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "DeleteMeasurement", id);
         }
     }
 }

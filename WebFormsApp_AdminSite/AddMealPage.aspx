@@ -65,35 +65,27 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Grami" meta:resourcekey="TemplateFieldResource4">
-                        <%--<EditItemTemplate>
-                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Grami") %>' meta:resourcekey="TextBox4Resource1"></asp:TextBox>
-                        </EditItemTemplate>--%>
+                       
                         <ItemTemplate>
-                            <asp:TextBox ID="lblGrami" CssClass="form-control" runat="server" Text='0' meta:resourcekey="lblGramiResource1" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="lblGrami" CssClass="form-control" Width="100" runat="server" Text='0' meta:resourcekey="lblGramiResource1" TextMode="Number"></asp:TextBox>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Komad" meta:resourcekey="TemplateFieldResource5">
-                       <%-- <EditItemTemplate>
-                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Komad") %>' meta:resourcekey="TextBox5Resource1"></asp:TextBox>
-                        </EditItemTemplate>--%>
+                      
                         <ItemTemplate>
-                            <asp:TextBox ID="lblKomad" CssClass="form-control" runat="server" Text='0' meta:resourcekey="lblKomadResource1" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="lblKomad" CssClass="form-control" Width="100" runat="server" Text='0' meta:resourcekey="lblKomadResource1" TextMode="Number"></asp:TextBox>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Žlica" meta:resourcekey="TemplateFieldResource6">
-                       <%-- <EditItemTemplate>
-                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Zlica") %>' meta:resourcekey="TextBox6Resource1"></asp:TextBox>
-                        </EditItemTemplate>--%>
+                      
                         <ItemTemplate>
-                            <asp:TextBox ID="lblZlica" CssClass="form-control" runat="server" Text='0' meta:resourcekey="lblZlicaResource1" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="lblZlica" CssClass="form-control" Width="100" runat="server" Text='0' meta:resourcekey="lblZlicaResource1" TextMode="Number"></asp:TextBox>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Šalica" meta:resourcekey="TemplateFieldResource7">
-                        <%--<EditItemTemplate>
-                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Salica") %>' meta:resourcekey="TextBox7Resource1"></asp:TextBox>
-                        </EditItemTemplate>--%>
+                       
                         <ItemTemplate>
-                            <asp:TextBox ID="lblSalica" CssClass="form-control" runat="server" Text='0' meta:resourcekey="lblSalicaResource1" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="lblSalica" CssClass="form-control" Width="100" runat="server" Text='0' meta:resourcekey="lblSalicaResource1" TextMode="Number"></asp:TextBox>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="TIP NAMIRNICE" meta:resourcekey="TemplateFieldResource8">

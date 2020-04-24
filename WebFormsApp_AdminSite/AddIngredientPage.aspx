@@ -52,78 +52,27 @@
                             </asp:DropDownList>
                         </td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td class="text-center">
+                            <asp:Button ID="Button1" runat="server" Text="Unesi" CssClass="btn btn-danger" Width="200px" OnClick="btUnos_Click" meta:resourcekey="btUnosResource1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td  class="text-center">
+                            <asp:Label runat="server" ID="lblInfo" ForeColor="#007BFF" meta:resourcekey="lblInfoResource1"></asp:Label>
+                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="justify-content-center" ForeColor="Red" DisplayMode="SingleParagraph" meta:resourcekey="ValidationSummary1Resource1" />
+
+                        </td>
+                        
+                    </tr>
+
 
                 </table>
             </div>
         </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table table-borderless ">
-                        <tr class="text-center">
-
-                            <th>
-                                <asp:Label runat="server" ID="lblGrami" CssClass="badge badge-secondary" Width="150px" meta:resourcekey="lblGramiResource1">Grami</asp:Label></th>
-                            <th>
-                                <asp:Label runat="server" ID="lblKomad" CssClass="badge badge-secondary" Width="150px" meta:resourcekey="lblKomadResource1">Komad</asp:Label></th>
-                            <th>
-                                <asp:Label runat="server" ID="lblZlica"  CssClass="badge badge-secondary" Width="150px" meta:resourcekey="lblZlicaResource1">Žlica</asp:Label></th>
-                            <th>
-                                <asp:Label runat="server" ID="lblSalica" CssClass="badge badge-secondary" Width="150px" meta:resourcekey="lblSalicaResource1">Šalica</asp:Label></th>
-                        </tr>
-                        <tr>
-                            <td class="text-center">
-                                <asp:TextBox runat="server" Width="50px" TextMode="Number" ID="txtGrami" meta:resourcekey="txtGramiResource1"></asp:TextBox>
-                            </td>
-                            <td class="text-center">
-                                <asp:TextBox runat="server" Width="50px" TextMode="Number" ID="txtKomad" meta:resourcekey="txtKomadResource1"></asp:TextBox>
-                            </td>
-                            <td class="text-center">
-                                <asp:TextBox runat="server" Width="50px" TextMode="Number" ID="txtZlica" meta:resourcekey="txtZlicaResource1"></asp:TextBox>
-                            </td>
-                            <td class="text-center">
-                                <asp:TextBox runat="server" Width="50px" TextMode="Number" ID="txtSalica" meta:resourcekey="txtSalicaResource1"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td colspan="2" class="text-center">
-                                <asp:Button ID="btUnos" runat="server" Text="Unesi" CssClass="btn btn-danger" Width="200px" OnClick="btUnos_Click" meta:resourcekey="btUnosResource1" />
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr >
-                            <td colspan="4" class="text-center">
-                                <asp:Label runat="server" ID="lblInfo" ForeColor="#007BFF" meta:resourcekey="lblInfoResource1"></asp:Label>
-                                <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="justify-content-center" ForeColor="Red" DisplayMode="SingleParagraph" meta:resourcekey="ValidationSummary1Resource1" />
-
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                    </table>
-
-                </div>
-            </div>
-
-
-       <%-- <div class="row justify-content-center ">
-            <div class="col-md-12">
-
-                <div class="form-group text-center w-100  alert-danger">
-                    <asp:Label runat="server" ID="lblInfo" ForeColor="Red"></asp:Label>
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="justify-content-center" ForeColor="Red" DisplayMode="SingleParagraph" />
-
-
-                </div>
-            </div>
-        </div>--%>
-
-
-
-
+         
 
     </div>
 

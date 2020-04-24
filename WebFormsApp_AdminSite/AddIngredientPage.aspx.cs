@@ -70,10 +70,7 @@ namespace WebFormsApp_AdminSite
             n.Energija_kcal = (txtEnergija_kcal.Text != string.Empty) ? int.Parse(txtEnergija_kcal.Text) : 0;
             n.Energija_kJ = (txtEnergija_kJ.Text != string.Empty) ? int.Parse(txtEnergija_kJ.Text) : 0;
             n.TipNamirnice = ddlTipNamirnice.SelectedValue;
-            n.Grami = (txtGrami.Text != string.Empty) ? int.Parse(txtGrami.Text) : 0;
-            n.Komad = (txtKomad.Text != string.Empty) ? int.Parse(txtKomad.Text) : 0;
-            n.Zlica = (txtZlica.Text != string.Empty) ? int.Parse(txtZlica.Text) : 0;
-            n.Salica = (txtSalica.Text != string.Empty) ? int.Parse(txtSalica.Text) : 0;
+            
 
 
             if (!helper.ContainsIngredient(n.NazivNamirnice))
@@ -97,10 +94,7 @@ namespace WebFormsApp_AdminSite
             txtNaziv.Text = "";
             txtEnergija_kJ.Text = "";
             txtEnergija_kcal.Text = "";
-            txtGrami.Text = "";
-            txtKomad.Text = "";
-            txtZlica.Text = "";
-            txtSalica.Text = "";
+            
 
 
         }

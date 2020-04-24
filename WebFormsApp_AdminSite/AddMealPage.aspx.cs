@@ -147,14 +147,14 @@ namespace WebFormsApp_AdminSite
 
                     Namirnice n = new Namirnice();
                     n.IDNamirnice = id;
-                    //n.NazivNamirnice = lblNaziv.Text;
-                    //n.Energija_kJ = int.Parse(lblEnergija_kJ.Text);
-                    //n.Energija_kcal = int.Parse(lblEnergija_kcal.Text);
-                    n.Grami = int.Parse(txtGrami.Text);
-                    n.Komad = int.Parse(txtKomad.Text);
-                    n.Zlica = int.Parse(txtZlica.Text);
-                    n.Salica = int.Parse(txtSalica.Text);
-                    //n.TipNamirnice = lblTipNamirnice.Text;
+
+                    
+
+                    n.Grami = !string.IsNullOrWhiteSpace(txtGrami.Text) ? int.Parse(txtGrami.Text) : 0; 
+                    n.Komad = !string.IsNullOrWhiteSpace(txtKomad.Text) ? int.Parse(txtKomad.Text) : 0;
+                    n.Zlica = !string.IsNullOrWhiteSpace(txtZlica.Text) ? int.Parse(txtZlica.Text) : 0;
+                    n.Salica = !string.IsNullOrWhiteSpace(txtSalica.Text) ? int.Parse(txtSalica.Text) : 0;
+
 
 
                     kolekcija.Add(n);

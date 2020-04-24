@@ -333,7 +333,7 @@ namespace WebFormsApp_AdminSite
 
         public void DeleteMealItem(int obrokId)
         {
-
+            repo.DeleteMeasurement(obrokId);
             repo.DelteFromMealIngredients(obrokId);
             repo.DeleteMeal(obrokId);
 

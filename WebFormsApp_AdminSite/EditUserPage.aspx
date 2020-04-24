@@ -12,7 +12,6 @@
     <div class="container">
        
         <div class="row  justify-content-center" style="margin-bottom: 20px;">
-            <%--<h1><span class="badge badge-danger">Uredi korisnika</span></h1>--%>
            <asp:Label runat="server" ID="lblEditUser" meta:resourcekey="lblEditUserResource1" CssClass="badge badge-danger" Font-Size="2em">Uredi korisnika</asp:Label>
         </div>
 
@@ -43,7 +42,7 @@
                         CssClass="form-control"
                         runat="server"
                         TabIndex="1"
-                        placeholder="dd.mm.yyyy."
+                        placeholder="dd.mm.gggg."
                         autocomplete="off"
                         MaxLength="10" meta:resourcekey="txtDatumRodenjaEditResource1"></asp:TextBox>
                    

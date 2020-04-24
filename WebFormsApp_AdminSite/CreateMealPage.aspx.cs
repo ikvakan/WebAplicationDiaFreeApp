@@ -152,7 +152,7 @@ namespace WebFormsApp_AdminSite
             //TextBox tbKomad = (TextBox)updateRow.Cells[4].Controls[1];
             //TextBox tbZlica = (TextBox)updateRow.Cells[5].Controls[1];
             //TextBox tbSalica = (TextBox)updateRow.Cells[6].Controls[1];
-            DropDownList tbTipNamirnice = (DropDownList)updateRow.Cells[7].Controls[1];
+            DropDownList tbTipNamirnice = (DropDownList)updateRow.Cells[3].Controls[1];
 
             Namirnice n = new Namirnice();
             n.IDNamirnice = (int)gvNamirnice.DataKeys[e.RowIndex].Value;
@@ -213,16 +213,12 @@ namespace WebFormsApp_AdminSite
                 Label lblNaziv = (Label)row.FindControl("lblNaziv");
                 Label lblEnergija_kJ = (Label)row.FindControl("lblEnergija_kJ");
                 Label lblEnergija_kcal = (Label)row.FindControl("lblEnergija_kcal");
-                //Label lblGrami = (Label)row.FindControl("lblGrami");
-                //Label lblKomad = (Label)row.FindControl("lblKomad");
-                //Label lblZlica = (Label)row.FindControl("lblZlica");
-                //Label lblSalica = (Label)row.FindControl("lblSalica");
+               
                 Label lblTipNamirnice = (Label)row.FindControl("lblTipNamirnice");
 
                 if (cb != null && cb.Checked)
                 {
 
-                    // var id = gvNamirnice.DataKeys[row.DataItemIndex].Values["IDNamirnice"].ToString();
                     var id = (int)gvNamirnice.DataKeys[row.RowIndex]["IDNamirnice"];
 
 
@@ -232,10 +228,6 @@ namespace WebFormsApp_AdminSite
                     n.NazivNamirnice = lblNaziv.Text;
                     n.Energija_kJ = int.Parse(lblEnergija_kJ.Text);
                     n.Energija_kcal = int.Parse(lblEnergija_kcal.Text);
-                    //n.Grami = int.Parse(lblGrami.Text);
-                    //n.Komad = int.Parse(lblKomad.Text);
-                    //n.Zlica = int.Parse(lblZlica.Text);
-                    //n.Salica = int.Parse(lblSalica.Text);
                     n.TipNamirnice = lblTipNamirnice.Text;
 
 

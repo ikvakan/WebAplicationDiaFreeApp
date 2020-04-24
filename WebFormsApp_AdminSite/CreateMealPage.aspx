@@ -20,15 +20,7 @@
 
         <div class="row ">
             <div class="col-md-12 ">
-                <%--<div class="form-group">
-                    <label class="badge w-100">Obrok</label>
-                    <asp:DropDownList runat="server" ID="ddlObrok" CssClass="form-control">
-
-                        <asp:ListItem>Doručak</asp:ListItem>
-                        <asp:ListItem>Ručak</asp:ListItem>
-                        <asp:ListItem>Večera</asp:ListItem>
-                    </asp:DropDownList>
-                </div>--%>
+             
 
                 <div class="form-group">
                     <asp:Label runat="server" ID="lblTipNamirnice" CssClass="badge w-100" meta:resourcekey="lblTipNamirniceResource1">Tip namirnice</asp:Label>
@@ -41,14 +33,6 @@
 
                 </div>
 
-                <%--<div class="form-group">
-
-                    <label class="badge w-100">Odaberite datum</label>
-                    <asp:Calendar ID="calendar" runat="server">
-                        <SelectedDayStyle BackColor="Yellow" ForeColor="Black" />
-                    </asp:Calendar>
-                    
-                </div>--%>
                 <div class="form-group">
 
                     <asp:Button runat="server" ID="btnOdaberi" Text="Odaberi namirnice" CssClass="btn btn-block btn-primary" OnClick="btnGeneriraj_Click" meta:resourcekey="btnOdaberiResource1" />
@@ -89,39 +73,7 @@
                             <asp:Label ID="lblEnergija_kcal" runat="server" Text='<%# Bind("Energija_kcal") %>' meta:resourcekey="lblEnergija_kcalResource1"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <%--<asp:TemplateField HeaderText="Grami" meta:resourcekey="TemplateFieldResource4">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Grami") %>' CssClass="form-control" Width="100px" meta:resourcekey="TextBox4Resource1"></asp:TextBox>
-
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblGrami" runat="server" Text='<%# Bind("Grami") %>' meta:resourcekey="lblGramiResource1"></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Komad" meta:resourcekey="TemplateFieldResource5">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Komad") %>' CssClass="form-control" meta:resourcekey="TextBox5Resource1"></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblKomad" runat="server" Text='<%# Bind("Komad") %>' meta:resourcekey="lblKomadResource1"></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Žlica" meta:resourcekey="TemplateFieldResource6">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Zlica") %>' CssClass="form-control" meta:resourcekey="TextBox6Resource1"></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblZlica" runat="server" Text='<%# Bind("Zlica") %>' meta:resourcekey="lblZlicaResource1"></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Šalica" meta:resourcekey="TemplateFieldResource7">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Salica") %>' CssClass="form-control" meta:resourcekey="TextBox7Resource1"></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblSalica" runat="server" Text='<%# Bind("Salica") %>' meta:resourcekey="lblSalicaResource1"></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>--%>
+                   
                     <asp:TemplateField HeaderText="TIP NAMIRNICE" meta:resourcekey="TemplateFieldResource8">
                         <EditItemTemplate>
                             <asp:DropDownList ID="ddlEdit" runat="server" Text='<%# Bind("TipNamirnice") %>' Width="200px" CssClass="form-control" meta:resourcekey="ddlEditResource1">
