@@ -132,10 +132,10 @@ namespace WebFormsApp_AdminSite
                 Label lblNaziv = (Label)row.FindControl("lblNaziv");
                 Label lblEnergija_kJ = (Label)row.FindControl("lblEnergija_kJ");
                 Label lblEnergija_kcal = (Label)row.FindControl("lblEnergija_kcal");
-                Label lblGrami = (Label)row.FindControl("lblGrami");
-                Label lblKomad = (Label)row.FindControl("lblKomad");
-                Label lblZlica = (Label)row.FindControl("lblZlica");
-                Label lblSalica = (Label)row.FindControl("lblSalica");
+                TextBox txtGrami = (TextBox)row.FindControl("lblGrami");
+                TextBox txtKomad = (TextBox)row.FindControl("lblKomad");
+                TextBox txtZlica = (TextBox)row.FindControl("lblZlica");
+                TextBox txtSalica = (TextBox)row.FindControl("lblSalica");
                 Label lblTipNamirnice = (Label)row.FindControl("lblTipNamirnice");
 
                 if (cb != null && cb.Checked)
@@ -150,10 +150,10 @@ namespace WebFormsApp_AdminSite
                     //n.NazivNamirnice = lblNaziv.Text;
                     //n.Energija_kJ = int.Parse(lblEnergija_kJ.Text);
                     //n.Energija_kcal = int.Parse(lblEnergija_kcal.Text);
-                    //n.Grami = int.Parse(lblGrami.Text);
-                    //n.Komad = int.Parse(lblKomad.Text);
-                    //n.Zlica = int.Parse(lblZlica.Text);
-                    //n.Salica = int.Parse(lblSalica.Text);
+                    n.Grami = int.Parse(txtGrami.Text);
+                    n.Komad = int.Parse(txtKomad.Text);
+                    n.Zlica = int.Parse(txtZlica.Text);
+                    n.Salica = int.Parse(txtSalica.Text);
                     //n.TipNamirnice = lblTipNamirnice.Text;
 
 
@@ -169,7 +169,8 @@ namespace WebFormsApp_AdminSite
 
                     foreach (var item in kolekcija)
                     {
-                        repo.InsertIntoMealIngredients(idMeal, item.IDNamirnice);
+                        var KolicinaID = (int)repo.InsertMeasurementForIngredient(item);
+                        repo.InsertIntoMealIngredients(idMeal, item.IDNamirnice,KolicinaID);
                     }
 
                     Session.Clear();

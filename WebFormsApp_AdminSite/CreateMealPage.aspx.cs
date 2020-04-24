@@ -148,10 +148,10 @@ namespace WebFormsApp_AdminSite
             TextBox tbNamirnica = (TextBox)updateRow.Cells[0].Controls[1];
             TextBox tbEnergija_kJ = (TextBox)updateRow.Cells[1].Controls[1];
             TextBox tbEnergija_kcal = (TextBox)updateRow.Cells[2].Controls[1];
-            TextBox tbGrami = (TextBox)updateRow.Cells[3].Controls[1];
-            TextBox tbKomad = (TextBox)updateRow.Cells[4].Controls[1];
-            TextBox tbZlica = (TextBox)updateRow.Cells[5].Controls[1];
-            TextBox tbSalica = (TextBox)updateRow.Cells[6].Controls[1];
+            //TextBox tbGrami = (TextBox)updateRow.Cells[3].Controls[1];
+            //TextBox tbKomad = (TextBox)updateRow.Cells[4].Controls[1];
+            //TextBox tbZlica = (TextBox)updateRow.Cells[5].Controls[1];
+            //TextBox tbSalica = (TextBox)updateRow.Cells[6].Controls[1];
             DropDownList tbTipNamirnice = (DropDownList)updateRow.Cells[7].Controls[1];
 
             Namirnice n = new Namirnice();
@@ -159,10 +159,10 @@ namespace WebFormsApp_AdminSite
             n.NazivNamirnice = tbNamirnica.Text;
             n.Energija_kJ = int.Parse(tbEnergija_kJ.Text);
             n.Energija_kcal = int.Parse(tbEnergija_kcal.Text);
-            n.Grami = int.Parse(tbGrami.Text);
-            n.Komad = int.Parse(tbKomad.Text);
-            n.Zlica = int.Parse(tbZlica.Text);
-            n.Salica = int.Parse(tbSalica.Text);
+            //n.Grami = int.Parse(tbGrami.Text);
+            //n.Komad = int.Parse(tbKomad.Text);
+            //n.Zlica = int.Parse(tbZlica.Text);
+            //n.Salica = int.Parse(tbSalica.Text);
             n.TipNamirnice = tbTipNamirnice.Text;
 
             try
@@ -213,10 +213,10 @@ namespace WebFormsApp_AdminSite
                 Label lblNaziv = (Label)row.FindControl("lblNaziv");
                 Label lblEnergija_kJ = (Label)row.FindControl("lblEnergija_kJ");
                 Label lblEnergija_kcal = (Label)row.FindControl("lblEnergija_kcal");
-                Label lblGrami = (Label)row.FindControl("lblGrami");
-                Label lblKomad = (Label)row.FindControl("lblKomad");
-                Label lblZlica = (Label)row.FindControl("lblZlica");
-                Label lblSalica = (Label)row.FindControl("lblSalica");
+                //Label lblGrami = (Label)row.FindControl("lblGrami");
+                //Label lblKomad = (Label)row.FindControl("lblKomad");
+                //Label lblZlica = (Label)row.FindControl("lblZlica");
+                //Label lblSalica = (Label)row.FindControl("lblSalica");
                 Label lblTipNamirnice = (Label)row.FindControl("lblTipNamirnice");
 
                 if (cb != null && cb.Checked)
@@ -232,10 +232,10 @@ namespace WebFormsApp_AdminSite
                     n.NazivNamirnice = lblNaziv.Text;
                     n.Energija_kJ = int.Parse(lblEnergija_kJ.Text);
                     n.Energija_kcal = int.Parse(lblEnergija_kcal.Text);
-                    n.Grami = int.Parse(lblGrami.Text);
-                    n.Komad = int.Parse(lblKomad.Text);
-                    n.Zlica = int.Parse(lblZlica.Text);
-                    n.Salica = int.Parse(lblSalica.Text);
+                    //n.Grami = int.Parse(lblGrami.Text);
+                    //n.Komad = int.Parse(lblKomad.Text);
+                    //n.Zlica = int.Parse(lblZlica.Text);
+                    //n.Salica = int.Parse(lblSalica.Text);
                     n.TipNamirnice = lblTipNamirnice.Text;
 
 

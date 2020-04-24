@@ -89,7 +89,7 @@
                             <asp:Label ID="lblEnergija_kcal" runat="server" Text='<%# Bind("Energija_kcal") %>' meta:resourcekey="lblEnergija_kcalResource1"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Grami" meta:resourcekey="TemplateFieldResource4">
+                    <%--<asp:TemplateField HeaderText="Grami" meta:resourcekey="TemplateFieldResource4">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Grami") %>' CssClass="form-control" Width="100px" meta:resourcekey="TextBox4Resource1"></asp:TextBox>
 
@@ -121,7 +121,7 @@
                         <ItemTemplate>
                             <asp:Label ID="lblSalica" runat="server" Text='<%# Bind("Salica") %>' meta:resourcekey="lblSalicaResource1"></asp:Label>
                         </ItemTemplate>
-                    </asp:TemplateField>
+                    </asp:TemplateField>--%>
                     <asp:TemplateField HeaderText="TIP NAMIRNICE" meta:resourcekey="TemplateFieldResource8">
                         <EditItemTemplate>
                             <asp:DropDownList ID="ddlEdit" runat="server" Text='<%# Bind("TipNamirnice") %>' Width="200px" CssClass="form-control" meta:resourcekey="ddlEditResource1">

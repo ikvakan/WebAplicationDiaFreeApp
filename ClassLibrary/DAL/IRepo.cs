@@ -27,7 +27,7 @@ namespace ClassLibrary.DAL
 
         decimal InsertMeal(Obrok o);
 
-        void InsertIntoMealIngredients(int obrokId, int namirnicaID);
+        void InsertIntoMealIngredients(int obrokId, int namirnicaID,int kolicinaID);
 
         int GetNumberOfMeals();
         // void test(string naziv,int id);
@@ -40,7 +40,7 @@ namespace ClassLibrary.DAL
 
         void DelteFromMealIngredients(int obrokId);
 
-        
+        decimal InsertMeasurementForIngredient(Namirnice n);
 
     }
 }
