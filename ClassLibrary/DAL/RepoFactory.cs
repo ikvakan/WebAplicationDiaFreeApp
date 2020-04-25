@@ -8,9 +8,19 @@ namespace ClassLibrary.DAL
 {
     public static class RepoFactory
     {
-        public static IRepo GetRepo()
+        public static IObrok GetObrokRepo()
         {
-            return new Repo();
+            return new ObrokRepo();
+        }
+
+        public static IKorisnik GetKorisnikRepo()
+        {
+            return new KorisnikRepo();
+        }
+
+        public static INamirnica GetNamirnicaRepo()
+        {
+            return new NamirnicaRepo();
         }
 
         public static IHelperMethods GetHelperMethods()

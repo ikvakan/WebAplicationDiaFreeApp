@@ -15,7 +15,7 @@ namespace WebFormsApp_AdminSite
     public partial class CreateMealPage : System.Web.UI.Page
     {
 
-        private IRepo repo = RepoFactory.GetRepo();
+        private INamirnica repo = RepoFactory.GetNamirnicaRepo();
 
         private string selectedType;
         public static decimal obrokID;

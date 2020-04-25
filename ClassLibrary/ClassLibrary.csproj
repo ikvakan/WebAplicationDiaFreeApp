@@ -55,8 +55,9 @@
     <Compile Include="DAL\IKorisnik.cs" />
     <Compile Include="DAL\INamirnica.cs" />
     <Compile Include="DAL\IObrok.cs" />
-    <Compile Include="DAL\IRepo.cs" />
-    <Compile Include="DAL\Repo.cs" />
+    <Compile Include="DAL\KorisnikRepo.cs" />
+    <Compile Include="DAL\NamirnicaRepo.cs" />
+    <Compile Include="DAL\ObrokRepo.cs" />
     <Compile Include="DAL\RepoFactory.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Kolicina.cs" />

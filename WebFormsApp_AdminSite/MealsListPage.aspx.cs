@@ -30,8 +30,8 @@ namespace WebFormsApp_AdminSite
 {
     public partial class MealsListPage : System.Web.UI.Page
     {
-        private static IRepo repo = RepoFactory.GetRepo();
-
+        private static IObrok repoObrok = RepoFactory.GetObrokRepo();
+        private static INamirnica repoNamirnica = RepoFactory.GetNamirnicaRepo();
         public string Language { 
             get 
             {
@@ -76,7 +76,7 @@ namespace WebFormsApp_AdminSite
         {
 
 
-            foreach (var item in repo.GetMealList())
+            foreach (var item in repoObrok.GetMealList())
             {
 
                 CreateElement(item);
@@ -261,7 +261,7 @@ namespace WebFormsApp_AdminSite
 
         private void CreateTrTipNamirnice(int id, StringBuilder sb)
         {
-            foreach (var item in repo.GetIngredientForMeal(id))
+            foreach (var item in repoNamirnica.GetIngredientForMeal(id))
             {
                 sb.Append("<tr>");
                 sb.Append($"<td style='padding:0;'>{item.TipNamirnice} </td>");
@@ -271,7 +271,7 @@ namespace WebFormsApp_AdminSite
 
         private void CreateTrSalica(int id, StringBuilder sb)
         {
-            foreach (var item in repo.GetIngredientForMeal(id))
+            foreach (var item in repoNamirnica.GetIngredientForMeal(id))
             {
                 sb.Append("<tr>");
                 sb.Append($"<td style='padding:0;'>{item.Salica} </td>");
@@ -281,7 +281,7 @@ namespace WebFormsApp_AdminSite
 
         private void CreateTrZlica(int id, StringBuilder sb)
         {
-            foreach (var item in repo.GetIngredientForMeal(id))
+            foreach (var item in repoNamirnica.GetIngredientForMeal(id))
             {
                 sb.Append("<tr>");
                 sb.Append($"<td style='padding:0;'>{item.Zlica} </td>");
@@ -291,7 +291,7 @@ namespace WebFormsApp_AdminSite
 
         private void CreateTrKomad(int id, StringBuilder sb)
         {
-            foreach (var item in repo.GetIngredientForMeal(id))
+            foreach (var item in repoNamirnica.GetIngredientForMeal(id))
             {
                 sb.Append("<tr>");
                 sb.Append($"<td style='padding:0;'>{item.Komad} </td>");
@@ -301,7 +301,7 @@ namespace WebFormsApp_AdminSite
 
         private void CreateTrGrami(int id, StringBuilder sb)
         {
-            foreach (var item in repo.GetIngredientForMeal(id))
+            foreach (var item in repoNamirnica.GetIngredientForMeal(id))
             {
                 sb.Append("<tr>");
                 sb.Append($"<td style='padding:0;'>{item.Grami} </td>");
@@ -311,7 +311,7 @@ namespace WebFormsApp_AdminSite
 
         private static void CreateTrNamirnice(int id, StringBuilder sb)
         {
-            foreach (var item in repo.GetIngredientForMeal(id))
+            foreach (var item in repoNamirnica.GetIngredientForMeal(id))
             {
                 sb.Append("<tr >");
                 sb.Append($"<td style='padding:0; '>{item.NazivNamirnice} </td>");
@@ -336,9 +336,9 @@ namespace WebFormsApp_AdminSite
 
         public void DeleteMealItem(int obrokId)
         {
-            repo.DeleteMeasurement(obrokId);
-            repo.DelteFromMealIngredients(obrokId);
-            repo.DeleteMeal(obrokId);
+            repoObrok.DeleteMeasurement(obrokId);
+            repoObrok.DelteFromMealIngredients(obrokId);
+            repoObrok.DeleteMeal(obrokId);
 
         }
     }

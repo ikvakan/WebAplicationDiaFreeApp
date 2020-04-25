@@ -14,7 +14,7 @@ namespace WebFormsApp_AdminSite
     public partial class EditUserPage : System.Web.UI.Page
     {
 
-        private IRepo repo = RepoFactory.GetRepo();
+        private IKorisnik repo = RepoFactory.GetKorisnikRepo();
 
       
         protected void Page_Load(object sender, EventArgs e)

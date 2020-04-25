@@ -16,7 +16,7 @@ namespace WebFormsApp_AdminSite
     public partial class UserListPage : System.Web.UI.Page  
     {
 
-        private static IRepo repo = RepoFactory.GetRepo();
+        private static IKorisnik repo = RepoFactory.GetKorisnikRepo();
 
         public string Language
         {

@@ -17,5 +17,7 @@ namespace ClassLibrary.DAL
         List<Namirnice> GetIngredientForMeal(int idMeal);
 
         decimal InsertMeasurementForIngredient(Namirnice n);
+
+
     }
 }

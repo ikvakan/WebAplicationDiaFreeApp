@@ -16,7 +16,8 @@ namespace WebFormsApp_AdminSite
 
         private List<Namirnice> listNamirnice = new List<Namirnice>();
 
-        private IRepo repo = RepoFactory.GetRepo();
+        private IObrok repo = RepoFactory.GetObrokRepo();
+        private INamirnica repoNamirnica = RepoFactory.GetNamirnicaRepo();
         public string Language
         {
             get
@@ -173,7 +174,7 @@ namespace WebFormsApp_AdminSite
 
                     foreach (var item in kolekcija)
                     {
-                        var KolicinaID = (int)repo.InsertMeasurementForIngredient(item);
+                        var KolicinaID = (int)repoNamirnica.InsertMeasurementForIngredient(item);
                         repo.InsertIntoMealIngredients(idMeal, item.IDNamirnice,KolicinaID);
                     }
 

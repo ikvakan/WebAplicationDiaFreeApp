@@ -14,7 +14,7 @@ namespace WebFormsApp_AdminSite
 
     public partial class AddIngredientPage : System.Web.UI.Page
     {
-        private IRepo repo = RepoFactory.GetRepo();
+        private INamirnica repo = RepoFactory.GetNamirnicaRepo();
         private IHelperMethods helper = RepoFactory.GetHelperMethods();
 
         public string Language

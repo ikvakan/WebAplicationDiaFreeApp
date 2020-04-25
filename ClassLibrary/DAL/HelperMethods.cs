@@ -51,7 +51,7 @@ namespace ClassLibrary.DAL
 
         public bool ContainsIngredient(string name)
         {
-            IRepo repo = RepoFactory.GetRepo();
+            INamirnica repo = RepoFactory.GetNamirnicaRepo();
 
             List<Namirnice> kolekcijaNamirnica = repo.getIngredients("sve");
 
