@@ -48,6 +48,12 @@
             <asp:GridView ID="gvNamirnice" runat="server" CellPadding="4" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" Width="1000px" DataKeyNames="IDNamirnice" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CssClass="table table-borderless" OnPageIndexChanging="gvNamirnice_PageIndexChanging" OnRowCancelingEdit="gvNamirnice_RowCancelingEdit" OnRowEditing="gvNamirnice_RowEditing" OnRowUpdating="gvNamirnice_RowUpdating" OnRowDeleting="gvNamirnice_RowDeleting" meta:resourcekey="gvNamirniceResource1">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
+
+                    <%--CheckBox--%>
+                    <%--CheckBox--%>
+
+
+
                     <asp:TemplateField HeaderText="NAMIRNICA" meta:resourcekey="TemplateFieldResource1">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("NazivNamirnice") %>' CssClass="form-control" meta:resourcekey="TextBox1Resource1"></asp:TextBox>
@@ -87,9 +93,6 @@
                         </ItemTemplate>
                         <ControlStyle Width="150px" />
                     </asp:TemplateField>
-                    <asp:CommandField CancelText="Odustani" DeleteText="Obriši" EditText="Uredi" ShowEditButton="True" ShowDeleteButton="True" InsertText="Umetni" meta:resourcekey="CommandFieldResource1" />
-
-                    <%--CheckBox--%>
                     <asp:TemplateField HeaderText="Odaberi" meta:resourcekey="TemplateFieldResource9">
 
                         <ItemTemplate>
@@ -98,7 +101,7 @@
                         </ItemTemplate>
 
                     </asp:TemplateField>
-                    <%--CheckBox--%>
+                    <asp:CommandField CancelText="Odustani" DeleteText="Obriši" EditText="Uredi" ShowEditButton="True" ShowDeleteButton="True" InsertText="Umetni" meta:resourcekey="CommandFieldResource1" />
 
 
 

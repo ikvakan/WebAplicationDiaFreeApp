@@ -17,8 +17,9 @@ namespace WebFormsApp_AdminSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             //staviti admina u session zbog blokade pristupa 
+
+
 
             if (!IsPostBack)
             {
@@ -33,10 +34,12 @@ namespace WebFormsApp_AdminSite
         {
             var userName = txtUserName.Text;
             var password = txtPassword.Text;
-
             
+            
+
             if (Admin.isAdmin(userName, password))
             {
+               
                 Response.Redirect("Index.aspx");
             }
             else

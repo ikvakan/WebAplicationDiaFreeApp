@@ -9,14 +9,18 @@ namespace ClassLibrary.Models
 {
     public class Admin  
     {
-        private static string UserName { get; } = "admin";
+
+        public static string UserName { get; } = "admin";
         private static string Password { get; } = "123";
 
+        public Admin()
+        {
 
+        }
 
         public static bool isAdmin(string korisnickoIme, string zaporka)
         {
-            return korisnickoIme == UserName && Password == zaporka ? true : false;
+            return UserName == korisnickoIme && Password == zaporka ? true : false;
         }
 
 

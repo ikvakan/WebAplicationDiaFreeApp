@@ -52,6 +52,10 @@ namespace WebFormsApp_AdminSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+           
+
+
             if (Language == "hr")
             {
 
@@ -173,7 +177,9 @@ namespace WebFormsApp_AdminSite
                         repo.InsertIntoMealIngredients(idMeal, item.IDNamirnice,KolicinaID);
                     }
 
-                    Session.Clear();
+                     Session.Clear();
+                    
+                    
                 }
 
                     Response.Redirect("CreateMealPage.aspx");

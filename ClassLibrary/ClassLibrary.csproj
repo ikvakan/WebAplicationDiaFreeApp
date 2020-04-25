@@ -52,6 +52,9 @@
     <Compile Include="DAL\HelperMethods.cs" />
     <Compile Include="DAL\IFileManager.cs" />
     <Compile Include="DAL\IHelperMethods.cs" />
+    <Compile Include="DAL\IKorisnik.cs" />
+    <Compile Include="DAL\INamirnica.cs" />
+    <Compile Include="DAL\IObrok.cs" />
     <Compile Include="DAL\IRepo.cs" />
     <Compile Include="DAL\Repo.cs" />
     <Compile Include="DAL\RepoFactory.cs" />

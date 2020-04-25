@@ -76,6 +76,9 @@ namespace WebFormsApp_AdminSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+
             if (Language == "hr")
             {
 
@@ -84,6 +87,8 @@ namespace WebFormsApp_AdminSite
             else
                 Master.ShowLabel("Create meal");
            
+
+
 
             ViewState["selected"] = ddlTipNamirnice.SelectedValue;
 

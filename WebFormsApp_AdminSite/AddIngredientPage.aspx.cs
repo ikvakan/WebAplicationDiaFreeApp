@@ -44,7 +44,10 @@ namespace WebFormsApp_AdminSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Language == "hr")
+
+            
+
+            if (Language != "en" || Language=="0")
             {
                 Master.ShowLabel("Unos namirnice");
 
