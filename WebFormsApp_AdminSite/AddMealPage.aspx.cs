@@ -54,7 +54,10 @@ namespace WebFormsApp_AdminSite
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("~/LoginPage.aspx");
+            }
 
 
             if (Language == "hr")
@@ -89,7 +92,7 @@ namespace WebFormsApp_AdminSite
 
         private void BindDataToGridView()
         {
-            
+
             gvPopisNamirnica.DataSource = ListaNamirnicaSession;
             gvPopisNamirnica.DataBind();
         }
@@ -119,7 +122,8 @@ namespace WebFormsApp_AdminSite
 
         protected void btnPonisti_Click(object sender, EventArgs e)
         {
-            Session.Abandon();
+            Session.Remove("listaNamirnica");
+            // Session.Abandon();
             Response.Redirect("CreateMealPage.aspx");
         }
 
@@ -128,8 +132,8 @@ namespace WebFormsApp_AdminSite
             List<NamirniceModel> kolekcija = new List<NamirniceModel>();
 
             ObrokModel o = new ObrokModel();
-            o.NazivObroka= ddlObrok.SelectedValue;
-            o.DatumIzrade= DateTime.Parse(txtDatum.Text); 
+            o.NazivObroka = ddlObrok.SelectedValue;
+            o.DatumIzrade = DateTime.Parse(txtDatum.Text);
 
             foreach (GridViewRow row in gvPopisNamirnica.Rows)
             {
@@ -153,9 +157,9 @@ namespace WebFormsApp_AdminSite
                     NamirniceModel n = new NamirniceModel();
                     n.IDNamirnice = id;
 
-                    
 
-                    n.Grami = !string.IsNullOrWhiteSpace(txtGrami.Text) ? int.Parse(txtGrami.Text) : 0; 
+
+                    n.Grami = !string.IsNullOrWhiteSpace(txtGrami.Text) ? int.Parse(txtGrami.Text) : 0;
                     n.Komad = !string.IsNullOrWhiteSpace(txtKomad.Text) ? int.Parse(txtKomad.Text) : 0;
                     n.Zlica = !string.IsNullOrWhiteSpace(txtZlica.Text) ? int.Parse(txtZlica.Text) : 0;
                     n.Salica = !string.IsNullOrWhiteSpace(txtSalica.Text) ? int.Parse(txtSalica.Text) : 0;
@@ -168,22 +172,22 @@ namespace WebFormsApp_AdminSite
 
             }
 
-                if (kolekcija!=null && kolekcija.Count>0)
+            if (kolekcija != null && kolekcija.Count > 0)
+            {
+                var idMeal = (int)repo.InsertMeal(o);
+
+                foreach (var item in kolekcija)
                 {
-                    var idMeal =(int) repo.InsertMeal(o);
-
-                    foreach (var item in kolekcija)
-                    {
-                        var KolicinaID = (int)repoNamirnica.InsertMeasurementForIngredient(item);
-                        repo.InsertIntoMealIngredients(idMeal, item.IDNamirnice,KolicinaID);
-                    }
-
-                     Session.Clear();
-                    
-                    
+                    var KolicinaID = (int)repoNamirnica.InsertMeasurementForIngredient(item);
+                    repo.InsertIntoMealIngredients(idMeal, item.IDNamirnice, KolicinaID);
                 }
 
-                    Response.Redirect("CreateMealPage.aspx");
+                //Session.Clear();
+                Session.Remove("listaNamirnica");
+
+            }
+
+            Response.Redirect("CreateMealPage.aspx");
 
         }
 

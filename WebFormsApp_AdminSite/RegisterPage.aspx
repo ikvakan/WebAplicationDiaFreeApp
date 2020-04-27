@@ -7,6 +7,9 @@
     <title>Register</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/RegisterPage.css" rel="stylesheet" />
+
+
+    
 </head>
 <body>
    
@@ -56,9 +59,9 @@
                         <asp:Label runat="server" ID="lblUserName" meta:resourcekey="lblUserNameResource1">Korisničko ime:</asp:Label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Korisničko ime obavezno." ControlToValidate="txtKorisnickoIme" CssClass="validatorColor" Display="Dynamic" meta:resourcekey="RequiredFieldValidator4Resource1">*</asp:RequiredFieldValidator>
 
-                        <asp:CustomValidator ID="CheckForUserName" runat="server" ControlToValidate="txtKorisnickoIme" CssClass="validatorColor" Display="Dynamic" ErrorMessage="Korisničko ime već postoji." OnServerValidate="CheckForUserName_ServerValidate">*</asp:CustomValidator>
+                        <asp:CustomValidator runat="server" ControlToValidate="txtKorisnickoIme" CssClass="validatorColor" ErrorMessage="Korisničko ime već postoji." OnServerValidate="Unnamed1_ServerValidate" Display="Dynamic" ValidateEmptyText="True" ClientValidationFunction="KorisnickoIme_Provjera" >*</asp:CustomValidator>
 
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtKorisnickoIme" meta:resourcekey="txtKorisnickoImeResource1"></asp:TextBox>
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtKorisnickoIme" meta:resourcekey="txtKorisnickoImeResource1" CausesValidation="True"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" ID="lblZaporka" meta:resourcekey="lblZaporkaResource1">Zaporka:</asp:Label>
@@ -127,7 +130,7 @@
                     </div>
 
                     <div class="form-group">
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="validatorColor" meta:resourcekey="ValidationSummary1Resource1" />
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="validatorColor" meta:resourcekey="ValidationSummary1Resource1"  />
                     </div>
 
                 </div>

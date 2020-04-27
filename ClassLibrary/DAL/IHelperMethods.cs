@@ -15,5 +15,7 @@ namespace ClassLibrary.DAL
 
         bool ContainsIngredient(string name);
 
+        bool ContainsUserName(string usernName);
+
     }
 }

@@ -72,15 +72,16 @@ namespace ClassLibrary.DAL
 
         public bool ContainsUserName(string userName)
         {
-            var result = true;
-
             IKorisnik repo = RepoFactory.GetKorisnikRepo();
+            var result = false;
 
-            foreach (var item in repo.GetAllUsers())
+            List<KorisnikModel> korisnikModels = repo.GetAllUsers();
+
+            foreach (var item in korisnikModels)
             {
                 if (item.KorisnickoIme == userName)
                 {
-                    result= false;
+                    result= true;
                     break;
                 }
             }

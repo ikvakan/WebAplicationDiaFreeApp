@@ -76,8 +76,11 @@ namespace WebFormsApp_AdminSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("~/LoginPage.aspx");
+            }
 
             if (Language == "hr")
             {
@@ -270,6 +273,7 @@ namespace WebFormsApp_AdminSite
             base.InitializeCulture();
         }
 
+        
 
     }
 }

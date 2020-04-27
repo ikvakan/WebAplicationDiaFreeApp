@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,50 +8,28 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="container mainContainer">
-        <nav>
-            <div class="row ">
-                <div class="col-lg-6 col-md-6 col-sm-12 text-left ">
-                    <label id="lblHeaderInof" class="customLabel"></label>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12  text-right   ">
-
-                    <a href="https://www.youtube.com/watch?v=gkqSCaMBERQ&list=PLPf69IGxwfBH7_qrNcN1eP-WuSS5oWLiZ" class="btn btn-primary">[User- model]</a> @*model user !!!!!!*@
-                    <a href="https://localhost:44310/LoginPage.aspx" class="btn btn-danger">Odjava</a>
-                    
-                </div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+               
+                @Html.ActionLink("DIAFREEAPP", "Index", "Home", new { @class = "navbar-brand" })
             </div>
-            <hr style="border: 1px solid #808080" />
-
-            <div class="row ">
-                <div class="col-sm-12 col-md-6 text-center">
-
-                    @Html.ActionLink("Odaberi obrok", "Index", "Home", null, new { @class = "btn btn-primary" })
-
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-
-                    @Html.ActionLink("Popis obroka", "Index", "Home", null, new { @class = "btn btn-primary" })
-
-                </div>
-
-
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Kreiraj obrok", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Popis obroka", "About", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                </ul>
 
             </div>
-            <hr style="border: 1px solid #808080" />
-
-
-        </nav>
-
-
-
-        <div class="content  justify-content-center">
-
-            @RenderBody()
         </div>
-
-        <hr style="border: 1px solid #808080" />
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
         <footer>
             <div class="footer text-center ">
                 <p>@DateTime.Now.ToShortDateString() | <span style="color:red;">WEB FORMS PROJEKT</span></p>

@@ -24,5 +24,7 @@ namespace WebFormsApp_AdminSite
         {
             lblHeaderInfo.Text = message;
         }
+
+        
     }
 }

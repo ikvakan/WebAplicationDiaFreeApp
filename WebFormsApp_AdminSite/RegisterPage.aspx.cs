@@ -36,9 +36,15 @@ namespace WebFormsApp_AdminSite
             k.Spol = ddlSpol.SelectedValue;
 
 
-           
-            repo.InsertUser(k);
-            Response.Redirect("LoginPage.aspx");
+
+
+            if (Page.IsValid)
+            {
+                repo.InsertUser(k);
+                Response.Redirect("LoginPage.aspx");
+
+            }
+
         }
 
 
@@ -56,23 +62,18 @@ namespace WebFormsApp_AdminSite
             base.InitializeCulture();
         }
 
-       
-        protected void CheckForUserName_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void Unnamed1_ServerValidate(object source, ServerValidateEventArgs args)
         {
             var userName = args.Value;
 
-           
 
-            if ()
+            if (helper.ContainsUserName(userName))
             {
+                args.IsValid = false;
 
-                args.IsValid = true;
             }
             else
-            {
-
-                args.IsValid = false;
-            }
+                args.IsValid = true;
         }
     }
 }

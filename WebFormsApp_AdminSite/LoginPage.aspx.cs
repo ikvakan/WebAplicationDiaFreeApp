@@ -39,7 +39,7 @@ namespace WebFormsApp_AdminSite
 
             if (AdminModel.isAdmin(userName, password))
             {
-               
+                Session["admin"] = userName;
                 Response.Redirect("Index.aspx");
             }
             else
