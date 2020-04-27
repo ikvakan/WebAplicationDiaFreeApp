@@ -7,20 +7,22 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Models
 {
-    public class Admin  
+    public class AdminModel  : KorisnikModel
     {
 
         public static string UserName { get; } = "admin";
         private static string Password { get; } = "123";
 
-        public Admin()
-        {
 
+
+        public AdminModel()
+        {
+           
         }
 
-        public static bool isAdmin(string korisnickoIme, string zaporka)
+        public static bool isAdmin(string usernName, string password)
         {
-            return UserName == korisnickoIme && Password == zaporka ? true : false;
+            return UserName == usernName && Password == password ? true : false;
         }
 
 

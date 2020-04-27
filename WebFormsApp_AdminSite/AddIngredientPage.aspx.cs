@@ -68,7 +68,7 @@ namespace WebFormsApp_AdminSite
 
 
 
-            Namirnice n = new Namirnice();
+            NamirniceModel n = new NamirniceModel();
             n.NazivNamirnice = txtNaziv.Text;
             n.Energija_kcal = (txtEnergija_kcal.Text != string.Empty) ? int.Parse(txtEnergija_kcal.Text) : 0;
             n.Energija_kJ = (txtEnergija_kJ.Text != string.Empty) ? int.Parse(txtEnergija_kJ.Text) : 0;

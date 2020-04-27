@@ -26,7 +26,7 @@ namespace ClassLibrary.DAL
 
        
 
-        public decimal InsertMeal(Obrok o)
+        public decimal InsertMeal(ObrokModel o)
         {
             
             return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeal", o.NazivObroka,o.DatumIzrade);
@@ -42,13 +42,13 @@ namespace ClassLibrary.DAL
             return (int) SqlHelper.ExecuteScalar(cs, "GetNumberOfMeals");
         }
 
-        public List<Obrok> GetMealList()
+        public List<ObrokModel> GetMealList()
         {
             ds = SqlHelper.ExecuteDataset(cs, "GetMeal");
-            List<Obrok> kolekcija = new List<Obrok>();
+            List<ObrokModel> kolekcija = new List<ObrokModel>();
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                Obrok o = new Obrok();
+                ObrokModel o = new ObrokModel();
                 o.IDObrok = (int)row["IDObrok"];
                 o.NazivObroka = (string)row["NazivObroka"];
                 o.DatumIzrade = (DateTime)row["DatumIzrade"];

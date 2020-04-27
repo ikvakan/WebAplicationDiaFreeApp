@@ -20,15 +20,15 @@ namespace WebFormsApp_AdminSite
         private string selectedType;
         public static decimal obrokID;
 
-        public List<Namirnice> KolekcijaNamirnica
+        public List<NamirniceModel> KolekcijaNamirnica
         {
             get
             {
                 if (Session["listaNamirnica"] == null)
                 {
-                    Session["listaNamirnica"] = new List<Namirnice>();
+                    Session["listaNamirnica"] = new List<NamirniceModel>();
                 }
-                return (List<Namirnice>)Session["listaNamirnica"];
+                return (List<NamirniceModel>)Session["listaNamirnica"];
             }
             set
             {
@@ -54,7 +54,7 @@ namespace WebFormsApp_AdminSite
         protected override void OnPreRender(EventArgs e)
         {
 
-            List<Namirnice> namirnice = new List<Namirnice>();
+            List<NamirniceModel> namirnice = new List<NamirniceModel>();
 
 
 
@@ -159,7 +159,7 @@ namespace WebFormsApp_AdminSite
             //TextBox tbSalica = (TextBox)updateRow.Cells[6].Controls[1];
             DropDownList tbTipNamirnice = (DropDownList)updateRow.Cells[3].Controls[1];
 
-            Namirnice n = new Namirnice();
+            NamirniceModel n = new NamirniceModel();
             n.IDNamirnice = (int)gvNamirnice.DataKeys[e.RowIndex].Value;
             n.NazivNamirnice = tbNamirnica.Text;
             n.Energija_kJ = int.Parse(tbEnergija_kJ.Text);
@@ -209,7 +209,7 @@ namespace WebFormsApp_AdminSite
         protected void btnGeneriraj_Click(object sender, EventArgs e)
         {
 
-            List<Namirnice> kolekcija = new List<Namirnice>();
+            List<NamirniceModel> kolekcija = new List<NamirniceModel>();
 
 
             foreach (GridViewRow row in gvNamirnice.Rows)
@@ -228,7 +228,7 @@ namespace WebFormsApp_AdminSite
 
 
 
-                    Namirnice n = new Namirnice();
+                    NamirniceModel n = new NamirniceModel();
                     n.IDNamirnice = id;
                     n.NazivNamirnice = lblNaziv.Text;
                     n.Energija_kJ = int.Parse(lblEnergija_kJ.Text);

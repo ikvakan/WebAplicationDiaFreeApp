@@ -9,14 +9,14 @@ namespace ClassLibrary.DAL
 {
    public interface IObrok
     {
-        decimal InsertMeal(Obrok o);
+        decimal InsertMeal(ObrokModel o);
 
         void InsertIntoMealIngredients(int obrokId, int namirnicaID, int kolicinaID);
 
         int GetNumberOfMeals();
 
 
-        List<Obrok> GetMealList();
+        List<ObrokModel> GetMealList();
 
        
 

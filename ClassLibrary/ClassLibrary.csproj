@@ -38,6 +38,7 @@
       <HintPath>..\packages\Notify.1.0.2\lib\net40\Notify.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,12 +60,12 @@
     <Compile Include="DAL\NamirnicaRepo.cs" />
     <Compile Include="DAL\ObrokRepo.cs" />
     <Compile Include="DAL\RepoFactory.cs" />
-    <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\Kolicina.cs" />
-    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\KolicinaModel.cs" />
+    <Compile Include="Models\KorisnikModel.cs" />
     <Compile Include="Models\KreiraniObrok.cs" />
-    <Compile Include="Models\Namirnice.cs" />
-    <Compile Include="Models\Obrok.cs" />
+    <Compile Include="Models\NamirniceModel.cs" />
+    <Compile Include="Models\ObrokModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

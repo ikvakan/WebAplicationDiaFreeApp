@@ -52,7 +52,7 @@ namespace WebFormsApp_AdminSite
 
         }
 
-        private void FillTextFieldForEdit(Korisnik korisnik)
+        private void FillTextFieldForEdit(KorisnikModel korisnik)
         {
             
             txtImeEdit.Text = korisnik.Ime;
@@ -80,7 +80,7 @@ namespace WebFormsApp_AdminSite
 
         private void EditKorisnik()
         {
-            Korisnik k = new Korisnik();
+            KorisnikModel k = new KorisnikModel();
             k.IDKorisnik = int.Parse(hfkorisnikID.Value);
             k.Ime = txtImeEdit.Text;
             k.Prezime = txtPrezimeEdit.Text;

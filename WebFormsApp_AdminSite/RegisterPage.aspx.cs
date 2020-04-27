@@ -15,6 +15,7 @@ namespace WebFormsApp_AdminSite
     {
 
         private IKorisnik repo = RepoFactory.GetKorisnikRepo();
+        private IHelperMethods helper = RepoFactory.GetHelperMethods();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -22,7 +23,7 @@ namespace WebFormsApp_AdminSite
 
         protected void btnPotvrdi_Click(object sender, EventArgs e)
         {
-            Korisnik k = new Korisnik();
+            KorisnikModel k = new KorisnikModel();
             k.Ime = txtIme.Text;
             k.Prezime = txtPrezime.Text;
             k.Email = txtEmail.Text;
@@ -53,6 +54,25 @@ namespace WebFormsApp_AdminSite
                 }
             }
             base.InitializeCulture();
+        }
+
+       
+        protected void CheckForUserName_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            var userName = args.Value;
+
+           
+
+            if ()
+            {
+
+                args.IsValid = true;
+            }
+            else
+            {
+
+                args.IsValid = false;
+            }
         }
     }
 }

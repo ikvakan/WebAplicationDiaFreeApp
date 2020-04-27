@@ -1,0 +1,27 @@
+﻿body {
+    background-color: #E0E0E0;
+}
+
+.userContainer {
+    width: 400px;
+    margin: 200px auto;
+    background-color: #F5F5F5;
+    padding: 30px;
+    box-shadow: 5px 5px 5px #808080;
+    border-radius: 25px;
+}
+
+.login {
+    color: #337ab7;
+    font-size:3em;
+    font-weight:bold;
+}
+
+.txtBox{
+    border-radius:8px;
+}
+
+
+.validatorColor {
+    color: red;
+}

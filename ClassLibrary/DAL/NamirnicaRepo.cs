@@ -17,14 +17,14 @@ namespace ClassLibrary.DAL
         public DataSet ds { get; set; }
         private string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
 
-        public List<Namirnice> getIngredients(string tipNamirnice)
+        public List<NamirniceModel> getIngredients(string tipNamirnice)
         {
             ds = SqlHelper.ExecuteDataset(cs, "GetIngredients", tipNamirnice);
-            List<Namirnice> kolekcijaNamirnica = new List<Namirnice>();
+            List<NamirniceModel> kolekcijaNamirnica = new List<NamirniceModel>();
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                Namirnice n = new Namirnice();
+                NamirniceModel n = new NamirniceModel();
                 n.IDNamirnice = (int)row["IDNamirnice"];
                 n.NazivNamirnice = (string)row["Namirnica"];
                 n.Energija_kJ = (int)row["Energija_kJ"];
@@ -37,7 +37,7 @@ namespace ClassLibrary.DAL
             return kolekcijaNamirnica;
         }
 
-        public void UpdateIngredients(Namirnice n)
+        public void UpdateIngredients(NamirniceModel n)
         {
             SqlHelper.ExecuteNonQuery(cs, "UpdateIngredients", n.IDNamirnice, n.NazivNamirnice, n.Energija_kJ, n.Energija_kcal, n.TipNamirnice);
         }
@@ -47,23 +47,23 @@ namespace ClassLibrary.DAL
             SqlHelper.ExecuteNonQuery(cs, "DeleteIngredient", id);
         }
 
-        public void InsertIngredient(Namirnice n)
+        public void InsertIngredient(NamirniceModel n)
         {
             SqlHelper.ExecuteNonQuery(cs, "InsertIngredient", n.NazivNamirnice, n.Energija_kJ, n.Energija_kcal, n.TipNamirnice);
         }
 
-        public decimal InsertMeasurementForIngredient(Namirnice n)
+        public decimal InsertMeasurementForIngredient(NamirniceModel n)
         {
             return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeasurementForIngredient", n.Grami, n.Komad, n.Zlica, n.Salica);
         }
 
-        public List<Namirnice> GetIngredientForMeal(int idMeal)
+        public List<NamirniceModel> GetIngredientForMeal(int idMeal)
         {
             ds = SqlHelper.ExecuteDataset(cs, "GetIngredientForMeal", idMeal);
-            List<Namirnice> kolekcija = new List<Namirnice>();
+            List<NamirniceModel> kolekcija = new List<NamirniceModel>();
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                Namirnice n = new Namirnice();
+                NamirniceModel n = new NamirniceModel();
                 n.IDNamirnice = (int)row["IDNamirnice"];
                 n.NazivNamirnice = (string)row["Namirnica"];
                 n.Energija_kJ = (int)row["Energija_kJ"];

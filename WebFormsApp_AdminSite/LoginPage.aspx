@@ -46,7 +46,7 @@
                             Text="Prijava"
                             CssClass="btn btn-primary btn-block " OnClick="btnLogin_Click" meta:resourcekey="btnLoginResource1" />
                         <asp:HyperLink runat="server" ID="hlReg" NavigateUrl="RegisterPage.aspx"  CssClass="btn btn-primary btn-block" meta:resourcekey="hlRegResource1">Registracija</asp:HyperLink>
-                        <%--<a href="RegisterPage.aspx" class="btn btn-primary btn-block">Registracija</a>--%>
+                       
                     </div>
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="validatorColor" meta:resourcekey="ValidationSummary1Resource1" />
 

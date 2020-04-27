@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Models
 {
-   public class Obrok
+   public class ObrokModel
     {
         public int IDObrok { get; set; } 
         public string NazivObroka { get; set; }
         //public List<Namirnice> ListaNamirnica{ get; set; }
         public DateTime? DatumIzrade { get; set; }
 
-        public Obrok()
+        public ObrokModel()
         {
             //ListaNamirnica = new List<Namirnice>();
             

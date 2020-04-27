@@ -53,7 +53,7 @@ namespace ClassLibrary.DAL
         {
             INamirnica repo = RepoFactory.GetNamirnicaRepo();
 
-            List<Namirnice> kolekcijaNamirnica = repo.getIngredients("sve");
+            List<NamirniceModel> kolekcijaNamirnica = repo.getIngredients("sve");
 
             bool result = false;
 
@@ -70,6 +70,23 @@ namespace ClassLibrary.DAL
             return result;
         }
 
+        public bool ContainsUserName(string userName)
+        {
+            var result = true;
+
+            IKorisnik repo = RepoFactory.GetKorisnikRepo();
+
+            foreach (var item in repo.GetAllUsers())
+            {
+                if (item.KorisnickoIme == userName)
+                {
+                    result= false;
+                    break;
+                }
+            }
+            
+                return result;
+        }
 
     }
 }

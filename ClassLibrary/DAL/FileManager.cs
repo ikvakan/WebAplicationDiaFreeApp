@@ -9,9 +9,9 @@ namespace ClassLibrary.DAL
 {
     public class FileManager : IFileManager
     {
-        public void AddMealToList(Obrok o)
+        public void AddMealToList(ObrokModel o)
         {
-            List<Obrok> kolekcijaObroka = new List<Obrok>();
+            List<ObrokModel> kolekcijaObroka = new List<ObrokModel>();
             kolekcijaObroka.Add(o);
         }
     }

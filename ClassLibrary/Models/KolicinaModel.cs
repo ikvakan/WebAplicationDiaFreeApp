@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Models
 {
-   public class Kolicina
+   public class KolicinaModel
     {
         public int IDKolicina { get; set; }
         public int Grami { get; set; }

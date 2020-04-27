@@ -9,10 +9,10 @@ namespace ClassLibrary.DAL
 {
    public interface IKorisnik
     {
-        void InsertUser(Korisnik k);
-        List<Korisnik> GetAllUsers();
-        Korisnik GetUserById(int idUser);
-        void UpdateUser(Korisnik k);
+        void InsertUser(KorisnikModel k);
+        List<KorisnikModel> GetAllUsers();
+        KorisnikModel GetUserById(int idUser);
+        void UpdateUser(KorisnikModel k);
         void DeleteUser(int id);
     }
 }

@@ -9,6 +9,6 @@ namespace ClassLibrary.DAL
 {
    public interface IFileManager
     {
-        void AddMealToList(Obrok o);
+        void AddMealToList(ObrokModel o);
     }
 }

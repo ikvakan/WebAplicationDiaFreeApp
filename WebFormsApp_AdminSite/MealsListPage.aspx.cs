@@ -84,7 +84,7 @@ namespace WebFormsApp_AdminSite
 
         }
 
-        private void CreateElement(Obrok item)
+        private void CreateElement(ObrokModel item)
         {
 
 

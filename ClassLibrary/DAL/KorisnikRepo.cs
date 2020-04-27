@@ -16,14 +16,14 @@ namespace ClassLibrary.DAL
         public DataSet ds { get; set; }
         private string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
 
-        public List<Korisnik> GetAllUsers()
+        public List<KorisnikModel> GetAllUsers()
         {
             ds = SqlHelper.ExecuteDataset(cs, "GetAllUsers");
-            List<Korisnik> kolekcijaKorisnika = new List<Korisnik>();
+            List<KorisnikModel> kolekcijaKorisnika = new List<KorisnikModel>();
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                Korisnik k = new Korisnik();
+                KorisnikModel k = new KorisnikModel();
                 k.IDKorisnik = (int)row["IDKorisnik"];
                 k.Ime = row["Ime"].ToString();
                 k.Prezime = row["Prezime"].ToString();
@@ -43,13 +43,13 @@ namespace ClassLibrary.DAL
 
         }
 
-        public Korisnik GetUserById(int idUser)
+        public KorisnikModel GetUserById(int idUser)
         {
             var korisnik = GetAllUsers().FirstOrDefault(k => k.IDKorisnik == idUser);
             return korisnik;
         }
 
-        public void UpdateUser(Korisnik k)
+        public void UpdateUser(KorisnikModel k)
         {
             int FizAktivnostId = helperMethod.SetUserFizAktivnostForUpdate(k.FizickaAktivnost.ToLower());
 
@@ -58,7 +58,7 @@ namespace ClassLibrary.DAL
             SqlHelper.ExecuteNonQuery(cs, "UpdateUser", k.IDKorisnik, k.Ime, k.Prezime, k.Email, k.DatumRodenja, k.KorisnickoIme, k.Tezina, FizAktivnostId, k.Visina, tipDijabetesaId, k.Spol);
         }
 
-        public void InsertUser(Korisnik k)
+        public void InsertUser(KorisnikModel k)
         {
             int FizAktivnostId = helperMethod.SetUserFizAktivnostForUpdate(k.FizickaAktivnost.ToLower());
 

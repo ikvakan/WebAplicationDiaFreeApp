@@ -1,0 +1,23 @@
+﻿.mainContainer {
+   
+    width: 1200px;
+    margin: 50px auto;
+    background-color: #F5F5F5;
+    padding: 30px;
+    
+    border-radius: 10px;
+}
+
+.customLabel{
+    font-size:2em;
+}
+
+nav.row .btn {
+    margin-right:7px;
+   
+}
+
+footer p{
+   
+    margin:0;
+}

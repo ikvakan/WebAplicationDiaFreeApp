@@ -10,12 +10,12 @@ namespace ClassLibrary.Models
     {
         public int IDObrok { get; set; }
         public string NazivObroka { get; set; }
-        public List<Namirnice> ListaNamirnica{ get; set; }
+        public List<NamirniceModel> ListaNamirnica{ get; set; }
         public DateTime? DatumIzrade { get; set; }
 
         public KreiraniObrok()
         {
-            ListaNamirnica = new List<Namirnice>();
+            ListaNamirnica = new List<NamirniceModel>();
 
         }
     }

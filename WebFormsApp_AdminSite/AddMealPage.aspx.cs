@@ -14,7 +14,7 @@ namespace WebFormsApp_AdminSite
     public partial class AddMealPage : System.Web.UI.Page
     {
 
-        private List<Namirnice> listNamirnice = new List<Namirnice>();
+        private List<NamirniceModel> listNamirnice = new List<NamirniceModel>();
 
         private IObrok repo = RepoFactory.GetObrokRepo();
         private INamirnica repoNamirnica = RepoFactory.GetNamirnicaRepo();
@@ -33,15 +33,15 @@ namespace WebFormsApp_AdminSite
             }
         }
 
-        public List<Namirnice> ListaNamirnicaSession
+        public List<NamirniceModel> ListaNamirnicaSession
         {
             get
             {
                 if (Session["listaNamirnica"] == null)
                 {
-                    Session["listaNamirnica"] = new List<Namirnice>();
+                    Session["listaNamirnica"] = new List<NamirniceModel>();
                 }
-                return (List<Namirnice>)Session["listaNamirnica"];
+                return (List<NamirniceModel>)Session["listaNamirnica"];
             }
             set
             {
@@ -125,23 +125,23 @@ namespace WebFormsApp_AdminSite
 
         protected void btnKreirajObrok_Click(object sender, EventArgs e)
         {
-            List<Namirnice> kolekcija = new List<Namirnice>();
+            List<NamirniceModel> kolekcija = new List<NamirniceModel>();
 
-            Obrok o = new Obrok();
+            ObrokModel o = new ObrokModel();
             o.NazivObroka= ddlObrok.SelectedValue;
             o.DatumIzrade= DateTime.Parse(txtDatum.Text); 
 
             foreach (GridViewRow row in gvPopisNamirnica.Rows)
             {
                 CheckBox cb = (CheckBox)row.FindControl("cbOdaberi");
-                Label lblNaziv = (Label)row.FindControl("lblNaziv");
-                Label lblEnergija_kJ = (Label)row.FindControl("lblEnergija_kJ");
-                Label lblEnergija_kcal = (Label)row.FindControl("lblEnergija_kcal");
+                //Label lblNaziv = (Label)row.FindControl("lblNaziv");
+                //Label lblEnergija_kJ = (Label)row.FindControl("lblEnergija_kJ");
+                //Label lblEnergija_kcal = (Label)row.FindControl("lblEnergija_kcal");
                 TextBox txtGrami = (TextBox)row.FindControl("lblGrami");
                 TextBox txtKomad = (TextBox)row.FindControl("lblKomad");
                 TextBox txtZlica = (TextBox)row.FindControl("lblZlica");
                 TextBox txtSalica = (TextBox)row.FindControl("lblSalica");
-                Label lblTipNamirnice = (Label)row.FindControl("lblTipNamirnice");
+                //Label lblTipNamirnice = (Label)row.FindControl("lblTipNamirnice");
 
                 if (cb != null && cb.Checked)
                 {
@@ -150,7 +150,7 @@ namespace WebFormsApp_AdminSite
 
 
 
-                    Namirnice n = new Namirnice();
+                    NamirniceModel n = new NamirniceModel();
                     n.IDNamirnice = id;
 
                     

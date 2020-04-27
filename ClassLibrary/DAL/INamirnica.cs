@@ -9,14 +9,14 @@ namespace ClassLibrary.DAL
 {
    public interface INamirnica
     {
-        void UpdateIngredients(Namirnice n);
+        void UpdateIngredients(NamirniceModel n);
         void DeleteIngredient(int n);
 
-        void InsertIngredient(Namirnice n);
-        List<Namirnice> getIngredients(string tipNamirnice);
-        List<Namirnice> GetIngredientForMeal(int idMeal);
+        void InsertIngredient(NamirniceModel n);
+        List<NamirniceModel> getIngredients(string tipNamirnice);
+        List<NamirniceModel> GetIngredientForMeal(int idMeal);
 
-        decimal InsertMeasurementForIngredient(Namirnice n);
+        decimal InsertMeasurementForIngredient(NamirniceModel n);
 
 
     }

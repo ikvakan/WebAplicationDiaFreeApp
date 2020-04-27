@@ -37,7 +37,7 @@ namespace WebFormsApp_AdminSite
             
             
 
-            if (Admin.isAdmin(userName, password))
+            if (AdminModel.isAdmin(userName, password))
             {
                
                 Response.Redirect("Index.aspx");

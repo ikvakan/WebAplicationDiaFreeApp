@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Models
 {
-   public class Namirnice 
+   public class NamirniceModel 
         
     {
         public int IDNamirnice  { get; set; }

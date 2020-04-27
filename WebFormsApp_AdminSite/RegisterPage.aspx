@@ -42,14 +42,7 @@
                             Operator="DataTypeCheck"
                             Type="Date"
                             ErrorMessage="Nepravilan datum." Display="Dynamic" ForeColor="Red" meta:resourcekey="CompareValidator4Resource1"></asp:CompareValidator>
-                        <%--<asp:TextBox ID="txtDatumRodenja"
-                            CssClass="form-control"
-                            runat="server"
-                            AutoPostBack="False"
-                            TabIndex="1"
-                            placeholder="dd.mm.yyyy"
-                            autocomplete="off"
-                            MaxLength="10"></asp:TextBox>--%>
+                       
                         <asp:TextBox ID="txtDatumRodenja" runat="server" CssClass="form-control" TextMode="Date" meta:resourcekey="txtDatumRodenjaResource1"></asp:TextBox>
 
                     </div>
@@ -62,6 +55,8 @@
                     <div class="form-group">
                         <asp:Label runat="server" ID="lblUserName" meta:resourcekey="lblUserNameResource1">Korisničko ime:</asp:Label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Korisničko ime obavezno." ControlToValidate="txtKorisnickoIme" CssClass="validatorColor" Display="Dynamic" meta:resourcekey="RequiredFieldValidator4Resource1">*</asp:RequiredFieldValidator>
+
+                        <asp:CustomValidator ID="CheckForUserName" runat="server" ControlToValidate="txtKorisnickoIme" CssClass="validatorColor" Display="Dynamic" ErrorMessage="Korisničko ime već postoji." OnServerValidate="CheckForUserName_ServerValidate">*</asp:CustomValidator>
 
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtKorisnickoIme" meta:resourcekey="txtKorisnickoImeResource1"></asp:TextBox>
                     </div>
