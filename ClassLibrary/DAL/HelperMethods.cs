@@ -16,7 +16,7 @@ namespace ClassLibrary.DAL
         {
             int result = 0;
 
-            switch (tipDijabetesa)
+            switch (tipDijabetesa.ToLower())
             {
                 case "tip1":
                     result = 1;
@@ -33,7 +33,7 @@ namespace ClassLibrary.DAL
         {
             int result = 0;
 
-            switch (fizickaAktivnost)
+            switch (fizickaAktivnost.ToLower())
             {
                 case "slaba":
                     result = 1;

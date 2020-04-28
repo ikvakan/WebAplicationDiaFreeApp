@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomeValidator\ContainsUserNameValidator.cs" />
     <Compile Include="DAL\FileManager.cs" />
     <Compile Include="DAL\HelperMethods.cs" />
     <Compile Include="DAL\IFileManager.cs" />

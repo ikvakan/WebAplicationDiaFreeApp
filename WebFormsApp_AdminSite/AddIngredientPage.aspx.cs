@@ -50,13 +50,16 @@ namespace WebFormsApp_AdminSite
                 Response.Redirect("~/LoginPage.aspx");
             }
 
-            if (Language != "en" || Language=="0")
+            if (Language == "hr" )
             {
                 Master.ShowLabel("Unos namirnice");
 
             }
-            else
+            else if (Language=="en")
+            {
                 Master.ShowLabel("Create ingredient");
+
+            }
 
 
             if (!IsPostBack)

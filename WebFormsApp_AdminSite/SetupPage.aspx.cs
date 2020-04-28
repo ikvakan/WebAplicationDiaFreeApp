@@ -35,13 +35,16 @@ namespace WebFormsApp_AdminSite
 
 
 
-            if (Language == "hr")
+            if (Language == "hr" )
             {
                 Master.ShowLabel("Postavke");
 
             }
-            else
+            else if (Language=="en")
+            {
+
                 Master.ShowLabel("Settings");
+            }
 
             if (!IsPostBack)
             {

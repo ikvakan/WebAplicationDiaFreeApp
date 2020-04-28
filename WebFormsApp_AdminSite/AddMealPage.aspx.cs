@@ -65,8 +65,11 @@ namespace WebFormsApp_AdminSite
 
                 Master.ShowLabel("Odaberi namirnice");
             }
-            else
+            else if (Language=="en")
+            {
+
                 Master.ShowLabel("Select ingredient");
+            }
 
             if (!IsPostBack)
             {

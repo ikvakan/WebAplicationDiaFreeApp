@@ -11,15 +11,40 @@ namespace WebFormsApp_AdminSite
 {
     public partial class Index : System.Web.UI.Page
     {
+        public string Language
+        {
+            get
+            {
+                if (Request.Cookies["languageOptions"] != null)
+                {
+                    if (Request.Cookies["languageOptions"]["language"] != null)
+                    {
+                        return Request.Cookies["languageOptions"]["language"];
+                    }
+                }
+                return "";
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
 
             if (Session["admin"]==null)
             {
                 Response.Redirect("~/LoginPage.aspx");
             }
-            
-            Master.ShowLabel("Dobrodošli !");
+
+            if (Language == "hr")
+            {
+
+                Master.ShowLabel("Dobrodošli !");
+            }
+            else if (Language == "en")
+            {
+
+                Master.ShowLabel("Wellcome !");
+            }
 
            
 

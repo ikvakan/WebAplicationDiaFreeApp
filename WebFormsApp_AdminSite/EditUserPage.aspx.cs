@@ -15,8 +15,21 @@ namespace WebFormsApp_AdminSite
     {
 
         private IKorisnik repo = RepoFactory.GetKorisnikRepo();
+        public string Language
+        {
+            get
+            {
+                if (Request.Cookies["languageOptions"] != null)
+                {
+                    if (Request.Cookies["languageOptions"]["language"] != null)
+                    {
+                        return Request.Cookies["languageOptions"]["language"];
+                    }
+                }
+                return "";
+            }
+        }
 
-      
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["admin"] == null)
@@ -25,7 +38,18 @@ namespace WebFormsApp_AdminSite
             }
 
 
-            Master.ShowLabel("Uređivanje korisnika");
+            if (Language == "hr" )
+            {
+
+                Master.ShowLabel("Kreiraj obrok");
+            }
+            else if (Language=="en")
+            {
+                Master.ShowLabel("Create meal");
+
+            }
+
+           // Master.ShowLabel("Uređivanje korisnika");
 
             if (Request.Cookies["podaci"]!=null)
             {
@@ -60,7 +84,7 @@ namespace WebFormsApp_AdminSite
             
             txtImeEdit.Text = korisnik.Ime;
             txtPrezimeEdit.Text = korisnik.Prezime;
-            txtDatumRodenjaEdit.Text =korisnik.DatumRodenja.ToShortDateString();
+            txtDatumRodenjaEdit.Text =korisnik.DatumRodenja.Value.ToShortDateString();
             txtEmailEdit.Text = korisnik.Email;
             txtKorisnickoImeEdit.Text = korisnik.KorisnickoIme;
             txtTezinaEdit.Text =korisnik.Tezina.ToString();

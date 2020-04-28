@@ -24,7 +24,9 @@ namespace MVCApp_UserSite
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/RegisterPage.css",
+                      "~/Content/LoginPage.css"));
         }
     }
 }

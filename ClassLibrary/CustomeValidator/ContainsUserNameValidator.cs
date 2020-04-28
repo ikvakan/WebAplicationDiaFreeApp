@@ -1,11 +1,13 @@
 ﻿using ClassLibrary.DAL;
+using ClassLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MVCApp_UserSite.Models.CustomeValidators
+namespace ClassLibrary.CustomeValidator
 {
     public class ContainsUserNameValidator : ValidationAttribute
     {
@@ -13,9 +15,9 @@ namespace MVCApp_UserSite.Models.CustomeValidators
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var user = validationContext.ObjectInstance as UserLoginModel;
+            var user = validationContext.ObjectInstance as KorisnikModel;
 
-            return !repo.ContainsUserName(user.UserName) ? ValidationResult.Success : new ValidationResult("Korisničko ime već postoji.");
+            return !repo.ContainsUserName(user.KorisnickoIme) ? ValidationResult.Success : new ValidationResult("Korisničko ime već postoji.");
         }
     }
 }

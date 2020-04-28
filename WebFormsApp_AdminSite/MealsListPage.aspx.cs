@@ -54,7 +54,7 @@ namespace WebFormsApp_AdminSite
                 Response.Redirect("~/LoginPage.aspx");
             }
 
-            if (Language == "hr")
+            if (Language != "en" || Language != "0")
             {
                 Master.ShowLabel("Popis obroka");
             }
@@ -112,7 +112,7 @@ namespace WebFormsApp_AdminSite
 
 
 
-            if (Language == "hr")
+            if (Language == "hr" )
             {
                 nazivObrokaHeader.Text = "Obrok";
                 namirniceCellHeader.Text = "Namirnice";
@@ -122,8 +122,9 @@ namespace WebFormsApp_AdminSite
                 salicaCellHeader.Text = "Šalica";
                 tipNamirniceCellHeader.Text = "Tip namirnice"; 
             }
-            else
+            else if (Language=="en")
             {
+
                 nazivObrokaHeader.Text = "Meal";
                 namirniceCellHeader.Text = "Ingredient";
                 gramiCellHeader.Text = "Grams";
@@ -131,7 +132,9 @@ namespace WebFormsApp_AdminSite
                 zlicaCellHeader.Text = "Spoon";
                 salicaCellHeader.Text = "Cup";
                 tipNamirniceCellHeader.Text = "Ingredient type";
+            
             }
+            
 
             //header
             TableHeaderRow tblHeaderRow = new TableHeaderRow();

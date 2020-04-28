@@ -82,13 +82,16 @@ namespace WebFormsApp_AdminSite
                 Response.Redirect("~/LoginPage.aspx");
             }
 
-            if (Language == "hr")
+            if (Language == "hr" )
             {
 
                 Master.ShowLabel("Kreiraj obrok");
             }
-            else
+            else if (Language=="en")
+            {
+
                 Master.ShowLabel("Create meal");
+            }
            
 
 

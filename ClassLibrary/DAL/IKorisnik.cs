@@ -1,4 +1,5 @@
 ﻿using ClassLibrary.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace ClassLibrary.DAL
         List<KorisnikModel> GetAllUsers();
         KorisnikModel GetUserById(int idUser);
         void UpdateUser(KorisnikModel k);
+       
         void DeleteUser(int id);
     }
 }

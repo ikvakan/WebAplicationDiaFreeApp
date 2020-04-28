@@ -44,7 +44,7 @@
                         TabIndex="1"
                         placeholder="dd.mm.gggg."
                         autocomplete="off"
-                        MaxLength="10" meta:resourcekey="txtDatumRodenjaEditResource1"></asp:TextBox>
+                        MaxLength="10" meta:resourcekey="txtDatumRodenjaEditResource1" TextMode="SingleLine"></asp:TextBox>
                    
                 </div>
 

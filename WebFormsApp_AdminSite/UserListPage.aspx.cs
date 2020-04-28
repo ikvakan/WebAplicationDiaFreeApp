@@ -41,13 +41,16 @@ namespace WebFormsApp_AdminSite
             }
 
 
-            if (Language == "hr")
+            if (Language == "hr" )
             {
 
                 Master.ShowLabel("Popis korisnika");
             }
-            else
+            else if (Language=="en")
+            {
+
                 Master.ShowLabel("Users");
+            }  
 
             if (!IsPostBack)
             {
