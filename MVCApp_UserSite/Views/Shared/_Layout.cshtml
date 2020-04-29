@@ -12,17 +12,24 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="~/Home/Index" class="navbar-brand">DIAFREEAPP</a>
+                <a style="color:white;" class="navbar-brand">DIAFREEAPP</a>
                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Kreiraj obrok", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Popis obroka", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Kreiraj obrok", "CreateMeal", "Home")</li>
+                    <li>@Html.ActionLink("Popis obroka", "Menu", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Registracija", "Register", "Account")</li> @*ispis usera*@
+                    
+                    @if (Session["userName"]!=null)
+                    {
+                        <li><a  style="color:#ffd800">Pozdrav @Session["userName"] !</a> </li>
+                    }
+                    
+                    <li>@Html.ActionLink("Registracija", "Register", "Account")</li>
                     <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    <li>@Html.ActionLink("Logout", "LogOut", "Account")</li>
                 </ul>
 
             </div>

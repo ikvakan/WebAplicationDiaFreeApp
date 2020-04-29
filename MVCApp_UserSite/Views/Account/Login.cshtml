@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Login";
+
+    var message = (string)ViewBag.message;
 }
 
 
@@ -16,12 +18,11 @@
 
     <div class="container" style="width:1140px;">
         <div class="row">
-            <div class="col-md-4 col-md-offset-5">
-                <h2 class="" style="margin-top:100px;">Login</h2>
-
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2  style="margin-top:100px;">Login</h2>
             </div>
         </div>
-
+        
         <hr />
 
         <div class="row ">
@@ -44,8 +45,9 @@
 
                 <div class="form-group">
                     <input type="submit" value="Login" class="btn btn-primary btn-block" />
-                    <a href="~/Account/Register" style="width:280px;" class="reg btn btn-primary btn-block">Registracija</a>
+                <h3  style="color:red;">@message</h3>
                 </div>
+
             </div>
 
         </div>

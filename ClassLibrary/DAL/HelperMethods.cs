@@ -89,5 +89,22 @@ namespace ClassLibrary.DAL
                 return result;
         }
 
+        public bool UserLoginCheck(string usernName, string password)
+        {
+            IKorisnik repo = RepoFactory.GetKorisnikRepo();
+
+            bool result = false;
+
+            foreach (var item in repo.GetAllUsers())
+            {
+                if (item.KorisnickoIme==usernName && item.Zaporka==password)
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
+        }
     }
 }

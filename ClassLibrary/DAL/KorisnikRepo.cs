@@ -30,6 +30,7 @@ namespace ClassLibrary.DAL
                 k.Email = row["Email"].ToString();
                 k.DatumRodenja = (DateTime)row["DatumRodenja"];
                 k.KorisnickoIme = row["KorisnickoIme"].ToString();
+                k.Zaporka = row["Zaporka"].ToString();
                 k.Spol = row["Spol"].ToString();
                 k.Visina = (decimal)row["Visina"];
                 k.Tezina = (decimal)row["Tezina"];

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MVCApp_UserSite.Controllers
 {
@@ -17,6 +18,25 @@ namespace MVCApp_UserSite.Controllers
         {
 
             return View(new UserLoginModel());
+        }
+
+        [HttpPost]
+        public ActionResult Login(UserLoginModel ulm)
+        {
+            
+            IHelperMethods helper = RepoFactory.GetHelperMethods();
+
+
+            if (helper.UserLoginCheck(ulm.UserName, ulm.Password))
+            {
+                Session["userName"] = ulm.UserName;
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View(ulm);
+            }
+
         }
 
 
@@ -41,7 +61,21 @@ namespace MVCApp_UserSite.Controllers
 
             }
             else
-                return RedirectToAction("Greška: Korisnik nije dodan.");
+                return RedirectToAction("AddUserError","Error", new {message= "Greška: Korisnik nije dodan." });
+        }
+
+
+        public ActionResult LogOut()
+        {
+            if (Session["userName"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            var message = Session["userName"];
+            FormsAuthentication.SignOut();
+            Session.Abandon(); 
+            return View(message);
         }
 
     }

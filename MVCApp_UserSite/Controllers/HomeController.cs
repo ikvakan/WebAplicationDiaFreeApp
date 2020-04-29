@@ -13,6 +13,34 @@ namespace MVCApp_UserSite.Controllers
          [HttpGet]
         public ActionResult Index()
         {
+            if (Session["userName"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult CreateMeal()
+        {
+            if (Session["userName"]==null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+           
+                return View();
+
+        }
+
+        [HttpGet]
+        public ActionResult Menu()
+        {
+            if (Session["userName"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
             return View();
         }
     }

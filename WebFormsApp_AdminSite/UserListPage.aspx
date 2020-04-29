@@ -22,7 +22,7 @@
         
 </FooterTemplate>
         <HeaderTemplate>
-            <table class="table table-striped w-75">
+            <table class="table table-striped  ">
                 <thead class="thead-dark">
                     <th><asp:Label runat="server" ID="lblIme" meta:resourcekey="lblImeResource1">IME</asp:Label> </th>
                     <th>
