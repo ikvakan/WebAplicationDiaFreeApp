@@ -1,0 +1,29 @@
+﻿@using ClassLibrary.DAL
+@using ClassLibrary.Models
+@model IEnumerable<ClassLibrary.Models.KreiraniObrok>
+@{
+    ViewBag.Title = "MealsList";
+
+    var datum = Model.Select(d => d.DatumIzrade.Value.ToShortDateString()).First();
+}
+
+<div class="container alert">
+
+<fieldset class="border p-2">
+    <legend class="w-auto" style="color:red;">Datum @datum</legend>
+
+@foreach (var item in Model )
+{
+    @Html.Partial("_mealsList", item);
+    
+}
+</fieldset>
+
+   <div style="margin-top:15px;">
+    @Html.ActionLink("<< Povratak", "CreateMeal","Home",new {@class="btn btn-primary" })
+    
+   </div>
+
+</div>
+
+

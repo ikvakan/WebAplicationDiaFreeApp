@@ -24,22 +24,22 @@ namespace ClassLibrary.DAL
 
         }
 
-       
+
 
         public decimal InsertMeal(ObrokModel o)
         {
-            
-            return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeal", o.NazivObroka,o.DatumIzrade);
+
+            return (decimal)SqlHelper.ExecuteScalar(cs, "InsertMeal", o.NazivObroka, o.DatumIzrade);
         }
 
-        public void InsertIntoMealIngredients(int obrokId, int namirnicaID,int kolicinaID)
+        public void InsertIntoMealIngredients(int obrokId, int namirnicaID, int kolicinaID)
         {
-            SqlHelper.ExecuteNonQuery(cs, "InsertIntoMelaIngredients", obrokId, namirnicaID,kolicinaID);
+            SqlHelper.ExecuteNonQuery(cs, "InsertIntoMelaIngredients", obrokId, namirnicaID, kolicinaID);
         }
 
         public int GetNumberOfMeals()
         {
-            return (int) SqlHelper.ExecuteScalar(cs, "GetNumberOfMeals");
+            return (int)SqlHelper.ExecuteScalar(cs, "GetNumberOfMeals");
         }
 
         public List<ObrokModel> GetMealList()
@@ -59,9 +59,9 @@ namespace ClassLibrary.DAL
             return kolekcija;
         }
 
-       
 
-        public  void DeleteMeal(int obrokId)
+
+        public void DeleteMeal(int obrokId)
         {
             SqlHelper.ExecuteNonQuery(cs, "DeleteMeal", obrokId);
         }
@@ -71,11 +71,45 @@ namespace ClassLibrary.DAL
             SqlHelper.ExecuteNonQuery(cs, "DelteFromMealIngredients", obrokId);
         }
 
-       
+
 
         public void DeleteMeasurement(int id)
         {
             SqlHelper.ExecuteNonQuery(cs, "DeleteMeasurement", id);
         }
+
+        public List<ObrokModel> FilterMealByDate(string datum)
+        {
+            
+            return GetMealList().Where(o => o.DatumIzrade.Value.ToShortDateString() == datum).ToList();
+        }
+
+        public List<string> GetDateFromMeal()
+        {
+
+            return GetMealList().OrderBy(d => d.DatumIzrade).Select(o => o.DatumIzrade.Value.ToShortDateString()).Distinct().ToList();
+        }
+
+        public List<KreiraniObrok> GetCreatedMealList(string datum)
+        {
+            INamirnica repo = RepoFactory.GetNamirnicaRepo();
+            List<KreiraniObrok> kolekcija = new List<KreiraniObrok>();
+
+            var meals = FilterMealByDate(datum);
+
+            foreach (var item in meals)
+            {
+                KreiraniObrok obrok = new KreiraniObrok();
+                obrok.IDObrok = item.IDObrok;
+                obrok.DatumIzrade = item.DatumIzrade;
+                obrok.NazivObroka = item.NazivObroka;
+                obrok.ListaNamirnica = repo.GetIngredientForMeal(item.IDObrok);
+                kolekcija.Add(obrok);
+            }
+
+            return kolekcija;
+        }
+
+
     }
 }

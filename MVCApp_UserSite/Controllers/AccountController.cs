@@ -53,15 +53,25 @@ namespace MVCApp_UserSite.Controllers
         {
 
             IKorisnik repo = RepoFactory.GetKorisnikRepo();
-
-            if (ModelState.IsValid)
+            try
             {
-                repo.InsertUser(k);
-                return RedirectToAction("Index", "Home");
 
+                if (ModelState.IsValid)
+                {
+                    repo.InsertUser(k);
+                    return RedirectToAction("Index", "Home");
+
+                }
+                else
+                    return View(k);
             }
-            else
-                return RedirectToAction("AddUserError","Error", new {message= "Greška: Korisnik nije dodan." });
+            catch (Exception)
+            {
+
+             return RedirectToAction("CustomeError","Error", new {message= "Greška: Korisnik nije dodan." });
+                
+            }
+            
         }
 
 

@@ -11,9 +11,9 @@
     @Html.AntiForgeryToken()
 
     <div class="container register-content">
-        <div class="row ">
+        <div class="row justify-content-center">
 
-            <h2 class="text-center" style="margin-top:100px; padding-right:25px;">Registracija</h2>
+            <h2  style="margin-top:100px; ">Registracija</h2>
 
         </div>
         <hr />
@@ -21,8 +21,8 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="row ">
-            <div class="col-md-6  " style="padding-left:150px;">
+        <div class="row justify-content-center ">
+            <div class="col-md-6" style="padding-left:150px; " >
                 <div class="form-group ">
                     @Html.LabelFor(model => model.Ime, htmlAttributes: new { @class = "control-label " })
                     @Html.EditorFor(model => model.Ime, new { htmlAttributes = new { @class = "form-control" } })

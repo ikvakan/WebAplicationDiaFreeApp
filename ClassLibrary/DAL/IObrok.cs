@@ -10,22 +10,22 @@ namespace ClassLibrary.DAL
    public interface IObrok
     {
         decimal InsertMeal(ObrokModel o);
-
         void InsertIntoMealIngredients(int obrokId, int namirnicaID, int kolicinaID);
-
         int GetNumberOfMeals();
-
-
         List<ObrokModel> GetMealList();
-
        
-
         void DeleteMeal(int obrokId);
 
         void DelteFromMealIngredients(int obrokId);
 
-        
-
         void DeleteMeasurement(int id);
+
+        List<string> GetDateFromMeal();
+        List<ObrokModel> FilterMealByDate(string datum);
+
+        List<KreiraniObrok> GetCreatedMealList(string datum);
+
+
+
     }
 }

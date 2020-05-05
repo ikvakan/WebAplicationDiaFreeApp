@@ -1,7 +1,30 @@
-﻿
+﻿@using ClassLibrary.Models
+
+
 @{
     ViewBag.Title = "CreateMeal";
+    var datum = (List<SelectListItem>)ViewBag.datumi;
+
 }
 
-<h2>CreateMeal</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div style="margin-top:25px;" class="container jumbotron alert ">
+                <h2 class="text-center">Odaberi obrok</h2>
+                <hr />
+        <div class="row  justify-content-center">
+            <div class="text-center w-25">
+                    <label class="form-label" style="font-weight:bold;">Datum</label>
+                <div class="form-group   ">
+                    @Html.DropDownList("ddlDatumi", datum, "--odaberi--", new { @class = "form-control " })
+                </div>
+                <input type="submit" value="Odaberi" class="btn btn-primary w-100" />
+
+            </div>
+        </div>
+    </div>
+}
+
 

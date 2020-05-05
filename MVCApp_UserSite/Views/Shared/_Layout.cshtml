@@ -3,39 +3,41 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    
+    <title>@ViewBag.Title - DiaFree</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
         <div class="container">
+            
             <div class="navbar-header">
                 <a style="color:white;" class="navbar-brand">DIAFREEAPP</a>
-               
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Kreiraj obrok", "CreateMeal", "Home")</li>
-                    <li>@Html.ActionLink("Popis obroka", "Menu", "Home")</li>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mr-auto">
+                    <li>@Html.ActionLink("Odaberi obrok", "CreateMeal", "Home",null,new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Popis obroka", "Menu", "Home",null,new { @class = "nav-link" })</li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    @if (Session["userName"]!=null)
+                <ul class="nav navbar-nav navbar-right ">
+
+                    @if (Session["userName"] != null)
                     {
-                        <li><a  style="color:#ffd800">Pozdrav @Session["userName"] !</a> </li>
+                        <li class="nav-item"><a class="nav-link" style="color:#ffd800">Pozdrav @Session["userName"] !</a> </li>
                     }
-                    
-                    <li>@Html.ActionLink("Registracija", "Register", "Account")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                    <li>@Html.ActionLink("Logout", "LogOut", "Account")</li>
+
+                    <li class="nav-item">@Html.ActionLink("Registracija", "Register", "Account",null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Login", "Login", "Account",null ,new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Logout", "LogOut", "Account",null ,new { @class = "nav-link" })</li>
                 </ul>
 
             </div>
         </div>
     </div>
     <div class="container body-content">
+
         @RenderBody()
         <hr />
         <footer>

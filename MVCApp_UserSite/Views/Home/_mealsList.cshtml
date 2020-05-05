@@ -1,0 +1,103 @@
+﻿@model ClassLibrary.Models.KreiraniObrok
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table ">
+                @Html.HiddenFor(m => m.IDObrok)
+                <thead class="thead-light">
+                    <tr>
+                        <th>Obrok</th>
+                        <th style="width:250px; ">Namirnice</th>
+                        <th>Grami</th>
+                        <th>Komad</th>
+                        <th>Žlica</th>
+                        <th>Šalica</th>
+                        <th>Tip namirnice</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:10px 0 0 4px; font-weight:bold;" class="text-info">@Model.NazivObroka</td>
+                        <td>
+                            @foreach (var item in Model.ListaNamirnica)
+                            {
+                                <table class="table-borderless ">
+                                    <tr>
+                                        <td style="padding:0; ">@item.NazivNamirnice</td>
+                                    </tr>
+                                </table>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model.ListaNamirnica)
+                            {
+                                <table class="table-borderless  ">
+                                    <tr>
+                                        <td style="padding:0; ">@item.Grami</td>
+                                    </tr>
+                                </table>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model.ListaNamirnica)
+                            {
+                                <table class="table-borderless  ">
+                                    <tr>
+                                        <td style="padding:0; ">@item.Komad</td>
+                                    </tr>
+                                </table>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model.ListaNamirnica)
+                            {
+                                <table class="table-borderless  ">
+                                    <tr>
+                                        <td style="padding:0; ">@item.Zlica</td>
+                                    </tr>
+                                </table>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model.ListaNamirnica)
+                            {
+                                <table class="table-borderless  ">
+                                    <tr>
+                                        <td style="padding:0; ">@item.Salica</td>
+                                    </tr>
+                                </table>
+                            }
+                        </td>
+                        <td style="width:150px;">
+                            @foreach (var item in Model.ListaNamirnica)
+                            {
+                                <table class="table-borderless">
+                                    <tr >
+                                        <td align="center" style="padding:0;">@item.TipNamirnice</td>
+                                    </tr>
+                                </table>
+                            }
+                        </td>
+                    </tr>
+                    <tr >
+                        <td colspan="6"></td>
+                        <td class="">
+                            @*<input class="btn btn-block  btn-danger" value="Odaberi" />*@
+                            <div class="form-control badge-danger">
+                                @Html.CheckBox("checkMeal") Odaberi
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+               
+            </table>
+
+
+        </div>
+    </div>
+}
+

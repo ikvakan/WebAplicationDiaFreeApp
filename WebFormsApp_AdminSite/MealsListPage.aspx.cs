@@ -112,8 +112,6 @@ namespace WebFormsApp_AdminSite
 
 
 
-            if (Language == "hr" )
-            {
                 nazivObrokaHeader.Text = "Obrok";
                 namirniceCellHeader.Text = "Namirnice";
                 gramiCellHeader.Text = "Grami";
@@ -121,19 +119,7 @@ namespace WebFormsApp_AdminSite
                 zlicaCellHeader.Text = "Žlica";
                 salicaCellHeader.Text = "Šalica";
                 tipNamirniceCellHeader.Text = "Tip namirnice"; 
-            }
-            else if (Language=="en")
-            {
-
-                nazivObrokaHeader.Text = "Meal";
-                namirniceCellHeader.Text = "Ingredient";
-                gramiCellHeader.Text = "Grams";
-                komadCellHeader.Text = "Piece";
-                zlicaCellHeader.Text = "Spoon";
-                salicaCellHeader.Text = "Cup";
-                tipNamirniceCellHeader.Text = "Ingredient type";
-            
-            }
+          
             
 
             //header

@@ -23,10 +23,11 @@ namespace MVCApp_UserSite
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/Bootstrap.css",
                       "~/Content/Site.css",
                       "~/Content/RegisterPage.css",
-                      "~/Content/LoginPage.css"));
+                      "~/Content/LoginPage.css",
+                      "~/Content/CreateMeal.css"));
         }
     }
 }

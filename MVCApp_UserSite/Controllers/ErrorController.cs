@@ -9,7 +9,7 @@ namespace MVCApp_UserSite.Controllers
     public class ErrorController : Controller
     {
         // GET: Error
-        public ActionResult AddUserError(string message)
+        public ActionResult CustomeError(string message)
         {
             ViewBag.message = message;
 
