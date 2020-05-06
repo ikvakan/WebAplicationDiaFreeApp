@@ -135,5 +135,14 @@ namespace ClassLibrary.DAL
 
         }
 
+        public List<string> GetDateFromMealByUserId(int id)
+        {
+            return GetMealsForUserById(id).OrderBy(d => d.DatumIzrade).Select(o => o.DatumIzrade.Value.ToShortDateString()).Distinct().ToList();
+        }
+
+        public void DeleteMealForUser(int userId, int obrokId)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "DeleteMealForUser", userId, obrokId);
+        }
     }
 }

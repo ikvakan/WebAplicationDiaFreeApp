@@ -61,7 +61,7 @@ namespace MVCApp_UserSite.Controllers
                 if (ModelState.IsValid)
                 {
                     repo.InsertUser(k);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Account");
 
                 }
                 else

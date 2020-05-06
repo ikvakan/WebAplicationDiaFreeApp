@@ -314,6 +314,8 @@
     <Content Include="Views\Home\CreateMeal.cshtml" />
     <Content Include="Views\Home\_mealsList.cshtml" />
     <Content Include="Views\Home\MealsList.cshtml" />
+    <Content Include="Views\Home\UserMenus.cshtml" />
+    <Content Include="Views\Home\_userMenus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,5 +29,9 @@ namespace ClassLibrary.DAL
 
         List<KreiraniObrok> GetMealsForUserById(int idKorisnik);
 
+        List<string> GetDateFromMealByUserId(int id);
+
+        void DeleteMealForUser(int userId,int obrokId);
+
     }
 }
