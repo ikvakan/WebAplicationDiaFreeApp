@@ -79,7 +79,7 @@ namespace MVCApp_UserSite.Controllers
 
             if (string.IsNullOrEmpty(ddlDatumi))
             {
-                return RedirectToAction("CreateMeal");
+                return RedirectToAction("Index");
             }
 
             var createdMeals = repo.GetCreatedMealListByDate(ddlDatumi);
@@ -95,7 +95,7 @@ namespace MVCApp_UserSite.Controllers
             return View("MealsList", createdMeals);
         }
 
-       
+       [HttpGet]
         public ActionResult MealsListRemove(int id)
         {
            
@@ -113,7 +113,7 @@ namespace MVCApp_UserSite.Controllers
             }
             else
             {
-                //Session.Remove("savedMeals");
+                //Session.Remove("savedMealsCollection");
                 return RedirectToAction("CreateMeal", "Home");
             }
         }
@@ -130,7 +130,7 @@ namespace MVCApp_UserSite.Controllers
 
             IObrok repo = RepoFactory.GetObrokRepo();
 
-            if (SavedMealsCollection != null)
+            if (SavedMealsCollection.Count() > 0)
             {
                 foreach (var item in SavedMealsCollection)
                 {
@@ -139,6 +139,8 @@ namespace MVCApp_UserSite.Controllers
 
                 }
             }
+
+
 
             var datumi = repo.GetDateFromMealByUserId((int)Session["userID"]);
             List<SelectListItem> kolekcija = new List<SelectListItem>();
@@ -165,7 +167,7 @@ namespace MVCApp_UserSite.Controllers
         {
             if (string.IsNullOrEmpty(ddlDatumi))
             {
-                return RedirectToAction("Menu");
+                return RedirectToAction("Index");
             }
 
             IObrok repo = RepoFactory.GetObrokRepo();
@@ -181,6 +183,8 @@ namespace MVCApp_UserSite.Controllers
 
             Session["userDate"] = ddlDatumi;
 
+            //ViewBag.datum = ddlDatumi;
+
             return View("UserMenus", mealsByDate);
         }
 
@@ -191,19 +195,23 @@ namespace MVCApp_UserSite.Controllers
             var userId=(int)Session["userID"];
 
             repo.DeleteMealForUser(userId, obrokId);
-            var meals = repo.GetMealsForUserById((int)Session["userID"]);
+            var meals = repo.GetMealsForUserById(userId);
 
             var mealsByDate = meals.Where(o => o.DatumIzrade.Value.ToShortDateString() == date).ToList();
 
-            if (mealsByDate.Count() != 0)
+
+
+
+            if (mealsByDate.Count() > 0)
             {
-                return View("UserMenus",mealsByDate);
+                return View("UserMenus", mealsByDate);
             }
             else
             {
+                Session.Remove("savedMealsCollection");
                 return RedirectToAction("Menu");
             }
-            
+
         }
 
     }

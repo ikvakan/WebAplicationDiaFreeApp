@@ -4,8 +4,9 @@
 
 @{
 
+    var userDate = (string)Session["userDate"];
 
-
+   // var userDate = (string)ViewBag.datum;
 }
 
 
@@ -93,7 +94,7 @@
                 <tr>
                     <td colspan="6"></td>
                     <td class="">
-                        @Html.ActionLink("Obriši", "DeleteMenu", new { obrokId = Model.IDObrok,date=(string)Session["userDate"] }, new { @class = "btn btn-block btn-danger " })
+                        @Html.ActionLink("Obriši", "DeleteMenu", "Home",new { obrokId = Model.IDObrok, date=userDate }, new { @class = "btn btn-block btn-danger " })
                     </td>
                 </tr>
 

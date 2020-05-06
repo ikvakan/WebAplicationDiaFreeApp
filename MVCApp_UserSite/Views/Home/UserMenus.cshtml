@@ -5,6 +5,9 @@
 
     var datum = Session["userDate"];
 
+   // var datum = (string)ViewBag.datum;
+
+
 }
 
 <div class="container alert">
@@ -18,9 +21,9 @@
             @foreach (var item in Model)
             {
 
-                @Html.Partial("_userMenus", item);
+                @Html.Partial("_userMenus", item)
 
-            }
+                }
 
 
 
