@@ -160,7 +160,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\customeHtmlHelpers\customeHtmlHelpers.cs" />
-    <Compile Include="Models\DateListlModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

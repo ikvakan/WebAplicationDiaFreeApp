@@ -19,5 +19,7 @@ namespace ClassLibrary.DAL
 
         bool UserLoginCheck(string usernName,string password);
 
+
+
     }
 }

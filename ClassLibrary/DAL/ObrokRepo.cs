@@ -90,7 +90,7 @@ namespace ClassLibrary.DAL
             return GetMealList().OrderBy(d => d.DatumIzrade).Select(o => o.DatumIzrade.Value.ToShortDateString()).Distinct().ToList();
         }
 
-        public List<KreiraniObrok> GetCreatedMealList(string datum)
+        public List<KreiraniObrok> GetCreatedMealListByDate(string datum)
         {
             INamirnica repo = RepoFactory.GetNamirnicaRepo();
             List<KreiraniObrok> kolekcija = new List<KreiraniObrok>();
@@ -110,6 +110,30 @@ namespace ClassLibrary.DAL
             return kolekcija;
         }
 
+        public void InsertIntoUserMeals(int idKorisnik, int idObrok)
+        {
+            SqlHelper.ExecuteNonQuery(cs, "InsertIntoUserMeals", idKorisnik, idObrok);
+        }
+
+        public List<KreiraniObrok> GetMealsForUserById(int idKorisnik)
+        {
+            INamirnica repo = RepoFactory.GetNamirnicaRepo();
+
+            ds = SqlHelper.ExecuteDataset(cs, "GetMealsForUser",idKorisnik);
+            List<KreiraniObrok> kolekcija = new List<KreiraniObrok>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                KreiraniObrok o = new KreiraniObrok();
+                o.IDObrok = (int)row["IDObrok"];
+                o.NazivObroka = (string)row["NazivObroka"];
+                o.DatumIzrade = (DateTime)row["DatumIzrade"];
+                o.ListaNamirnica = repo.GetIngredientForMeal(o.IDObrok); //????
+                kolekcija.Add(o);
+            }
+
+            return kolekcija;
+
+        }
 
     }
 }

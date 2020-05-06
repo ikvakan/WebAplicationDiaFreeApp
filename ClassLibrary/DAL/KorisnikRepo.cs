@@ -73,6 +73,11 @@ namespace ClassLibrary.DAL
             SqlHelper.ExecuteNonQuery(cs, "DeleteUser", id);
         }
 
+        public int GetUserId(string userName, string password)
+        {
+            var user= GetAllUsers().Where(u => u.KorisnickoIme == userName && u.Zaporka == password).Select(us => us.IDKorisnik).FirstOrDefault();
 
+            return user;
+        }
     }
 }

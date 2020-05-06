@@ -17,7 +17,7 @@ namespace MVCApp_UserSite.Controllers
         {
 
             IObrok repo = RepoFactory.GetObrokRepo();
-            List<KreiraniObrok> createdMeal = repo.GetCreatedMealList(datum);
+            List<KreiraniObrok> createdMeal = repo.GetCreatedMealListByDate(datum);
 
             return Json(createdMeal, JsonRequestBehavior.AllowGet);
         }

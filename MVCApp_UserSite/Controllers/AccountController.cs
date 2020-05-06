@@ -25,11 +25,13 @@ namespace MVCApp_UserSite.Controllers
         {
             
             IHelperMethods helper = RepoFactory.GetHelperMethods();
-
+            IKorisnik repo = RepoFactory.GetKorisnikRepo();
 
             if (helper.UserLoginCheck(ulm.UserName, ulm.Password))
             {
                 Session["userName"] = ulm.UserName;
+                Session["userID"] = repo.GetUserId(ulm.UserName,ulm.Password);
+
                 return RedirectToAction("Index", "Home");
             }
             else

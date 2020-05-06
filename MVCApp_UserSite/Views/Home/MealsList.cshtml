@@ -4,25 +4,39 @@
 @{
     ViewBag.Title = "MealsList";
 
-    var datum = Model.Select(d => d.DatumIzrade.Value.ToShortDateString()).First();
+    //var datum = Model.Select(d => d.DatumIzrade.Value.ToShortDateString()).First();
+    //var datum = (string)ViewBag.datum;
+
+    var datum = Session["datum"];
+
+   // var mealIDList = Session["mealIDList"];
+
 }
 
 <div class="container alert">
 
-<fieldset class="border p-2">
-    <legend class="w-auto" style="color:red;">Datum @datum</legend>
+    @using (Html.BeginForm())
+    {
+    <fieldset class="border p-2">
+        <legend class="w-auto" style="color:red;">Datum @datum</legend>
 
-@foreach (var item in Model )
-{
-    @Html.Partial("_mealsList", item);
-    
-}
-</fieldset>
 
-   <div style="margin-top:15px;">
-    @Html.ActionLink("<< Povratak", "CreateMeal","Home",new {@class="btn btn-primary" })
-    
-   </div>
+        @foreach (var item in Model)
+        {
+
+            @Html.Partial("_mealsList", item);
+
+        }
+
+     
+
+    </fieldset>
+
+    <div style="margin-top:15px;">
+        @Html.ActionLink("Povratak", "CreateMeal", "Home", new { @class = "btn btn-primary" })
+        @*@Html.ActionLink("Spremi", "Menu", "Home", new { @class = "btn btn-primary" })*@
+    </div>
+    }
 
 </div>
 

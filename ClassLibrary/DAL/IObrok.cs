@@ -23,9 +23,11 @@ namespace ClassLibrary.DAL
         List<string> GetDateFromMeal();
         List<ObrokModel> FilterMealByDate(string datum);
 
-        List<KreiraniObrok> GetCreatedMealList(string datum);
+        List<KreiraniObrok> GetCreatedMealListByDate(string datum);
 
+        void InsertIntoUserMeals(int idKorisnik, int idObrok);
 
+        List<KreiraniObrok> GetMealsForUserById(int idKorisnik);
 
     }
 }

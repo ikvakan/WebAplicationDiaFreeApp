@@ -10,6 +10,23 @@ namespace MVCApp_UserSite.Controllers
 {
     public class HomeController : Controller
     {
+
+        public List<KreiraniObrok> SavedMealsCollection
+        {
+            get 
+            {
+                if (Session["savedMealsCollection"]==null)
+                {
+                    Session["savedMealsCollection"] = new List<KreiraniObrok>();
+                }
+                return (List<KreiraniObrok>)Session["savedMealsCollection"];
+            }
+            set 
+            {
+                Session["savedMealsCollection"] = value;
+            }
+        }
+
         // GET: Home
 
         [HttpGet]
@@ -67,7 +84,8 @@ namespace MVCApp_UserSite.Controllers
                 return RedirectToAction("CreateMeal");
             }
 
-            var createdMeals = repo.GetCreatedMealList(ddlDatumi);
+            var createdMeals = repo.GetCreatedMealListByDate(ddlDatumi);
+
 
             if (createdMeals == null)
             {
@@ -75,34 +93,100 @@ namespace MVCApp_UserSite.Controllers
             }
 
 
+            Session["datum"] = ddlDatumi;
+            Session["createdMeals"] = createdMeals;
+
+            var mealIDist = createdMeals.Select(m => m.IDObrok).ToList();
+            Session["mealIDList"] = mealIDist;
+
             return View("MealsList", createdMeals);
         }
 
+       
 
-        public ActionResult MealsList(List<KreiraniObrok> obrok)
+        //[HttpGet]
+        //public ActionResult MealsList()
+        //{
+        //    var obrok=(List<KreiraniObrok>)Session["createdMeals"];
+
+        //    if (obrok != null)
+        //    {
+        //        return View(obrok);
+
+        //    }
+        //    else
+        //        return RedirectToAction("CustomeError", "Error", new { message = "Greška: Nema jela za odabrani datum." });
+
+        //}
+
+        public ActionResult MealsListRemove(int id)
         {
+           
+           // List<KreiraniObrok> savedMealsCollection = new List<KreiraniObrok>();
 
-            if (obrok != null)
+            var meals = (List<KreiraniObrok>)Session["createdMeals"];
+            var savedMeal = meals.Where(m => m.IDObrok == id).First();
+
+            SavedMealsCollection.Add(savedMeal);
+
+
+           
+            meals.Remove(savedMeal);
+
+
+
+            if (meals.Count() != 0)
             {
-                return View(obrok);
-
+                return View("MealsList", meals);
             }
             else
-                return RedirectToAction("CustomeError", "Error", new { message = "Greška: Nema jela za odabrani datum." });
-
-
+            {
+                //Session.Remove("savedMeals");
+                return RedirectToAction("CreateMeal", "Home");
+            }
         }
-
 
 
 
         [HttpGet]
         public ActionResult Menu()
         {
-            if (Session["userName"] == null)
+            //if (Session["userName"] == null)
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
+
+            IObrok repo = RepoFactory.GetObrokRepo();
+
+            foreach (var item in SavedMealsCollection)
             {
-                return RedirectToAction("Login", "Account");
+                var userId = (int)Session["userID"];
+                repo.InsertIntoUserMeals(userId,item.IDObrok);
+
             }
+
+            
+          
+            var obrok = repo.GetMealsForUserById((int)Session["userID"]);
+
+          
+            //List<SelectListItem> kolekcija = new List<SelectListItem>();
+
+            //foreach (var item in datumi)
+            //{
+            //    SelectListItem listItem = new SelectListItem
+            //    {
+            //        Text = item,
+            //        Value = item
+
+            //    };
+
+            //    kolekcija.Add(listItem);
+            //}
+
+            //ViewBag.datumi = kolekcija;
+
+
             return View();
         }
     }

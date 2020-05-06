@@ -14,7 +14,8 @@ namespace ClassLibrary.DAL
         List<KorisnikModel> GetAllUsers();
         KorisnikModel GetUserById(int idUser);
         void UpdateUser(KorisnikModel k);
-       
         void DeleteUser(int id);
+
+        int GetUserId(string userName,string password);
     }
 }
