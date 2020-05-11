@@ -37,20 +37,7 @@ namespace WebFormsApp_AdminSite
         }
 
 
-        public string Language
-        {
-            get
-            {
-                if (Request.Cookies["languageOptions"] != null)
-                {
-                    if (Request.Cookies["languageOptions"]["language"] != null)
-                    {
-                        return Request.Cookies["languageOptions"]["language"];
-                    }
-                }
-                return "";
-            }
-        }
+       
         protected override void OnPreRender(EventArgs e)
         {
 
@@ -82,16 +69,6 @@ namespace WebFormsApp_AdminSite
                 Response.Redirect("~/LoginPage.aspx");
             }
 
-            if (Language == "hr" )
-            {
-
-                Master.ShowLabel("Kreiraj obrok");
-            }
-            else if (Language=="en")
-            {
-
-                Master.ShowLabel("Create meal");
-            }
            
 
 

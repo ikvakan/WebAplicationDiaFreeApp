@@ -4,7 +4,9 @@ using ClassLibrary.DAL;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Web;
 using System.Web.UI;
@@ -13,25 +15,12 @@ using System.Web.UI.WebControls;
 namespace WebFormsApp_AdminSite
 {
 
-    public partial class UserListPage : System.Web.UI.Page  
+    public partial class UserListPage : System.Web.UI.Page
     {
 
         private static IKorisnik repo = RepoFactory.GetKorisnikRepo();
+        private static IFileManager file = RepoFactory.GetFileManager();
 
-        public string Language
-        {
-            get
-            {
-                if (Request.Cookies["languageOptions"] != null)
-                {
-                    if (Request.Cookies["languageOptions"]["language"] != null)
-                    {
-                        return Request.Cookies["languageOptions"]["language"];
-                    }
-                }
-                return "";
-            }
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,16 +30,7 @@ namespace WebFormsApp_AdminSite
             }
 
 
-            if (Language == "hr" )
-            {
 
-                Master.ShowLabel("Popis korisnika");
-            }
-            else if (Language=="en")
-            {
-
-                Master.ShowLabel("Users");
-            }  
 
             if (!IsPostBack)
             {
@@ -100,7 +80,26 @@ namespace WebFormsApp_AdminSite
             repo.DeleteUser(id);
 
             Response.Redirect(Request.Url.LocalPath);
-            
+
+        }
+
+        protected void btnSpremi_Click(object sender, EventArgs e)
+        {
+            var users = repo.GetAllUsers();
+            var info = "";
+
+            if (users.Count() > 0)
+            {
+                info = file.WriteUserTofile(users);
+                lblInfo.Text = info;
+            }
+            else
+            {
+
+                info = "Greška: Nema registriranih korisnika.";
+                lblInfo.Text = info;
+            }
+
         }
     }
 }

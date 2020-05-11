@@ -113,7 +113,7 @@ namespace MVCApp_UserSite.Controllers
             }
             else
             {
-                //Session.Remove("savedMealsCollection");
+               
                 return RedirectToAction("CreateMeal", "Home");
             }
         }

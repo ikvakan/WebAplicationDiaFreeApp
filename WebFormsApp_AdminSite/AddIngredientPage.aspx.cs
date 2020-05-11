@@ -17,20 +17,7 @@ namespace WebFormsApp_AdminSite
         private INamirnica repo = RepoFactory.GetNamirnicaRepo();
         private IHelperMethods helper = RepoFactory.GetHelperMethods();
 
-        public string Language
-        {
-            get
-            {
-                if (Request.Cookies["languageOptions"] != null)
-                {
-                    if (Request.Cookies["languageOptions"]["language"] != null)
-                    {
-                        return Request.Cookies["languageOptions"]["language"];
-                    }
-                }
-                return "";
-            }
-        }
+       
 
         protected override void OnPreLoad(EventArgs e)
         {
@@ -50,16 +37,7 @@ namespace WebFormsApp_AdminSite
                 Response.Redirect("~/LoginPage.aspx");
             }
 
-            if (Language == "hr" )
-            {
-                Master.ShowLabel("Unos namirnice");
-
-            }
-            else if (Language=="en")
-            {
-                Master.ShowLabel("Create ingredient");
-
-            }
+           
 
 
             if (!IsPostBack)

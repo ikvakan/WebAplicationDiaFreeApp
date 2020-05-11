@@ -18,20 +18,7 @@ namespace WebFormsApp_AdminSite
 
         private IObrok repo = RepoFactory.GetObrokRepo();
         private INamirnica repoNamirnica = RepoFactory.GetNamirnicaRepo();
-        public string Language
-        {
-            get
-            {
-                if (Request.Cookies["languageOptions"] != null)
-                {
-                    if (Request.Cookies["languageOptions"]["language"] != null)
-                    {
-                        return Request.Cookies["languageOptions"]["language"];
-                    }
-                }
-                return "";
-            }
-        }
+       
 
         public List<NamirniceModel> ListaNamirnicaSession
         {
@@ -60,16 +47,7 @@ namespace WebFormsApp_AdminSite
             }
 
 
-            if (Language == "hr")
-            {
-
-                Master.ShowLabel("Odaberi namirnice");
-            }
-            else if (Language=="en")
-            {
-
-                Master.ShowLabel("Select ingredient");
-            }
+           
 
             if (!IsPostBack)
             {

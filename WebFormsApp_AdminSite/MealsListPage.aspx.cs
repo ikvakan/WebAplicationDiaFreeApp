@@ -54,12 +54,7 @@ namespace WebFormsApp_AdminSite
                 Response.Redirect("~/LoginPage.aspx");
             }
 
-            if (Language != "en" || Language != "0")
-            {
-                Master.ShowLabel("Popis obroka");
-            }
-            else
-                Master.ShowLabel("Meals");
+           
 
             //if (!IsPostBack)
             //{

@@ -16,14 +16,14 @@ namespace WebFormsApp_AdminSite
 
         protected void btnOdajvi_Click(object sender, EventArgs e)
         {
-            //odjavi korisnika iz sesije
+            
             Response.Redirect("LoginPage.aspx");
         }
 
-        public void ShowLabel(string message)
-        {
-            lblHeaderInfo.Text = message;
-        }
+        //public void ShowLabel(string message)
+        //{
+        //    lblHeaderInfo.Text = message;
+        //}
 
         
     }

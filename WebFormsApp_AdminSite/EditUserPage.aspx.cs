@@ -15,20 +15,7 @@ namespace WebFormsApp_AdminSite
     {
 
         private IKorisnik repo = RepoFactory.GetKorisnikRepo();
-        public string Language
-        {
-            get
-            {
-                if (Request.Cookies["languageOptions"] != null)
-                {
-                    if (Request.Cookies["languageOptions"]["language"] != null)
-                    {
-                        return Request.Cookies["languageOptions"]["language"];
-                    }
-                }
-                return "";
-            }
-        }
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,17 +25,7 @@ namespace WebFormsApp_AdminSite
             }
 
 
-            if (Language == "hr" )
-            {
-
-                Master.ShowLabel("Kreiraj obrok");
-            }
-            else if (Language=="en")
-            {
-                Master.ShowLabel("Create meal");
-
-            }
-
+          
            // Master.ShowLabel("Uređivanje korisnika");
 
             if (Request.Cookies["podaci"]!=null)

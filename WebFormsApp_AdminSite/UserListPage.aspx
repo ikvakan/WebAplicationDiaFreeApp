@@ -9,7 +9,7 @@
     
     <div class="row  justify-content-center" style="margin-bottom: 20px;">
        
-        <asp:Label runat="server" ID="lblPopisKor" CssClass="badge badge-danger" Font-Size="2em" meta:resourcekey="lblPopisKorResource1" >Popis korisnika [spremi korisnike]</asp:Label>
+        <asp:Label runat="server" ID="lblPopisKor" CssClass="badge badge-danger" Font-Size="2em" meta:resourcekey="lblPopisKorResource1" >Popis korisnika</asp:Label>
     </div>
 
     <div class="row justify-content-center">
@@ -57,9 +57,9 @@
 
 
         </asp:Repeater>
-    <asp:Label runat="server" ID="lblInfo" meta:resourcekey="lblInfoResource1"></asp:Label>
-
+    <asp:Button runat="server" ID="btnSpremi" Text="Spremi korisnike" CssClass="btn btn-dark" OnClick="btnSpremi_Click" />
     </div>
+    <asp:Label runat="server" ID="lblInfo" meta:resourcekey="lblInfoResource1" Font-Bold="True" ForeColor="Red"></asp:Label>
 </div>
     
 </asp:Content>

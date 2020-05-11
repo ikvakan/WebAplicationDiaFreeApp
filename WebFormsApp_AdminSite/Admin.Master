@@ -21,7 +21,7 @@
             <header>
                 <div class="row ">
                     <div class="col-lg-6 col-md-6 col-sm-12 text-left ">
-                        <asp:Label ID="lblHeaderInfo" runat="server" Font-Bold="True" Font-Italic="True" CssClass="customLabel" meta:resourcekey="lblHeaderInfoResource1"></asp:Label>
+                        <asp:Label ID="lblHeaderInfo" runat="server" Font-Bold="True" Font-Italic="True" CssClass="customLabel" meta:resourcekey="lblHeaderInfoResource1">DIAFREEAPP</asp:Label>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12  text-right   ">
                         <asp:HyperLink ID="HyperLink1" Text="Admin" CssClass="btn btn-primary" runat="server" NavigateUrl="https://www.youtube.com/watch?v=gkqSCaMBERQ&list=PLPf69IGxwfBH7_qrNcN1eP-WuSS5oWLiZ" meta:resourcekey="HyperLink1Resource1"></asp:HyperLink>

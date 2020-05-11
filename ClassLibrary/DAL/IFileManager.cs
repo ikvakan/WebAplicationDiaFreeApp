@@ -9,6 +9,8 @@ namespace ClassLibrary.DAL
 {
    public interface IFileManager
     {
-        void AddMealToList(ObrokModel o);
+      
+        string WriteUserTofile(List<KorisnikModel> k);
+
     }
 }
